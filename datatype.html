@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python datatypes, The data type is the type of variable. It may be an integer, string, list or tuple."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Datatypes.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Datatypes</h1>
+                    <h5>In this article, we will learn about different kind of data types in Python.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    The data type is the type of variable. It may be an integer, string, or tuple.<br>
+                    Python variables do not need an explicit declaration of what type data, you stored in a variable. The declaration happens automatically when you assign a value to a variable.
+                    <br>
+                    There are two main types of Datatypes.
+				</p>
+                <p>
+                    <img src="/images/pythondatatype.jpeg" alt="Python Datatypes"
+					title="Python Datatypes">
+                </p>
+                <p>
+                    Immutable data types are those who can not change once you created them. While mutable data types are can be altered or change. You can check the data type of a variable using the built-in function <code>type()</code>.
+                </p>
+
+                <h3>Numeric Datatype</h3>
+                <p>
+					There are three distinct numeric types: integers, floating-point numbers, and complex numbers in Python. Booleans are also a subtype of integers.
+				</p>
+<pre>
+>>> num = <span class="number"> 10 </span><span class="comment">#integer.</span>
+
+>>> <span class="function">print</span>(<span class="function">type</span>(num))
+< class 'int' >
+
+>>> float_num = <span class="number"> 3.14 </span><span class="comment">#floating point number.</span>
+>>> <span class="function">print</span>(<span class="function">type</span>(float_num))
+< class 'float' >
+
+>>> complex_num = <span class="number"> 2 + 3j </span><span class="comment">#complex number.</span>	
+>>> <span class="function">print</span>(<span class="function">type</span>(complex_num))
+< class 'complex' >
+
+</pre>  
+                        <h3>String</h3>
+                        <p>
+                            Strings are an immutable sequence of Unicode code points. Strings are a set of characters represented in the quotation marks. In Python, we can use either pair of single or double or triple quotes to define a string.
+                        </p>
+<pre>
+str_var = <span class="string">"Hello, World!"</span>	
+</pre>
+
+                        <p>
+                            Tuples are an immutable sequence of elements separated by commas and enclosed in parentheses <code>()</code>. Tuples can be sequence of same or combination of different data types.
+                            <br>
+                            A tuple is a read-only data structure as we don’t modify the size and value of the items of a tuple.
+                        </p>
+<pre>
+<span class="comment">#tuple</span>
+tuple1 = (<span class="number">1, </span><span class="number">2, </span><span class="number">3</span>)
+
+tuple2 = (<span class="number">1, </span><span class="string">'a', </span><span class="number">3.14</span>)	
+</pre>
+                        <h3>List</h3>
+                        <p>
+                            A list contains items separated by commas and enclosed within square brackets <code>[]</code>. Python list can have data of different data types. List are similar to arrays in C.
+                        </p>
+<pre>
+<span class="comment">#list</span>
+list1 = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]
+
+<span class="comment">#List with Multiple Datatypes</span>
+list1 = [<span class="number">123</span>, <span class="string">'Python'</span>, <span class="number">3.14</span>]
+</pre>
+                        <h3>Dictionary</h3>
+                        <p>
+                            Dictionary consists of key-value pairs. It is enclosed by curly braces <code>{}</code> and values can be assigned using square brackets <code>[]</code>.
+                        </p>
+<pre>
+dictionary = {<span class="string">'name'</span>: <span class="string">'Advaita'</span>, <span class="string">'age'</span>: <span class="number">7</span>}
+</pre>
+                        <h3>Set</h3>
+                        <p>
+                            Sets are unordered collections of unique objects.
+                            <br>
+                            There two types of sets.
+                            <br>
+                            <strong>1. sets</strong> – They are mutable and new elements can be added once sets are defined. 
+                        </p>
+<pre>
+>>> basket = {<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'kiwi'</span>}
+
+>>> <span class="function">print</span>(<span class="variable">basket</span>)
+{'apple', 'banana', 'orange', 'kiwi'}
+</pre>
+                        <p>
+                            <strong>2. frozen set</strong> – They are immutable and new elements cannot be added after its defined.
+                        </p>
+<pre>
+>>> b = <span class="function">frozenset</span>(<span class="string">'asdfagsa'</span>)
+
+>>> <span class="function">print</span>(<span class="variable">b</span>)
+frozenset({'d', 'f', 'g', 's', 'a'})
+</pre>
+
+                        <p>
+                            In this tutorial, we learned different types of datatypes briefly, we will learn each data types in details in coming tutorials so, keep learning!.
+                        </p>
+
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="variable.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="operator.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

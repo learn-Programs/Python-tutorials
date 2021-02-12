@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Modules.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Python Modules</h1>
+                    <h5>In this tutorial, you will learn, How to create, import modules in Python.</h5>
+                </div>
+            <div class="content__container">
+                <h3>What are Modules?</h3>
+                <p>
+                    A module is a file containing Python definitions and statements.  We can say that, a module is nothing but a Python source code file that we save with <code>.py</code> extension. <br>The file name is module name with the suffix <code>.py</code> .
+
+				</p>
+
+                <p>
+                	To Understand more about modules, Let's create a following Program that  has function called <code>sqr(num)</code> which takes number, and returns a square of that number, and save that file as <code>square.py</code>.
+
+                </p>
+                <p>
+                    Here, <code>square.py</code> is called module and <code>square</code>  is module name.
+                </p>
+<pre>
+<span class="comment">#'square.py'</span>
+
+<span class="keyword">def</span> <span class="userfunction">sqr</span>(num):
+    <span class="keyword">return</span> num * num
+    
+num = <span class="number">2</span>
+sqr(num) <span class="comment"># function call</span>
+</pre>
+                <p>
+                    We use modules to break down large programs into small manageable and orgranized files. Modules provides reusablitilies of code.
+                </p>
+                <p>
+                    We can defined our most used functions in a module and import it, instead of copying its definition into each program every time.
+                </p>
+                <h3>How to import modules in Python?</h3>
+                <p>
+                    We can import the definition inside a module, into another module or the interactive interpreter in Python.
+
+				</p>
+
+                <p>
+                    To import module, we can use <code>import</code> keyword followed by the name of the module.
+
+                </p>
+
+                <p>
+                    Now, lets enter into the Python interpreter and import the module <code>square.py</code> which we created earlier.
+                </p>
+<pre>
+>>> <span class="keyword">import</span> square   
+</pre>
+                <p>
+                    This does not enter the names of functions defined in <code>square</code> module directly in the current symbol table; it only enter the module name <code>square</code> there.
+                </p>
+                <p>
+                    We can access the functions and definitions inside the module using module name with  <code>.</code> dot operator as follows.
+                </p>
+<pre>
+>>> square.sqr(<span class="number">2</span>)
+>>> 4
+</pre>
+                <p>
+
+                   Python provides a library of standard modules, which we can use in our program in similar way as we did before using <code>import</code>. 
+                </p>
+                <p>
+                    Each module has it's own private symbol table, which is used as the global symbol table by all functions defined inside that module. Thus, the creator of module can use global variables in the module without worring about the clashes with a user's global variables.
+                </p>
+                <h3>Python "from .. import" statement</h3>
+                <p>
+                    We can import the specific names / functions from module without importing whole module.
+                </p>
+<pre>
+>>> <span class="keyword">from</span> square <span class="keyword">import</span> sqr
+>>> sqr(<span class="number">2</span>)
+4
+</pre>
+                <p>
+                    In the above example, we imported only <code>sqr</code> definition/function from a <code>square</code> module. 
+                </p>
+                <p>
+                    In this case, we don't need use <code>.</code> dot operator, we can used it as it directly. we can also import attributes of a module in similar mannar as above.
+                </p>
+<pre>
+>>> <span class="keyword">from</span> square <span class="keyword">import</span> num
+>>> num
+2
+</pre>
+                <p>
+                    This does not introduce the module name from which the imports  ( definitions/ functions/  attributes ) are taken in the local symbol table. so the <code>square</code> is not defined here.
+                </p>
+                <h3>import all names</h3>
+                <p>
+                    We can import all names that a modules defines, using <b>*</b> operator.
+                </p>
+<pre>
+>>> <span class ="keyword">from</span> square <span class ="keyword">import</span> *
+>>> sqr(<span class ="number">3</span>)
+9
+>>> num
+2
+</pre> 
+                <p>
+                    This import all names(definitions) from the modules defined except those beginning with an underscore <b>(__)</b>.
+                </p>
+                <p>
+                    Although, it is not good practice of include importing <b>*</b> from a module, since it often causes poorly readable code.
+                </p>
+
+                <h3>importing with renaming</h3>
+                <p>
+                    We can  rename module while importing it into our program using <code>as</code> keyword as follows:
+                </p>
+<pre>
+>>> <span class ="keyword">import</span> square <span class ="keyword">as</span> s
+>>> s.sqr(<span class ="number">4</span>) <span class ="comment">#accessing function in s module using '.' operator.</span>
+<span class ="number">16</span>
+</pre>
+                <p>
+                    This is a same way importing module with <code>import square</code> , only difference is that, it is now available as <code>s</code>.
+                </p>
+                <p>
+                    Now, <code>square</code> is not recognized in our scope, since we change the name as <code>s</code>. Hence, the <code>square.sqr(4)</code> is invalid here.
+                </p>
+
+                <p>
+                    It can also be used using <code>from</code> with similar effects as follows:
+                </p>
+<pre>
+>>> <span class ="keyword">from</span> square <span class ="keyword">import</span> sqr <span class="keyword">as</span> sq
+>>> sq(<span class ="number">5</span>)
+<span class ="number">25</span>
+</pre>
+</p>
+                <h4>Python module search path</h4>
+                <p>
+                    When module is imported, the interpreter first search for a built-in module with that name. If file not found, then it searches that file in a list of directories given by the variable <code>sys.path</code>.
+                </p>
+                <p>
+                    <code>sys.path</code> is initialized from these locations listed below
+                    <ul>
+                        <li>The directory containing the input script or current directory.</li>
+                        <li> <code>PYTHONPATH</code> ; a list of directory names.</li>
+                        <li> The installation-dependent default directory.</li>
+                    </ul>
+                </p>
+                <p>
+                    After initialization, Python programs can modify <code>sys.path</code>.
+                </p>
+                <h3>Reloading Modules</h3>
+                <p>
+                    A module can contain executable statements as well as functions definition.
+                    <br>
+
+                    These statements are intended to initialized the module. They are executed only the first time the module name is encountered in an import statement.
+
+                    <br>
+                    Let's create a <code>test.py</code> module.
+                </p>
+<pre>
+<span class ="comment">#test.py</span>
+<span class ="function">print</span>(<span class ="string">"test.py module imported."</span>)
+
+<span class ="keyword">def</span> <span class ="userfunction">function</span>():
+    <span class ="function">print</span>(<span class ="string">"Welcome to function of test module."</span>)
+</pre>
+                <p>
+                    Now, let's try to import it more than one times in Python interpreter.
+                </p>
+<pre>
+>>> <span class ="keyword">import</span> test
+test.py module imported.
+
+>>> <span class ="keyword">import</span> test
+
+>>> <span class ="keyword">import</span> test
+</pre>
+                <p>
+                    Did you notice?, when we import the module <code>test</code> first time, only then print statement is get executed. Which means that our modules was imported only once. 
+
+                </p>
+                <p>
+                    Now, if our module changed while running program, then we must restart the interpreter which is not a good idea. 
+
+                </p>
+                <p>
+                    But, Python provide an efficient way to do it using <code>importlib.reload()</code> method.
+
+                </p>
+<pre>
+>>> <span class ="keyword">import</span> test
+test.py module imported.
+
+>>> <span class ="keyword">import</span> test
+
+>>> <span class ="keyword">import</span> importlib
+>>> importlib.relaod(test)
+test.py module imported
+</pre>
+                <h3>dir() function</h3>
+                <p>
+                    A module can be imported, when imported, module is evaluaed, and a module object is created. That module object has attributes. 
+
+                </p>
+                <p>
+                    The <code>dir()</code> function is built-in function which is used to find out that objects of the modules when module is evaluated.
+
+                </p>
+                <p>
+                    It retruns a sorted list of strings which contains a all types of names such as variables, functions, modules, etc.
+
+                    <br>
+                    for example:
+                </p>
+<pre>
+>>> <span class="keyword">import</span> square
+
+>>> <span class="function">dir</span>(square)
+[<span class="string">'__builtins__'</span>,<span class="string">'__doc__'</span>, <span class="string">'__file__'</span>, <span class="string">'__name__'</span>, <span class="string">'num'</span>, <span class="string">'sqr'</span>]
+</pre>
+                <p>
+                    Here, we can see a sorted list of names - along with `num` and `sqr` . All other names that begin with double underscore (__) are default Python attributes associated with module, when module was executed. 
+
+                </p>
+                <ul>
+                        <li><b>__doc__</b> : the doc string of the module.</li>
+                        <li> <b>__name__</b> : The name of the module when the module is imported.</li>
+                </ul>
+            </p>
+<pre>
+>>> <span class="keyword">import</span>  square
+>>> square.__name__
+<span class="string">'square'</span>
+</pre>
+                <p>
+                    We can find list of all the names that we defined in our current namespace using <code>dir()</code> without any argument.
+                </p>
+<pre>
+>>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
+>>> <span class="keyword">import</span> square
+>>> s = sqaure.sqr
+>>> <span class="function">dir</span>()
+[<span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__name__'</span>, <span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'square'</span>]                   
+</pre>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="lambda.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="file.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

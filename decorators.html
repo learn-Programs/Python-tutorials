@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Decorators.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Decorators</h1>
+                    <h5>A decorator takes in a function, adds some functionality and returns it. In this tutorial, you will learn how to create a decorators and why you should use it.</h5>
+                </div>
+            <div class="content__container">
+                <h3>What is Decorators in Python?</h3>
+                <p>
+                    A decorator is a function that takes a function as its argument and returns a new function with the same name as the original function but with enhanced functionality. 
+				</p>
+
+                <p>
+                	Decorators in Python are special functions which adds additional functionality to an existing code.
+                </p>
+
+                <p>
+                    This is also called <b>Metaprogramming</b>, because one part of the program tries to modify the another part of the same program at compile time.
+                </p>
+                <h3>Things you should know for learning decorators</h3>
+                <p>
+                    Before we start learning about what decorators and how to create them, we should know few basic things about functions in Python.
+				</p>
+
+                <p>
+                	In Python, everything is <code>object</code> and can be referenced using a variable name. The functions and classes in Python are no exceptions for that, they are objects too with attributes. We can have multiple variables references to the same function object (definition).
+                    for example,
+                </p>
+<pre>
+<span class="keyword">def</span> <span class="function">func</span>(msg):
+    <span class="function">print</span>(msg)
+
+<span class="comment"># function call</span>
+<span class="function">func</span>(<span class="string">"Hello"</span>)
+
+func_obj = <span class="function">func</span> <span class="comment"># create an Object.</span>
+func_obj(<span class="string">"Hello"</span>)
+</pre>
+<p><strong>Output</strong></p>
+<pre class="output">
+Hello
+Hello
+</pre>
+                <p>
+                    When we run the code,  both the function <code>func()</code> and <code>func_obj</code> gives us the same output,  the <code>func_obj</code> is a variable object of function <code>func()</code>, which refers to the same function <code>func()</code>.
+                </p>
+
+                <p>
+                    Functions in Python are First class citizens (First-class object), which means that the functions in Python can be passed as an argument, returned from a function and can assigned to a variable. 
+                </p>
+
+                <p>
+                    If you have used functions like <code>map</code>, <code>filter</code> and <code>reduce</code> in Python, then you already have know about this. These functions take other functions as arguments are called <b>higher order function</b>.  
+
+                </p>
+
+                <p>
+                    Now, let just see how these functions can be used as arguments, and can be return from functions with example.
+                </p>
+                <h4>Function as Argument</h4> 
+            
+                <p>
+                    Here is a simple example of function used as argument.
+                </p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">add</span>(a, b):
+    <span class="function">return</span> a + b
+
+<span class="keyword">def</span> <span class="userfunction">sub</span>(a, b)
+    <span class="function">return</span> a - b
+
+<span class="keyword">def</span> <span class="userfunction">compute</span>(func</span>, x, y):
+    result = func(x, y)
+    <span class="function">return</span> result
+</pre>
+                <p>
+                    Let's try to call it from interpreter.
+<pre>
+>>> compute(add, <span class="number">2</span>, <span class="number">3</span>)
+<span class="number">5</span>
+>>> compute(sub, <span class="number">5</span>, <span class="number">3</span>)
+<span class="number">2</span>
+</pre>
+                </p>
+                <h4>Function in Return Statement.</h4>
+                <p>
+                    We learned in previous tutorial of Python closures, where we return a function from nested function. so here is a very simple example of a function can return from another function.
+                </p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">outer</span>():
+
+    <span class="keyword">def</span> <span class="userfunction">inner</span>():
+
+        <span class="function">print</span>(<span class="string">"This is inner function"</span>)
+
+    <span class="function">return</span> inner
+
+<span class="comment">#function object.</span>
+outer_func = outer
+outer_func()
+</pre>
+                <p><strong>Output</strong></p>
+<pre class="output">
+This is inner function.
+</pre>
+                <p>
+                    Here, <code>inner()</code> is a nested function which is defined inside the <code>outer()</code> function and returned each time we called <code>outer()</code> function.
+                </p>
+                <h3>Creating Decorators</h3>
+                <p>
+                    A decorator gives a function new behaviour without changinge the function itself. A decorator is used to add functionality to a function or a class.  A decorator in Python is sort of an extension of the closures in Python. So the all function and method decorators have the same overall structure.</p>
+
+                <p>
+                    Functions and methods are called <b>callable</b> as they can be called. So, a decorator is a callable that returns a callable. since it takes a function, adds some functionality and return it.
+                </p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">my_decorator</span>(func):
+
+    <span class="keyword">def</span> <span class="userfunction">inner</span>():
+
+       <span class="function">print</span>(<span class="string">"Docorated"</span>)
+       func()
+
+    <span class="function">return</span> inner
+
+
+
+<span class="keyword">def</span> <span class="userfunction">simple</span>():
+    <span class="function">print</span>(<span class="string">"Simple function"</span>)
+
+
+<span class="comment"># calling simple function.</span>
+simple()
+
+<span class="comment"># decorating the simple function.</span>
+decorated_simple = my_decorator(simple)
+
+<span class="comment"># calling the decorated_simple function.</span>
+decorated_simple()
+</pre>
+
+<p><strong>Output</strong></p>
+<pre class="output">
+Simple function  
+
+Decorated
+Simple function
+</pre>
+                <p>
+                    In the above example, we followd the Python's closure approach but instead of some variable, we passed the function as argument.    
+                </p>
+                <p>
+                    Here, <code>my_decorator()</code> is a decorator. 
+                </p>
+
+                <p>
+                    <pre>
+decorated_simple = my_decorator(simple)</pre>
+                </p>
+
+                <p>
+                    Here, the function <code>simple()</code> got decorated and return a function, which was given the name as <code>decorated_simple</code>
+                </p>
+
+                <p>
+                    We can decorate a function and reassign it as,
+                </p>
+
+                <p>
+                    <pre>
+simple = my_decorator(simple)
+</pre>
+                </p>
+                <p>
+                    This function replaces the original function using the original function's name. Instead of using this, Python has simple way to do this.
+                </p>
+
+                <p>
+                    We can use <b>@</b> symbol along with the name of the decorator function and place it above the definition of the function to be decorated.
+                </p>
+
+                <p>
+                    <b>syntax</b> : <code>@< docorator_function_name></code>
+                </p>
+<pre>
+@my_decorator
+    <span class="keywords">def</span> <span class="userfunction">simple</span>():
+        <span class="function">print</span>(<span class="string">"Simple function"</span>)
+</pre>
+
+                <p>
+                    This is same as with <code>simple = my_decorator(simple)</code>.
+                </p>
+                <h3>Decorators with Arguments</h3>
+                <p>
+                    A decorator may accept only a single function, method or class as its argument. so in theory it is not possible to parameterize decorators, but in practice we can parameterize the function.
+                </p>
+                <p>
+                    The above decorator was simple and only works with the function with no parameters. Now, let's try to create a decorator for a function that has a parameters.
+                </p>
+<pre>
+<span class="keywords">def</span> <span class="userfunction">sub</span>(a, b):
+    <span class="function">return</span> a - b 
+</pre>
+                <p>
+                    This function has two parameters  <code>a</code> and <code>b</code>.  This function will return the subtraction of two numbers, but it will return negative value if number <code>b</code> is greater than number <code>a</code>.
+                </p>
+<pre>
+>>> sub(<span class="number">2</span>, <span class="number">5</span>)
+    -<span class="number">3</span> 
+</pre>
+                <p>
+                    To avoid this, we can create a decorator, which checks greater number between this two parameter.
+                </p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">real_sub</span>(func):
+
+    <span class="keyword">def</span> <span class="userfunction">inner</span>(a, b):
+
+        <span class="keyword">if</span> a < b:
+           a, b = b, a
+        <span class="function">return</span> func(a, b)
+        
+    <span class="function">return</span> inner
+
+
+@real_sub
+<span class="function">def</span> sub(a, b):
+    <span class="function">return</span> a - b
+
+<span class="function">print</span>(sub(<span class="number">4</span>, <span class="number">6</span>))
+</pre>
+                    <p>
+                        Did you notice? the <code>inner()</code> function inside the decorator has the same parameters as of the original function that is being decorates. In this way, we can create a decorator with any number of Parameters.
+                    </p>
+                    <p>
+                        In Python, we can use <code>function(*args, **kwargs)</code> for any number of parameters, where <code>args</code> will be the tuple of positional arguments and <code>kwargs</code> will be the dictionary of keyword arguments.
+                    
+<pre>
+<span class="keyword">def</span> <span class="userfunction">decorator</span>(func):
+
+    <span class="keyword">def</span> <span class="userfunction">inner</span>(*args, **kwrgs):
+
+        <span class="keyword">print</span>(<span class="string">"Decorator!"</span>)
+        func(*args, **kwrgs)
+
+    <span class="function">return</span> inner
+</pre>
+</p>
+                    <h3>Multiple Decorators</h3>
+                    <p>
+                        We can use more than one decorator to decorate a single function by chaining them.</p> 
+
+<pre>
+<span class="comment">#star decorator</span>
+<span class="keyword">def</span> <span class="userfunction">star</span>(func):
+
+    <span class="keyword">def</span> <span class="userfunction">inner</span>():
+
+        <span class="function">print</span>(<span class="string">'****'</span> + <span class="string">'****'</span>)
+        func()
+        <span class="function">print</span>(<span class="string">'****'</span> + <span class="string">'****'</span>)
+
+    <span class="function">return</span> inner
+
+
+<span class="comment">#percent decorator</span>
+<span class="keyword">def</span> <span class="userfunction">percent</span>(func):
+
+    <span class="keyword">def</span> <span class="userfunction">inner</span>():
+
+        <span class="function">print</span>(<span class="string">'%%%%'</span> + <span class="string">'%%%%'</span>)
+        func()
+        <span class="function">print</span>(<span class="string">'%%%%'</span> + <span class="string">'%%%%'</span>)
+
+    <span class="function">return</span> inner
+
+
+@star
+@percent
+<span class="keyword">def</span> <span class="userfunction">function</span>():
+    <span class="function">print</span>(<span class="string">'Hello'</span>)
+
+
+function() <span class="comment"># function call</span>
+</pre>
+<p><strong>Output</strong></p>
+<pre class="output">
+********
+%%%%%%%%
+Hello
+%%%%%%%%
+********                        
+</pre>
+                <p>
+                    The decorator that we wrote above,</p>
+<pre>
+@star
+@percent
+<span class="keyword">def</span> <span class="userfunction">function</span>():
+    <span class="function">print</span>(<span class="string">'Hello'</span>)
+</pre>
+
+<p>
+    This is equivalent to
+<pre>
+function = star(percent(function))
+</pre>
+                        </p>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="closures.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="#">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

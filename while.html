@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python supports two types of Loops 1. for loop 2. while loop. The looping simplifies complex problems. Instead of writing same code again and again, we can use loops in Python. " />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python While Loop.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Python Loop- While Loop</h1>
+                    <h5>
+                        Loops are used in programming language to repeat a particular block code. In this tutorial, we will learn about while loop in Python.
+                    </h5>
+                </div>
+            <div class="content__container">
+                <h3>What is while loop?</h3>
+                <p>
+                    Loops are used to repeat a particular block of code. The while loop in Python is used to repeat the execution of a block of code as long as an expression (condition) is <code>True</code>.
+                </p>
+                <p><strong>Syntax:</strong>
+<pre class="syntax">
+while condition:
+    block of code
+</pre></p>
+                <p>
+                    This while loop repeatedly tests the expression and if it is true, executes the block of while loop. if condition or expression is false, the next section of code is executed.
+                </p>
+<pre>
+<span class="comment"># Program to find the sum of 10 numbers using while loop.</span>
+
+n = <span class="number">0</span>
+sum = <span class="number">0</span>
+
+<span class="keyword">while</span> n < <span class="number">10</span>:
+
+    sum = sum + n
+    n = n + <span class="number">1</span>
+
+<span class="function">print</span>(<span class="string">"Sum = "</span>,sum)
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+sum = 45
+</pre></p>
+                <p>
+                    In the above example of while loop. we print sum of first <code>10</code> numbers starting from <code>0</code>. while loop has an increment operation where we are increasing the value of <code>n</code> by <code>1</code>. This is a very important step.
+                </p>
+                <p>
+                    The while loop must have an increment or decrement operation, else the loop will run infinitely.
+                </p>
+                <h3>Infinite while Loop</h3>
+                <p>
+                    When the condition in while loop never becomes false, the while loop will never terminate and result in the infinite loop.
+                </p>
+<pre>
+<span class="comment">#infinte loop.</span>
+
+n = <span class="number">1</span>
+
+<span class="keyword">while</span> n != <span class="number"></span>2</span>:
+    <span class="function">print</span>(n)
+</pre>
+                <p><strong>Output</strong></p>
+<pre class="output">
+1
+1
+.
+.
+Infinte times
+</pre>
+                <p>
+                    In the above example, <code>while</code> loop first evaluates the condition. Here, the condition is True, only when n is not equals to 2. <br> 
+                    Since, the value of n is equal to 1, which is not equal to 2, which statisfies the condition.Now, program counter will enter into the while loop and excecutes the while block of code.
+                </p>
+                <p>
+                    Here it will prints the value of n, which is 1. so program will prints the 1 and again check for the condition until the condition is false.
+                    <br>
+                    The program prints 1 indefinitely because inside the loop we are not updating the value of n. so the value of <code>n</code> will always remain <code>1</code> and condition will always remains <code>True</code> which leads to an infinite loop.
+                </p>
+                <h3>while loop with 'else'.</h3>
+                <p>
+                    Python enables us to use the else with the while loop also. The else block is executed when the condition given in the while statement becomes false.
+				</p>
+				<p>
+					If while loop has break statement, then the else block will not be executed and the statement present after else block will be executed.
+                </p>
+                <p>
+                    The following example is the combination of while loop with else statement, it will print a number as long as number is less than 3, otherwise it will print the else block of code.</p>
+<pre>
+<span class="comment"># While loop with else.</span>
+
+n = <span class="number">1</span>
+<span class="keyword">while</span> n < <span class="number">3</span>:
+
+    <span class="function">print</span>(n)
+    n = n + <span class="number">1</span>
+
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">f"{n} is not less than 3"</span>)
+</pre>
+                <p><strong>Output</strong>
+<pre class="output">
+1
+2
+3 is not less than 3
+</pre></p>
+                
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="for.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="function.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

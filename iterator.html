@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content=""/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Iterators.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Iterators</h1>
+                    <h5>
+                        In this tutorial, we will learn everything about iterators in Python, What iterators are, how to create them and use them.
+                    </h5>
+                </div>
+            <div class="content__container">
+                <h3>What is Iterator? </h3>
+                <p>
+                    An iterator is simply an <strong>object</strong>, representing a stream of data (such as list, tuple, dictionary, etc) which returns the data, one element at a time.
+				</p>
+
+                <p>
+                	A Python iterator object must be implement two special methods, <code>__iter__()</code> and <code>__next__()</code> which can be refers as the iterator protocol. An object is called iterable if we can get an iterator for it.
+                </p>
+
+                <p>
+                    Python’s several built-in datatypes supports iteration, and most common are containers like: list, tuple, string, dictionary etc. so these are the most common iterables in Python.</p>
+
+				<h4 id="iterating">Iterating through an Iterator.</h4>
+
+				<p>
+					Python Iterator must support a method called <code>__next__()</code> that takes no arguments and always returns the next element of containers ( list for example). If there are no more elements in the containers or if we reach the last element then, <code>__next__()</code> raises the <code>StopIteration</code> exception.
+				</p>
+
+                <p>
+                	The built-in <code>iter()</code> function takes an arbitrary object and tries to return an iterator that will return the object’s contents or elements.  It will raise a <code>TypeError</code> if the object is not an iterable type or doesn’t support iteration.</p>
+
+                <p>
+                	The <code>iter()</code> function (which in turn calls the <code>__iter__()</code> method) returns an iterator object from them.
+                </p>
+<pre>
+>>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment"># define a list</span> 
+
+>>> my_iter = <span class="function">iter</span>(a) <span class="comment"># get an iterator using iter()</span>
+
+>>> my_iter <span class="comment">#iterator object</span>
+< list_iterator object at... >
+
+>>> my_iter.<span class="function">__next__</span>() <span class="comment"># same as next(my_iter)</span>
+<span class="number">1</span>
+
+>>> <span class="function">next</span>(my_iter)
+<span class="number">2</span>
+
+>>> <span class="function">next</span>(my_iter)
+<span class="number">3</span>
+
+>>> <span class="function">next</span>(my_iter)
+
+Traceback (most recent call last):
+   File"<span class="function">< stdin></span>", line1, in < module>
+StopIteration
+</pre>
+</p>
+
+                <p>There is another way to iterate over an object in Python using <code>for</code> loop. In the <code>for</code> statement <code>for x in y</code>, here <code>y</code> must be an iterator or some object for which <code>iter()</code> can create an iterator.</p>
+
+<pre>
+<span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">iter</span>(obj):
+    <span class="function">print</span>(i)
+
+<span class="keyword">for</span> i <span class="keyword">in</span> obj: <span class="comment"># same as above.</span>
+    <span class="function">print</span>(i)
+</pre>
+                <p>
+                    So, using for loop we can iterate over any object that can return an iterator, for example list, string, file etc.
+                </p>
+<pre>
+>>> <span class="keyword">for</span> element <span class="keyword">in</span> a:
+...     <span class="function">print</span>(element)
+...
+<span class="number">1</span>
+<span class="number">2</span>
+<span class="number">3</span>
+</pre>
+                <h3>Working of for loop with Iterators</h3>
+                <p>
+                    From above example we can see that, <code>for</code> loop was able to iterate over list <code>a</code> automatically.
+                </p>
+                <p>
+                    <code>for</code> loop can iterate over most of the Python’s container objects such as list, tuple, dictionary, string or files. This style of accessing elements from container is clear, concise and convenient.
+                </p>
+<pre>
+<span class="keyword">for</span> element <span class="keyword">in</span> iterable:
+    <span class="comment"># do something with element.</span>
+</pre>
+                <p>
+                    Now, let’s see how the <code>for</code> loop is actually implemented in Python.
+                </p>
+<pre>
+<span class="comment"># create an iterator object from that iterable.</span>
+
+iter_obj = <span class="function">iter</span>(iterable)
+
+<span class="comment"># infinite loop</span>
+<span class="keyword">while</span> <span class="method">True</span>:
+
+    <span class="keyword">try</span>:
+
+       <span class="comment"># get the next item</span>
+       element = <span class="function">next</span>(iter_obj)
+       <span class="comment"># do something with element</span>
+
+   <span class="keyword">except</span> <span class="exception">StopIteration</span>:
+
+       <span class="comment"># if StopIteration is raised, break from loop.</span>
+       <span class="keyword">break</span>
+</pre>
+                <p>
+                    Internally, the <code>for</code> loop creates an iterable object, <code>iter_obj</code> by calling <code>iter()</code> on the iterable (container object). The function returns an iterator object that defines the method <code>next()</code> which accesses the elements in the container one at a time. When there is no more elements, <code>next()</code> raises a <code>StopIteration</code> exception which tells the <code>for</code> loop to terminate the loop.
+                </p>
+
+                <h3>Creating iterators.</h3>
+                <p>
+                    Creating an iterators from scratch is easy in Python. We just need to implement <code>__iter__()</code> and <code>__next__()</code> methods
+                </p>
+
+                <p>
+                    The <code>__iter__()</code> method returns the iterator object itself and if any require initialization.
+                </p>
+                <p>
+                	The <code>__next__()</code> method returns the next elements in iterator and It raises a <code>StopIteration</code> when there is no more elements in the sequence / iterator object.
+                </p>
+                <p>
+                    Here, let’s create iterator that returns whether number is even or odd, from 1 to user set number.
+                </p>
+
+<pre>
+<span class="keyword">class</span> <span class="userfunction">EvenOdd</span>:
+
+    <span class="string">"""Class to implements an 
+    iterator for even number"""</span>
+    
+    <span class="keyword">def</span> __<span class="function">init</span>__(<span class="keyword">self</span>, max):
+        <span class="keyword">self</span>.max = max
+
+    <span class="comment"># create a iterator function.</span>
+    <span class="keyword">def</span> __<span class="function">iter</span>__(<span class="keyword">self</span>):
+        <span class="keyword">self</span>.num = <span class="number">1</span>
+        <span class="function">return</span> <span class="keyword">self</span>
+
+    <span class="keyword">def</span> __<span class="function">next</span>__(<span class="keyword">self</span>):
+
+        <span class="keyword">if</span> <span class="keyword">self</span>.num <= <span class="keyword">self</span>.max:
+
+            <span class="keyword">if</span> <span class="keyword">self</span>.num % <span class="number">2</span> == <span class="number">0</span>:
+                <span class="keyword">self</span>.num += <span class="number">1</span>
+                <span class="function">return</span> <span class="string">"</span>{}<span class="string"> is even"</span>.<span class="function">format</span>(<span class="keyword">self</span>.num-<span class="number">1</span>)
+
+            <span class="keyword">else</span>:
+
+                <span class="keyword">self</span>.num += <span class="number">1</span>
+                <span class="function">return</span> <span class="string">"</span>{}<span class="string"> is odd"</span>.<span class="function">format</span>(<span class="keyword">self</span>.num -<span class="number">1</span>)
+
+        <span class="keyword">else</span>:
+            <span class="function">raise</span> <span class="exception">StopIteration</span>
+  
+<span class="comment"># create an object.</span>
+numbers = <span class="userfunction">EvenOdd</span>(<span class="number">4</span>)
+
+<span class="comment"># create an iterable object from object.</span>
+iter_obj = <span class="function">iter</span>(numbers)
+
+<span class="comment"># using next method to get the next iterator element.</span>
+
+<span class="function">print</span>(<span class="function">next</span>(iter_obj))
+<span class="function">print</span>(<span class="function">next</span>(iter_obj))
+<span class="function">print</span>(<span class="function">next</span>(iter_obj))
+<span class="function">print</span>(<span class="function">next</span>(iter_obj))
+</pre>
+<p><strong>Output</strong></p>
+<pre class="output">
+1 is odd
+2 is even
+3 is odd
+4 is even
+Traceback (most recent call last):
+   File"<stdin>", line1, in <module>
+StopIteration
+</pre>
+                <p>
+                    We can do the same thing using <code>for</code> loop as follows;
+                </p>
+<pre>
+>>> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="userfunction">EvenOdd</span>(<span class="number">4</span>):
+...     <span class="function">print</span>(i)
+...
+1 is odd
+2 is even
+3 is odd
+4 is even
+</pre>
+                <p>
+                    The  advantage of using iterators is that they save resources. There’s an easier way to create iterators in Python. To learn more visit Python Genetators.
+                </p>
+                
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="inheritance.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="generator.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

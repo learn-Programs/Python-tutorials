@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content=""/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Generators.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Generators</h1>
+                    <h5>
+                        In this tutorial, we will learn about Python generators, How to create user-defined iterator using Generator without worrying about the iterator protocol.
+                    </h5>
+                </div>
+            <div class="content__container">
+                <h3>What is Generators?</h3>
+                <p>
+                    In the last tutorial, we created a class-based iterator in Python which accesses one element at a time from the container. To create such a iterator, we have to implement a class with <code>__iter__()</code> and <code>__next__()</code> method, we have to keep the track of internal states, and we need to raise <code>StopIteration</code> exception, when there are no values to be returned.
+
+				</p>
+
+                <p> 
+                	We can create a same iterators using Python's <code>generator</code>. Generators in Python are simple and powerful tool for creating iterators beacause, the <code>__iter__()</code> and <code>__next__()</code> methods are created automatically by generators in Python.
+                </p>
+                <p>
+
+                    A generator is a function which returns a generator object (iterator) which we can iterate over (one value at a time).
+                </p>
+                <h3>How to create Generators in Python?</h3>
+                <p>
+                    A generator functions can be created as same as regular functions, only difference is that the regular function use <code>return</code> statement while generator function use <code>yield</code> statement, whenever they want to return data.
+				</p>
+
+                <p>
+                	If a function contains at least one <code>yield</code> statement ( it may contains other <code>yield</code> or <code>return</code> statements), then that function becomes a generator function. Both <code>yield</code> and <code>return</code> will return some value from a function.
+                </p>
+                <p>
+                    The difference between <code>return</code> and <code>yield</code> statements is that <code>return</code> statement terminates a function entirely, while <code>yield</code> statement pauses the function saving all its state and later continues from where they left off.
+                </p>
+                <h3>Difference between Generator function and Regular function.</h3>
+                <p>
+                    This is how the generator function is differs from normal function.
+                </p>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Generator Function</th>
+                        <th>Regular Function</th>
+                    </tr>
+                    <tr>
+                        <td class="data">Generator function contains one or more "yield" statements</td>
+                        <td class="data">Regular function contains one or more "return" statements.</td>
+                    </tr>
+                    <tr>
+                        <td class="data">When the function gets called, it returns an "object" (iterator) but does not start execution immediately.</td>
+                        <td class="data"> Regular function does not create any "object" and it compute a value and return it.</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    <p>
+                        We are familiar with how regular function call works in Python or the execution of regular function.
+                </p>
+
+                <p>
+                    When a normal function is called, in a program, the control from calling function is shifted to called  function, it gets a private namespace where its local variables are created. 
+                </p>
+
+                <p>
+                    Execution of called function starts from first line and continues until the function reaches a <code>return</code> statement or end of the function, the local variables are lost and the value is returned to the caller function.
+                </p>
+
+                <p>
+                    A later call to the same function creates a new private namespace and a fresh set of local variables.
+                    But, When you call the generator function, it doesn't return a single value; instead it returns a generator object(iterator) that support the iterator protocol. 
+
+                </p>
+                <p>
+                    On executing the <code>yield</code> expression, the generator outputs the values similar to <code>return</code> statement but the state of execution is suspended and local variables are stored and the control is transferred to the caller. <br>
+                    Generator remembers everything from data values to which statement was executed last. 
+                    On the next call to generator's <code>next()</code> method, the function will resumes executing.
+                </p>
+                <p>
+                    Generator function looks like a normal function except that it contains <code>yield</code> statement whenever they want to return data.
+                </p>
+
+                <p>
+                    since the <code>__iter__()</code> and <code>__next__()</code> methods are implemented automatically. so we can iterate through the items using <code>next()</code> method. 
+                </p>
+                <p>
+                    In addition to automatic method creation and saving program state, when generators terminate, they automatically raise <code>StopIteration</code>. These features make it easy to create iterators.
+                </p>
+                <p>
+                    Now, let's create a simple generator function <code>simple_gen()</code> in Python.
+                </p>
+<pre>
+<span class="comment"># A simple generator function.</span>
+
+<span class="function">def</span> <span class="userfunction">simple_gen</span>():
+
+    n = <span class="number">1</span>
+    
+    <span class="function">print</span>(<span class="string">"first iteration"</span>)
+    <span class="keyword">yield</span> n
+
+    <span class="function">print</span>(<span class="string">"second iteration"</span>)
+    <span class="keyword">yield</span> n += <span class="number">1</span>
+
+    <span class="function">print</span>(<span class="string">"third iteration"</span>)
+    <span class="keyword">yield</span> n += <span class="number">1</span>
+</pre>
+                <p>
+                    Let's see the output of this above example using Python interpreter.
+                </p>
+<pre>
+>>> <span class="function">simple_gen</span>() <span class="comment"># calling generator function.</span>
+< generator object 'my_gen' at ...>
+
+>>> obj = <span class="function">simple_gen</span>() <span class="comment"># generator object.</span>
+
+>>> <span class="function">next</span>(obj)
+<span class="string">first iteration</span>
+<span class="number">1</span>
+
+>>> <span class="function">next</span>(obj)
+<span class="string">second iteratio</n
+<span class="number">2</span>
+
+>>> <span class="function">next</span>(obj)
+<span class="string">third iteration</span>
+<span class="number">3</span>
+
+>>> <span class="function">next</span>(obj)
+Traceback (most recent call last):
+ ...
+<span class="exception">StopIteration</span>
+
+>>> <span class="function">next</span>(obj)
+Traceback (most recent call last):
+ ...
+<span class="exception">StopIteration</span>
+</pre>
+                <p>
+                    Did you notice that, when we called the function <code>simple_gen()</code> it does not executes immediately but it returns a generator object (iterator), which we can iterate over to get values. 
+                </p>
+
+                <p>
+                    Also, the value of variable <code>n</code> is remembered between each call.
+                    <br>
+
+                    In generator function, the local variables are not destroyed when the function yields. The generator object can be iterated only once. 
+
+                </p>
+
+                <p>
+                   To restart the process we need to create another generator object using <code>obj = simple_gen()</code>.
+                </p>
+                <h3>Generators with Loop.</h3>
+                <p>
+                    We can use generators with <code>for</code> loop directly, since a <code>for</code> loop takes an iterator and iterates over it using <code>next()</code> function. It automatically ends when <code>StopIteration</code> is raised.
+                
+<pre>
+<span class="comment"># let's use above generator function with 'for' loop</span>
+
+<span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">simple_gen</span>():
+    <span class="function">print</span>(i)
+</pre>
+</p>
+<pre class="output">
+first iteration
+1
+
+second iteration
+2
+
+third iteration
+3
+</pre>
+                <p>
+                    Now, let's create one more example of generators with a loop that reverses a string.
+                </p>
+<pre>
+<span class="function">def</span> <span class="userfunction">reverse_str</span>(my_str):
+
+    length = <span class="function">len</span>(my_str)
+
+    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(length-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):
+        <span class="function">yield</span> my_str[i]
+        
+
+<span class="comment"># for loop to reverse the string.</span>
+
+<span class="keyword">for</span> char <span class="keyword">in</span> <span class="function">reverse_str</span>(<span class="string">"Python"</span>):
+    <span class="function">print</span>(char)
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+n
+o
+h
+t
+y
+P
+</pre>
+</p>
+                <h3>Generator Expression</h3>
+                <p>
+                    Simple generators can be created easily using generator expression.
+                    <br>
+                    The syntax for generator expression is similar to that of a list comprehension in Python. But the generator expressions are surrounded by parentheses <code>()</code> and list comprehensions are surrounded by square brackets <code>[]</code>. 
+                </p>
+                <p>
+                    The main difference between the list comprehension and generator expression is that a list comprehension produces the entire list while the generator expression produces one item at a time.
+                </p>
+<pre>
+my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+
+<span class="comment"># square of each number using list comprehension</span>
+list_ = [x*x <span class="keyword">for</span> x <span class="keyword">in</span> my_list]
+
+<span class="comment"># square of each number using generator expression</span>
+<span class="comment"># generator expression are surrounded by parenthese.</span>
+generator = (x*x <span class="keyword">for</span> x <span class="keyword">in</span> my_list)
+
+<span class="function">print</span>(list_)
+<span class="function">print</span>(generator)    
+</pre>
+                <p><strong>output</strong>
+<pre class="output">
+[1, 4, 9]
+< generator object <genexpr> at ... > </pre>
+</p>
+                <p>
+                    Did you notice?,  the generator expression does not produces the require result immediately. Instead, it returned a generator object, which we can iterate over to get values.
+                </p>
+                <p>
+                    We can do this using <code>next()</code> method on generator object.
+                </p>
+<pre>
+>>> <span class="function">next</span>(generator)
+<span class="number">1</span>
+
+>>> <span class="function">next</span>(generator)
+<span class="number">4</span>
+
+>>> <span class="function">next</span>(generator)
+<span class="number">9</span>
+
+>>> <span class="function">next</span>(generator)
+Traceback (most recent call last):
+...
+<span class="exception">StopIteration</span>
+</pre>
+                    <p>
+                        The generator expression return an iterator that computes the values as necessary, this means that list comprehensions are not useful if you're working with iterators that returns an infinite stream or very large amount of data.  Generator expression are preferable in these situations.
+                    </p>
+                    <p>
+                        Generator expressions always have to be written inside parentheses. Generator expression can be used in a function call as arguments so when we used in such a way, the parentheses can be omitted.
+                        <br>For example:
+                    
+<pre>
+>>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]
+
+>>> <span class="comment"># we can compute the sum of even number </span>
+>>> <span class="comment"># from list 'a' using generator expression as</span>
+
+>>> <span class="function">sum</span>(x <span class="keyword">for</span> x <span class="keyword">in</span> a if x % <span class="number">2</span> == <span class="number">0</span>)
+<span class="number">6</span> 
+
+>>> <span class="function">max</span>(x <span class="keyword">for</span> x <span class="keyword">in</span> a)
+<span class="number">5</span>
+</pre></p>
+                    <h3>Advantages of Generators</h3>
+                    <ul>
+                        <li>
+                            These functions are better with respect to memory utilization and code performance, as they allow function to avoid doing all work at  a time.
+                       </li>
+                       <li>
+                           They provide a way to manually save the state between iterations. As the variables in function scope are saved and restored automatically.
+                        </li> 
+                    </ul>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="iterator.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="closures.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

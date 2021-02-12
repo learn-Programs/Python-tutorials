@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python dictionary is an unordered collection of data and mapping mutable objects which means that we can change the values in dictionary."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Dictionary.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Dictionary</h1>
+                    <h5>In this tutorial, we will learn about Python dictionary, how to create a dictionary, access, update, and delete elements from dictionary, we will also look at some useful dictionary operations and methods.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    Another useful data type and currently the only one standard mapping type in Python is <strong>dictionary</strong> . <br>
+                    Python dictionary is an unordered collection of data and mapping mutable objects which means that we can change the values in dictionary.
+                </p>
+                
+                <h3>How to Create a Dictionary?</h3>
+                <p>
+                    Dictionaries can be created by placing a comma-separated list of <code>key:value</code> pairs with-in braces. </p>
+                <p>
+                    An item has a key and the corresponding value expressed as pair, <strong>key: value</strong>.
+					
+					The keys within dictionary must be unique, while the value can be of any datatype.
+                </p>
+                <p>
+					<strong>Key</strong> can be any immutable type such as string and numbers. Tuples can be used as keys if they contain only strings, numbers, or tuples. if a tuple contains any mutable object, it can not be used as keys. The list can not be used as key since lists are mutable datatype.
+					<br>
+					A pair of braces creates an empty dictionary.
+<pre>
+<span class="comment">#empty dictionary.</span>
+my_dict = {}
+    
+<span class="comment">#dictionary with integer keys.</span>
+my_dict = { <span class="number">1</span>:<span class="string"> 'a'</span>, <span class="number">2</span>:<span class="string"> 'b'</span>}
+    
+<span class="comment">#dictionary using dict() built-in function.</span>
+my_dict = <span class="function">dict</span>(<span class="variable">{</span><span class="string">'name'</span><span class="variable">:</span><span class="string">'Radha'</span><span class="variable">,</span> <span class="string">'age'</span><span class="variable">:</span> <span class="number">7</span><span class="variable">}</span>)
+    
+<span class="comment">#using list of tuple of key and value as (key, value).</span>
+my_dict = <span class="function">dict</span>(<span class="variable">[(</span><span class="number">1</span>, <span class="string">'apple'</span><span class="variable">), (</span><span class="number">2</span>, <span class="string">'banana'</span><span class="variable">), (</span><span class="number">3</span>, <span class="string">'orange'</span><span class="variable">)]</span>)
+</pre>
+                </p>
+                <h3>Accessing elements in dictionary</h3>
+                <p>
+                    We know that indexing is used to access elements in other container types. But a dictionary is an unordered collection of values, it doesn’t work with indexing, the dictionary uses keys to storing a value. <br>
+                    To access the values of dictionary, the key of that value can be used in square brackets. <br>
+                    <strong>Syntax</strong>: <code>dictionary_name[key]</code>
+<pre>
+<span class="comment">#accessing elements in dictionary.</span>
+my_dict =<span class="variable">{</span><span class="string">'name'</span><span class="variable">:</span><span class="string">'Radha'</span><span class="variable">,</span> <span class="string">'age'</span><span class="variable">:</span> <span class="number">7</span><span class="variable">}</span>
+<span class="function">print</span>(<span class="variable">my_dict[<span class= "string">'name'</span>]</span>)
+
+<span class="comment">#output
+Radha</span>
+</pre>
+                </p>
+                <p>
+                    We can also use <code>get()</code> method which returns the value for a key.
+                <br>
+                    <strong>Syntax</strong>: <code>dictionary_name.get(key)</code>
+<pre>
+<span class="function">print</span>(<span class="variable">my_dict.</span><span class="function">get</span>(<span class="string">'age'</span>))
+
+<span class="comment">#output
+7</span>
+</pre>
+                </p>
+                <p>
+                    The difference while using <code>get()</code> method is that it returns <code>None</code> instead of <code>KeyError</code> if the key is not found.
+                </p>
+                <h3>Udating elements in dictionary.</h3>
+                <p>
+                    Dictionaries are mutable mapping objects, we can change or add new values in a dictionary.
+<pre>
+>>> my_dict = <span class="variable">{</span><span class="number">1</span>:<span class="string">'apple'</span><span class="variable">,</span><span class="number">2</span>:<span class="string">'banana'</span><span class="variable">,</span><span class="number">3</span>:<span class="string">'orange'</span><span class="variable">}</span>
+
+>>> <span class="comment"># changing value at key 1</span>
+>>> my_dict[<span class="number">1</span>] = <span class="string">'lemon'</span>
+    
+>>> <span class="function">print</span>(<span class="variable">my_dict</span>)
+{1:'lemon', 2:'orange', 3:'banana'}
+    
+>>> <span class="comment"># adding new item.</span>
+>>> my_dict[<span class="number">4</span>] = <span class="string">'papaya'</span>
+    
+>>> my_dict
+{1:'lemon', 2:'orange', 3:'banana', 4:'papaya'}
+</pre> 
+                </p>
+                <h3>Delete or remove elements from dictionary</h3>
+                <p>
+                    We can remove a particular value of a dictionary using <code>pop()</code> method as <code>dict_var.pop(key)</code>. if key is in the dictionary, remove it and return its value. else return default and does not raise <code>KeyError</code>.
+<pre>
+>>> <span class="comment">#dictionary of programming languages.</span>
+
+>>> languages = {<span class="number">1</span>: <span class="string">'Python'</span>, <span class="number">2</span>: <span class="string">'Java'</span>, <span class="number">3</span>: <span class="string">'C'</span>, <span class="number">4</span>: <span class="string">'C++'</span>, <span class="number">5</span>: <span class="string">'R'</span>}
+
+>>> <span class="comment">#value at key '1',i.e'Python' will remove and return.</span>
+
+>>> languages.<span class="function">pop</span>(<span class="number">1</span>)
+'Python'
+
+>>> <span class="function">print</span>(<span class="variable">languages</span>)
+{2: 'Java', 3: 'C', 4: 'C++', 5: 'R'}
+</pre>
+                </p>
+                <p>
+                    The method, <code>popitem()</code> can be used to remove and return an arbitrary item<code>(key, value)</code> from the dictionary.
+<pre>
+>>> <span class="comment"># returns in (key, value) </span>
+>>> <span class="function">print</span>(<span class="variable">languages</span>.<span class="function">popitem</span>())
+(5, 'R')
+
+>>> languages
+{2: 'Java', 3: 'C', 4: 'C++'}
+</pre>
+                </p>
+                <h4>del</h4>
+                <p>
+                    we can also use <code>del</code> keyword as <code>del dict_var[key]</code>. it will remove a value from dictionary at the key. if key does not exist in dictionary, it raises <code>keyError</code>.
+
+                 	<br>
+                 	<br>
+                 	We can use <code>clear()</code> method to remove all items from the dictionary. we can also delete the entire dictionary using <code>del</code> keyword.
+                 	for example, we can delete the value at key <code>3</code> from above <code>languages</code> dictionary as follows.
+<pre>
+>>> languages
+{2: 'Java', 3: 'C', 4: 'C++'}
+
+>>> <span class="comment">#delete values using del.</span>
+>>> <span class="keyword">del </span><span class="variable">languages</span>[<span class="number">3</span>]
+
+>>> <span class="function">print</span>(<span class="variable">languages</span>)
+{2: 'Java', 4: 'C++'}
+
+>>> <span class="comment">#clear() method will remove all elements</span>
+>>> <span class="comment">and return an empty dictionary.</span>
+>>> <span class="variable">languages</span>.<span class="function">clear</span>()
+>>> <span class="function">print</span>(<span class="variable">languages</span>)
+{}
+
+>>> <span class="keyword">del </span><span class="variable">languages</span>
+>>> <span class="function">print</span>(<span class="variable">languages</span>)
+    NameError: name 'languages' is not defined
+</pre>                     
+                </p>
+                <h3>Dictionary Operations</h3>
+                <h4>Membership Test</h4>
+                <p>
+                    We can test if a particular key is present in a dictionary or not using <code>in</code> or <code>not in</code> keywords.
+<pre>
+>>> squares = {<span class="number">1</span>:<span class="number">1</span>, <span class="number">2</span>:<span class="number">4</span>, <span class="number">3</span>:<span class="number">9</span>, <span class="number">4</span>:<span class="number">16</span>}
+>>> <span class="function">print</span>(<span class="number">1 </span><span class="keyword">in </span><span class="variable">squares</span>)
+True
+
+>>> <span class="function">print</span>(<span class="number">5 </span><span class="keyword">in </span><span class="variable">squares</span>)
+True
+</pre>
+                </p>
+                <h4>Iterating Through a Dictionary</h4>
+                <p>
+                    We can iterate through each key in dictionary using <strong>for</strong> loop.
+<pre>
+<span class="comment"># we can get the key and 
+# values of dictionary using dict.items() method.</span>
+
+<span class="keyword">for</span> key, values <span class="keyword">in</span> squares.<span class="function">items</span>():
+<span class="function">print</span>(key, values)
+</pre></p>
+<p>
+<strong>Output</strong>
+<pre class="output">
+1 1
+2 4
+3 9
+4 16
+</pre>
+                </p>
+                <h3>Dictionary Comprehension.</h3>
+                <p>
+                    Python also supports dictionary comprehension.
+                    <br>
+                    Dictionary Comprehensions can be used to create dictionaries from key and value expression.
+<pre>
+>>> <span class="comment"># create squares dictionary with key as numbers and </span>
+>>> <span class="comment"># values as there squares using dictionary comprehension.</span>
+
+>>> <span class="variable">squares</span> = {<span class="variable">x</span> : <span class="variable">x</span>*<span class="variable">x</span> <span class="keyword">for</span> <span class="variable">x</span> <span class="keyword">in</span> <span class="function">range</span>(<span class="number">2</span>, <span class="number">6</span>)}
+>>> <span class="variable">squares
+{2:4, 3:9, 4:16, 5:25}
+</pre>
+                </p>
+                <h3>Dictionary Methods</h3>
+                <p>
+                    Most common dictionary methods are as follows. Methods can be accessed as <code>dictionary_name.method()</code>. excepts the <code>iter(d)</code> where 'd' is a dictionary.
+                </p>
+                <table>
+                    <thead>
+                    <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>iter(d)</td>
+                    <td>Return an iterator over the keys of the dictionary.</td>
+                    </tr>
+                    <tr>
+                    <td>clear()</td>
+                    <td>Remove all items from dictionary</td>
+                    </tr>
+                    <tr>
+                    <td>copy()</td>
+                    <td>Return a copy of the dictionary</td>
+                    </tr>
+                    <tr>
+                    <td>items()</td>
+                    <td>Return a list of dictionary items in (key, value) pairs</td>
+                    </tr>
+                    <tr>
+                    <td>keys()</td>
+                    <td>Return a list of dictionary keys</td>
+                    </tr>
+                    <tr>
+                    <td>values()</td>
+                    <td>Return a list of dictionary values</td>
+                    </tr>
+                    <tr>
+                    <td>fromkeys(seq[, value])</td>
+                    <td>Create a new dictionary with keys from sequence seq and values set to values.</td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="tuple.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="set.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Functions are the most important features of the Python programming language. A function is a block of reusable code which is used to perform a specific task."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Functions.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Functions</h1>
+                    <h5>
+                        Functions are the most important features of the Python programming language. In this article, we will learn how to create a function, use function in python programs with return and pass statement.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    Functions are the most important features of the Python programming language. A function is a block of reusable code which is used to perform a specific task.
+				</p>
+				<p>
+					The function helps break our program into a smaller piece of code that is executed as a unit.
+					Functions make our program more organized and manageable and it avoids repetition and makes code reusable.
+                </p>
+                <p>
+                    Python has many built-in functions like <code>print()</code>, <code>len()</code> which we use until now.  But you can also create your own functions in python. These functions are called <strong>User Defined Function</strong>. In order to create a user define function we need to first define a function. So, let's see how we can do that.
+                </p>
+                <h3>Function Definition</h3>
+                <p>You can define a function using following syntax.</p>
+                <p><strong>Syntax</strong>
+<pre>
+def function_name(parameters):
+    """Docstrings"""
+    statements
+    return [expression]
+</pre></p>
+                <p>
+                    The keyword <code>def</code> is used to define a function and it is called a "function definition".<br>
+
+                	It must be followed by the "function name" and the "parentheses" <code>()</code> where you can define a list of "parameters", the parameters are optional, and colon(:) that ends the line.
+                </p>
+
+                <p>
+                	The statements that form the body of the function start at the next line and must be indented.</p>
+                <p>
+                    The first statement of the function body can be a string literal. This is called the function’s "documentation string" or <strong>docstring</strong>. The docstring is optional but it is good practice to include docstrings in code.
+
+<pre>
+<span class="comment"># defining simple function.</span>
+
+<span class="keyword">def</span> <span class="userfunction">hello</span>():
+    <span class="string">"""This is simple function."""</span>
+    <span class="function">print</span>(<span class="string">"Hello, world!"</span>)
+</pre>
+                </p>
+                <h3>Calling Function</h3>
+                <p>
+                    Once a function is defined, we can call the functions from another function or python prompt.
+                	
+                	The function definition does not execute the function body, this gets executed only when the function is called.
+                </p>
+                <p>
+                    To call the function, use the function name followed by the parentheses with appropriate parameters.
+                </p>
+                <p>
+                	Following is the example of calling above function <code>hello()</code>
+                     that we just create.
+                </p>
+                <p>
+<pre>
+<span class="userfunction">hello</span>() <span class="comment"># function call.</span>
+</pre>
+<p>
+<strong>Output</strong>
+<pre class="output">
+Hello, World!
+</pre>
+</p>
+                <h3>Docstrings</h3>
+                <p>
+                    In the above example, we have a docstring immediately below the function header. <br>
+                	This docstring is must be the first line and should always be a short, concise summary of the function.
+                </p>
+
+                <p>
+                	This line should begin with a capital letter and end with a period.
+                	We can get this docstrings using <code>__doc__</code>  attribute of the function.
+<pre>
+&gt;&gt;&gt; hello.__doc__
+This is simple function.
+</pre>
+                </p>
+                <h3>Function with Parameters</h3>
+                <p>
+                    A function can take a various number of parameters. These parameters are just like variables except that the values of these variables are defined when we call the function.
+                </p>
+                <p>
+                	Parameters are specified within the pair of parentheses in the function definition, separated by commas.
+                </p>
+                <p>
+                	<strong>Parameters</strong> are named that appear in the function definition, where as values that passed to a function when calling it, are called <strong>arguments</strong>.
+                	Parameters define what type of arguments a function can accept.
+                </p>
+                <p>The following function takes a string as input parameter.</p>
+<pre>
+<span class="comment"># defining function with parameter.</span>
+
+<span class="keyword">def</span> <span class="userfunction">hello</span>(name):
+    <span class="string">"""This is function with string parameter."""</span>
+    <span class="function">print</span>(<span class="string">"Hello"</span>, name)
+
+name = <span class="string">John</span>
+<span class="userfunction">hello</span>(name)<span class="comment"># calling function</span>
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+Hello John
+</pre></p>
+
+                <h3>Functions with Default argument values</h3>
+
+                <p>
+                    Python allows to initialize the arguments at the function definition using the assignment operator <strong>(=)</strong>. This is called <strong>default argument</strong> values.
+                </p>
+                <p>
+                	The most useful form is to specify a default value for one or more arguments. If the value of argument is not provided then this default value is used.</p>
+<pre>
+<span class="comment"># function definition.</span>
+
+<span class="keyword">def</span> <span class="userfunction">greet</span>(name, greeting = <span class="string">'Welcome'</span>):
+    <span class="string">"""This function greets"""</span>
+
+    <span class="function">print</span>(greeting, name)
+
+<span class="comment"># function call.</span>
+<span class="userfunction">greet</span>(<span class="string">'Radha'</span>, <span class="string">'Good Moring'</span>)
+<span class="userfunction">greet</span>(<span class="string">'Radha'</span>)
+</pre>
+<p> <strong>Output</strong>
+<pre class="output">
+Good Morning Radha
+Welcome Radha 
+</pre>
+                </p>
+                <h3>Keyword Arguments</h3>
+                <p>
+                    Functions can also be called using Keyword Arguments of the form <code>kwarg = value</code>.
+                    <br>
+
+                    In Python, we can use the name (keyword) instead of the position   (which we have been used) to specify the arguments to the function.
+<pre>
+<span class="keyword">def</span> <span class="userfunction">func</span>(a,b = 1):
+    <span class="function">print</span>(a + b)
+
+<span class="comment"># function call with positional arguments.</span>
+<span class="userfunction">func</span>(1)
+<span class="userfunction">func</span>(3, 4)
+
+<span class="comment"># function call using keyword arguments.</span>
+<span class="userfunction">func</span>(a = 2, b = 3)
+
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+2
+7
+5
+</pre>
+
+                </p>
+                <h3>Arbitrary Argument lists</h3>
+                <p>
+                	Python allows to define a function that can take any number of parameters.
+                	This function can be called with an arbitrary number of arguments. These arguments are collected as a tuple.
+                    <br>
+                	This can be achieved by using stars.</p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">func</span>(*names):
+    
+    <span class="function">print</span>(<span class="function">type</span>(names))
+    <span class="keyword">for</span> name <span class="keyword">in</span> names:
+        <span class="function">print</span>(name)
+
+<span class="userfunction">func</span>( <span class="string">'a'</span>,  <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>)
+</pre>
+                <p><strong>Output</strong></p>
+                <pre class="output">
+ &lt;class 'tuple'&gt;
+a
+b
+c
+d                   
+                </pre>
+                <p>
+                    When we declare a starred parameter as *args, then all the positional arguments are collected as a tuple. <br>
+                    when we declare a parameter with two-star as **kwarg, then all the keyword arguments are collected as a dictionary.
+                </p>
+                <h3>The return Statement</h3>
+                <p>
+                    The <code>return</code> statement is used to return from a function call.
+                </p>
+                <p><strong>Syntax:</strong>
+                </p>
+<pre class="syntax">
+return [expression_list]
+</pre> 
+                <p>
+                    The return statement leaves the function with evaluated expression value. If there is no expression in the statement or the return statement is not present in the function, then the function will return the <code>None</code> Object.
+                </p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">isEven(num):
+    
+    <span class="keyword">if</span></span> num % <span class="number">2</span> == <span class="number">0</span>:
+        <span class="keyword">return</span> True
+    <span class="keyword">else</span></span>:
+        <span class="keyword">return</span> False
+
+ <span class="comment"># Function call.</span>
+<span class="userfunction">isEven</span>(<span class="number">4</span>)
+<span class="userfunction">isEven</span>(<span class="number">5</span>)
+</pre>
+                <p><strong>Output</strong>
+<pre class="output">
+True
+False
+</pre></p>
+                <h3>Pass Statement</h3>
+                <p>
+                    The <code>pass</code> statement does nothing. it is used as place-holder for a function or conditional body when you create a function with no statements.
+                
+                    They cannot have an empty body since interpreter will raise an error, so we can use the <code>pass</code> statement to construct a body that does nothing.
+                </p>
+                <p>
+                    <strong>Syntax</strong>:
+                
+<pre class="syntax">
+pass
+</pre>
+</p>
+<pre>
+<span class="keyword">def</span> <span class="userfunction">function</span>():
+    <span class="keyword">pass</span>
+</pre>
+       <p>
+                    This can be used for creating minimal classes.
+                </p>
+<pre>
+<span class="keyword">class</span> <span class="userfunction">MyEmptyClass</span>:
+     <span class="keyword">pass</span>
+</pre>
+               
+
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="while.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="recursion.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

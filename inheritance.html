@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Inheritance is an important feature of the object oriented programming language. Inheritance provides code reusability to the program because inheritance enable us to share functionality between classes."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Inheritance.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Inheritance</h1>
+                    <h5>In this article, you will learn about inheritance in Python.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    Inheritance is an important feature of the object oriented programming language. Inheritance provides code reusability to the program because inheritance enable us to share functionality between classes.
+                </p>
+                <h3>What is Inheritance?</h3>
+                <p>
+                    In object oriented programming, Inheritance is a mechanism in which a new class is derived from an already defined class.
+				</p>
+				<p>
+					The derived class is known as a <strong>subclass</strong> or a <strong>child class</strong>. and the class from new class is derived is called as <strong>base</strong> <strong>class</strong> or <strong>superclass</strong> or <strong>parent class</strong>.
+                </p>
+                <p><strong>Syntax:</strong></p>
+<pre class="syntax">
+class BaseClass:
+    base class block
+    
+class DerivedClass(BaseClass):
+    derived class block
+</pre>
+                <p>
+                    The derived class inherits all the methods and properties of the base class. The derived class can also has its own methods.
+                </p>
+<pre>
+<span class="keyword">class</span> <span class="userfunction">Animal</span>:
+
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, name, color):
+        <span class="keyword">self</span>.name = name
+        <span class="keyword">self</span>.color= color
+
+<span class="keyword">class</span> <span class="userfunction">Dog</span>(<span class="userfunction">Animal</span>):
+
+    <span class="keyword">def</span> <span class="userfunction">bark</span>(<span class="keyword">self</span>):
+        <span class="function">print</span>(<span class="string">"Woof!"</span>)
+
+<span class="comment">#object</span>
+moti = <span class="userfunction">Dog</span>(<span class="string">"Moti"</span>, <span class="string">"Brown"</span>)
+
+<span class="function">print</span>(moti.color)
+
+moti.<span class="userfunction">bark</span>()
+</pre>
+                <p><strong>Output</strong>
+<pre class="output">
+Brown
+Woof!
+</pre></p>
+                <h3>Method Overriding</h3>
+                <p>
+                    The subclass can also replace methods of the superclass. The process of replacing methods defined in super class with new methods with the same name in the derived class is known as <strong>Method Overriding</strong>.					
+				</p>
+				<p>
+					When base class and derived class has methods with same name, the method in derived class overrides that method in the base class. which means that the whenever we call that method, method in derived class gets executed.
+				</p>
+				<p>
+					To avoid this we can use <strong>super()</strong> method in derived class.
+                </p>
+<pre>
+<span class="keyword">class</span> <span class="userfunction">Animal</span>:
+
+    <span class="keyword">def</span> <span class="userfunction">speak</span>(<span class="keyword">self</span>):
+        <span class="function">print</span>(<span class="string">"Speaking"</span>)
+
+<span class="keyword">class</span> <span class="userfunction">Dog</span>(<span class="userfunction">Animal</span>):
+
+    <span class="keyword">def</span> <span class="userfunction">speak</span>(<span class="keyword">self</span>):
+        <span class="function">print</span>(<span class="string">"Barking"</span>)
+        <span class="function">super</span>().<span class="userfunction">speak</span>()
+
+d = <span class="userfunction">Dog</span>()
+d.<span class="userfunction">speak</span>()
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+Barking
+Speaking
+</pre></p>
+                <p>
+                    Python has two built-in functions <code>isinstance()</code> and <code>issubclass()</code> are used to check inheritances.
+				</p>
+				<p>
+					Function <code>isinstance()</code> returns <code>True</code>, if the object is an instance of the class. each and every class in Python inherits from the base class <code>object</code>.
+<pre>
+&gt;&gt;&gt; <span class="function">isinstance</span>(d, Dog)
+True
+
+&gt;&gt;&gt; <span class="function">isinstance</span>(d, Animal)
+True
+
+&gt;&gt;&gt; <span class="function">issubclass</span>(Dog, Animal)
+True
+</pre>
+                </p>
+                <h3>Multi-level Inheritance</h3>
+                <p>
+                    Python also supports multi-level inheritance. In multilevel inheritance, features of the base class and derived class is inherited into the new derived class.
+                   
+                </p>
+                <p><strong>Syntax</strong>
+<pre class="syntax">
+class BaseClass
+     statements
+class DerivedClass1(BaseClass):
+     statements
+class DerivedClass2(DerivedClass1):
+     statements
+</pre>
+                </p>
+                <h3>Multiple Inheritance</h3>
+                <p>
+                    Python allows to inherits multiple base classes in the derived class.
+                </p>
+                <p><strong>Syntax</strong>
+<pre class="syntax">
+class BaseClass1:
+    statement
+class BaseClass2:
+    statement
+.
+.
+class DerivedClass(BaseClass1, BaseClass2,..):
+    statement  
+</pre></p>
+                <h3>Private Variables</h3>
+                <p>
+                    “Private” variables are those that cannot be accessed from outside the class. These attributes, may it be data or methods, can only be accessed from inside an object.
+				</p>
+				<p>
+					These types of members don’t exist in Python. However, Python provide a limiled support for such a mechanism, called name mangling. Where a name prefixed with two leading underscores and no more than one trailing underscore will be considered as a private member.
+				</p>
+
+				<p>
+				    for example, __spam  is considered as private member.
+				</p>
+				<p>
+					Name mangled methods can still be accessed externally, but by a different name. The method <strong>__privatemethod</strong> of class <strong>Spam</strong> could be accessed externally with <strong>_Spam__privatemethod.</strong>
+                </p>
+<pre>
+<span class="keyword">class</span> <span class="userfunction">Spam</span>:
+
+    __egg = 7
+
+    <span class="keyword">def</span> <span class="userfunction">print_egg</span>(<span class="keyword">self</span>):
+        <span class="function">print</span>(<span class="keyword">self</span>.__egg)
+
+
+s = <span class="userfunction">Spam</span>()
+
+s.<span class="userfunction">print_egg</span>()
+
+<span class="function">print</span>(s._Spam__egg)
+<span class="function">print</span>(s.__egg)
+</pre>
+                <p><strong>Output</strong></p>
+<pre class="output">
+7
+7
+AttributeError: 'Spam' object has no attribute '__egg'
+</pre>
+
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="class.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="iterator.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

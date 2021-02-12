@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python List.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>List.</h1>
+                    <h5>In this tutorial, we will learn everything about list in Python, how to create a list, access list elements, update or delete list or elements in list, different list methods and built-in functions and list comprehension so, let get started.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    Python has several datatypes, which used to group together other values. The <strong>list</strong> is one of the most frequently used and very versatile datatype used in Python. The List is sequence type which is finite ordered sets indexed by non-negative numbers.
+                </p>
+                <h3>How to create a List?</h3>
+                <p>
+                    A list can be created by placing an item in a square bracket <code>[ ]</code>, separated by commas. The list can be created by using the built-in function <code>list()</code>.
+					A list can be a collection of elements with different types. which means a list can have different data types values.
+                </p>
+<pre>
+<span class="comment">#empty list.</span>
+list1 = []
+
+<span class="comment">#list with elements of same datatype --> 'int'.</span>
+list2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+
+<span class="comment">#list with elements of different datatypes.</span>
+list3 = [<span class="number">1</span>, <span class="string">'a'</span>, <span class="number">3.14</span>]
+</pre>
+                <h3>Nested List.</h3>
+                <p>
+                    The list can contain another list as an element, this is called a <strong>Nested List</strong>.
+                
+<pre>
+<span class="comment">#nested list.</span>
+list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>, [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]]
+</pre>
+</p>
+                <h3>Accessing elements from a list.</h3>
+                <p>
+                    There are various ways to access the elements of a list.
+                </p>
+                    <h4>1. Using Indexing</h4>
+                <p>
+                    The elements of the list can be accessed by using indexing with the index operator <code>[]</code> where index start from <code>0</code>. When the length of the list is <code>n</code>, index starts from <code>0</code> and goes to the length of <code>n-1</code>.
+                    <br>
+                    If you try to access an elements outside the range of list's index such as if a list of the length <code>5</code> then index will be from <code>0</code> to <code>4</code> and if you try to access list with index 5 or 6 then it will raise an <code>IndexError</code>.
+                </p>
+                <p>
+                    The index must be an integer type; datatypes other than integer will raise an <code>TypeError</code>.
+
+					The first element of a list is stored at the 0th index, second is at index <code>1</code>, and so on.
+					<br>
+					<br>
+
+					So, the element at index <code>i</code> of list <code>a</code> can be accessed as <code>a[i]</code>.
+                
+<pre>
+>>> <span class="comment">#accessing elements in list 'a' using indexing.</span>
+>>> a = [<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>]
+
+>>> <span class="function">print</span>(<span class="variable">a[<span class='number'>0</span>]</span>)
+11
+</pre>
+</p>            
+                    <h4>2. Using Negative Indexing.</h4>
+                    <p>
+                    Python supports negative indexing for its sequences. The index of <code>-1</code> represents the last element, <code>-2</code> for the second last element, and so on. for example, let's access elements from above list 'a' using negative indexing.
+                
+<pre>
+>>> <span class="function">print</span>(<span class="variable">a</span>)
+[11, 22, 33, 44]
+
+>>> <span class="function">print</span>(<span class="variable">a[<span class='number'>-1</span>]</span>)
+44
+
+>>> <span class="function">print</span>(<span class="variable">a[<span class='number'>-3</span>]</span>)
+22
+</pre>
+</p>             
+                    <h4>3. Using Slicing.</h4>
+                <p>
+                    Sequences in Python also supports slicing. To access a range of elements in the list we can use slicing. The syntax for the same as follows.
+                    <br><code>list_name[start_index: end_index]</code><br>
+                    Here, the start is always included, and end index always excluded.
+                    Using slicing, let's access the range of elements of list 'b'.
+
+                </p>
+<pre>
+>>> <span class="comment">#accessing elements in list 'b' using slicing.</span>
+>>> b = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>]
+
+>>> b
+[2, 4, 6, 8, 10, 12]
+
+>>> <span class="function">print</span>(<span class="variable">b[<span class='number'>2</span> : <span class='number'>5</span>]</span>)
+[6, 8, 10]
+</pre>
+                <p>
+                    In the above slicing example, we print elements from the 2nd index to 4th index, but 5th will not be included.
+                </p>
+                <h3>Updating List.</h3>
+                <p>
+                    List is a mutable sequence data type, which means that elements in a list can be changed. We can use the assignment operator (=) to change an element or range of elements in a list.
+               
+<pre>
+>>> <span class="comment">#updating list.</span>
+>>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
+
+>>> <span class="function">print</span>(<span class="variable">a</span>)
+[1, 2, 3, 4]  
+
+>>> <span class="comment"># change last element.</span>
+>>> a [<span class="number">3</span>] = 5
+
+>>> <span class="function">print</span>(<span class="variable">a</span>)
+[1, 2, 3, 5]
+
+>>> a[<span class="number">0</span> : <span class="number">2</span>] = [<span class="number">11</span>, <span class="number">22</span>]
+
+>>> <span class="function">print</span>(<span class="variable">a</span>)
+[11, 22, 3, 5]
+</pre>
+</p>               
+                    <h4>Adding elements in list.</h4>
+                    <p>
+                    List provides an <code>append()</code> method to add one element and <code>extend()</code> method to update a list with more than one elements.<br>
+                    We also can add an element at the given position i.e at given index using <code>insert()</code> method as <code>list_name.insert(index, value)</code>.
+                
+<pre>
+>>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+
+>>> <span class="comment">#adding one element</span>
+>>> a.<span class="function">append</span>(<span class="number">4</span>)
+>>> a
+[1, 2, 3, 4]
+
+>>> <span class="comment">#adding several element</span>
+>>> a.<span class="function">extend</span>([<span class="number">11</span><span class="variable">,</span> <span class="number">21</span><span class="variable">,</span> <span class="number">31</span>])
+>>> a
+[1, 2, 3, 4, 11, 21, 31]
+
+>>> <span class="comment">#using insert method</span>
+>>> a.<span class="function">insert</span>(<span class="number">1</span><span class="variable">,</span> <span class="number">10</span>)
+>>> a
+[1, 10, 2, 3, 4, 11, 21, 31]
+</pre>
+</p>            
+                <h3>List Operators.</h3>
+                <p>
+                    To combine two lists, we can use <strong>+</strong> operator and this is called <strong>Concatenation</strong>.We can repeat a list for the given number of times using <strong>*</strong> operator
+                
+<pre>
+>>> even = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]
+
+>>> <span class="function">print</span>(<span class="variable">even + [<span class="number">10</span>, <span class="number">12</span>]</span>)
+[2, 4, 6, 8, 10, 12]
+
+>>> <span class="function">print</span>(<span class="variable">[<span class="string">"Hello"</span>]<span class="variable"> * </span><span class="number">3</span></span>)
+["Hello", "Hello", "Hello"]
+</pre>
+</p>               
+                <h4>List Membership Test</h4>
+                <p>
+                    We can check if an element is present in a list or not, using <code>in</code> keyword.
+                
+<pre>
+>>> my_list = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]
+
+>>> <span class="function">print</span>(<span class="string">'a'</span> <span class="keyword">in </span> <span class="variable">my_list</span>)
+True
+
+>>> <span class="function">print</span>(<span class="string">'e'</span> <span class="keyword">in </span> <span class="variable">my_list</span>)
+False
+</pre>
+</p>
+                <h4>Iterating through a list.</h4>
+                <p>
+                    We can iterate through a list using <code>for</code> loop.
+                
+<pre>
+my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <span class="string">'c'</span>]
+
+<span class="keyword">for </span>letter <span class="keyword">in </span>my_list:
+    <span class="function">print</span>(<span class="variable">letter</span>)
+</pre>
+</p>
+                <h3>Deleting list elements</h3>
+                <p>
+                    Since lists are mutable sequence we can delete one or more elements from a list. There are various methods to delete elements in a list.
+                </p>
+                <h4>1. Using 'del' keyword.</h4>
+                <p>
+                    <code>del list_name[index]</code>
+                    <br>here, the value at 'index' will be deleted from a list 'list_name'.
+                
+<pre>
+>>> my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
+>>>
+>>> <span class="comment">#deleting one element.</span>
+>>> <span class="keyword">del</span> my_list[<span class="number">1</span>]
+>>>
+>>> my_list
+[1, 3, 4]
+</pre>
+                </p>
+                <h4>2. Using pop() method.</h4>
+                <p>
+                    The method <code>pop()</code> will remove the element/value at the given index position in the list and return it.<br>
+                    if no index is specified, it removes and returns the last item in the list.<br><code>list_name.pop(index)</code>
+                
+<pre>
+>>> my_list = [<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>]
+
+>>> my_list.<span class="function">pop</span>(<span class="number">0</span>)
+11
+
+>>> my_list
+[22,33]
+</pre>
+</p>
+                <h4>3. Using remove() method.</h4>
+                <p>
+                    Remove the first occurrence of a value from the list using following syntax.
+                </p>
+                <p>
+                    <code>list_name.remove(value)</code><br>
+                    Let's try to remove the element from the above list, 'my_list'.
+                
+<pre>
+>>> my_list
+[22, 33]
+>>>
+>>> my_list.<span class="function">remove</span>(<span class="number">33</span>) <span class="comment">#here we provide a value from the list.</span>
+>>>
+>>> my_list
+[22]
+</pre></p>
+
+                <h4>4. Deleting List</h4>
+                <p>
+                    We remove all elements from the list using <code>clear()</code> built-in function.<br>
+                    <code>list_name.clear()</code>
+                </p>
+<pre>
+>>> my_list.<span class="function">clear()</span>
+>>> my_list
+[]
+</pre> 
+                <p>
+                    We can delete the entire list using the <code>del</code> keyword.<br>
+                    <code>del list_name</code>
+                </p>
+<pre>
+>>> <span class="keyword">del</span> my_list
+>>> my_list
+NameError: name 'my_list' is not defined.
+</pre>
+                <h3>List Methods</h3>
+                <p>
+                    Python list has some more methods. Here are all of the methods of list-objects.
+                    Methods can be accessed as <code>list_name.method()</code>.
+                </p>
+                <table>
+                    <thead>
+                    <tr>
+                    <th>Methods</th>
+                    <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>append()</td>
+                    <td>Add an element to the end of the list.</td>
+                    </tr>
+                    <tr>
+                    <td>extend()</td>
+                    <td>Add all elements of a list to another list</td>
+                    </tr>
+                    <tr>
+                    <td>insert()</td>
+                    <td>Insert an item at the defined index</td>
+                    </tr>
+                    <tr>
+                    <td>remove()</td>
+                    <td>Removes an item from the list</td>
+                    </tr>
+                    <tr>
+                    <td>pop()</td>
+                    <td>Removes and returns an element at the given index</td>
+                    </tr>
+                    <tr>
+                    <td>clear()</td>
+                    <td>Removes the all items from the list.</td>
+                    </tr>
+                    <tr>
+                    <td>count(value)</td>
+                    <td>Return the number of times value appears in a list</td>
+                    </tr>
+                    <tr>
+                    <td>sort()</td>
+                    <td>Sort the items of the list in place</td>
+                    </tr>
+                    <tr>
+                    <td>reverse()</td>
+                    <td>Reverse the elements of the list in place</td>
+                    </tr>
+                    <tr>
+                    <td>copy()</td>
+                    <td>Returns a copy of the list</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </p>
+                    
+                    
+                    <h4 id="function-list">List Built-in Functions</h4>
+                    
+                    <p>Python provides the following built-in functions.
+                    
+                    <table>
+                    <thead>
+                    <tr>
+                    <th>List Functions</th>
+                    <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>len(list)</td>
+                    <td>It retruns lenght of the list</td>
+                    </tr>
+                    <tr>
+                    <td>max(list)</td>
+                    <td>It returns maximum value of the list</td>
+                    </tr>
+                    <tr>
+                    <td>min(list)</td>
+                    <td>It returns minimum value of the list</td>
+                    </tr>
+                    <tr>
+                    <td>list(sequence)</td>
+                    <td>It returns list</td>
+                    </tr>
+                    <tr>
+                    <td>cmp(list1, list2)</td>
+                    <td>It compares the elements of both the lists.</td>
+                    </tr>
+                    </tbody>
+                    </table></p>
+                    <h3>List Comprehension</h3>
+                    <p>
+                        List comprehension provides a concise way to create lists.
+                        List comprehension can be used when to make a list where each element is the result of some operations applied to each member of another sequence(such as list, tuple, range).
+                        <br> <br>
+                        List comprehension consists of an expression followed by <strong>for statement</strong> inside square bracket.
+                    
+<pre>
+<span class="comment">#Create a list without list comprehension</span>
+
+squares = []
+<span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(<span class="number">10</span>):
+squares.<span class="function">append</span>(<span class="variable">x**</span><span class="number">2</span>)
+
+<span class="function">print</span>(<span class="variable">squares</span>)
+
+<span class="comment">#output
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+#Create a list using List comprehension.</span>
+squares = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(<span class="number">10</span>)]
+
+<span class="function">print</span>(<span class="variable">squares</span>)
+
+<span class="comment">#output [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+</pre>
+</pre></p>
+
+                
+<pre>
+<span class="comment"># creating list of even numbers using list comprehension.</span>
+even = [x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(<span class="number">1</span>, <span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]
+<span class="function">print</span>(even)
+<span class="comment">#Output[2, 4, 6, 8]</span>
+</pre>
+                
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="codingstyle.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="string.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

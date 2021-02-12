@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, python exception Handling" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Exception Handling.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Exception Handling</h1>
+                    <h5>In this tutorial, we will learn Python Errors and Exception Handling.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    There are two types of errors in Python programming languages.
+					<ol>
+						<li>Syntax Error</li>
+						<li>Exceptions.</li>
+					</ol>
+                </p>
+                <h3>Syntax Error</h3>
+                <p>
+                    The Syntax Errors occurs when there is a mistake in syntax, which means that when do not follow the proper structure of the language.
+					<br>
+                    The Syntax Errors are also called as ‘Parsing Error’.
+                </p>
+<pre>
+<span class="keyword">if</span> True
+<span class="function">print</span>(<span class="string">"Hello World"</span>)
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+File "&lt;stdin&gt;", line 1
+    if True
+           ^
+SyntaxError: invalid syntax
+</pre>
+
+
+                <p>
+                    Since colon <code>(:)</code> is missing after if statement <code>SyntaxError</code> occurs. Filename and line number are printed so could know where to look.
+                </p>
+                <h3>Exceptions</h3>
+                <p>
+                    The Errors that occur during the execution of the program is called <strong>Exceptions</strong>.
+                
+                    Whenever these type of runtime error occur, Python creates an exception object. It prints traceback to that error along with some details about why that error occurred.
+               </p>
+<pre>
+&gt;&gt;&gt; <span class="number">1</span> / <span class="number">0</span>
+
+Traceback (most recent call last):
+File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+     1/0
+ZeroDivisionError: division by zero
+</pre>
+                
+                <p>
+                    The last line of the traceback output message tell us about, what type of exception was reaised and some relevant information about that exception.
+                    Exceptions come in different types, and the type is printed as part of message.
+                </p>
+                <p>
+                    In the above example; exception <code>ZeroDivisionError</code>  with message as <code>division by zero</code> occur, which means that the second argument/operand used in a divison operation was zero.
+                </p>
+                <p>
+                    There are various built-in exceptions in Python that are raised when corresponding error occurs. we can view all built-in exceptions using the <code>local()</code> built-in functions as follows
+                </p>
+<pre>
+&gt;&gt;&gt; <span class="function">locals</span>`()['__builtins__]`
+</pre>
+                </p>
+                <h3>Exception Handling</h3>
+                <p>
+                    It is possible to write a program that handles selected exceptions. This can be done using <code>try...except</code> statement.
+                </p>
+                <p>
+                    The <code>try</code> statement specifies exception handlers and cleans up the code and <code>except</code> clause specify one or more exception handlers.
+                </p>
+                <p>
+                    If the program contains a code that may raise an exception is placed inside the <code>try</code> clause and the code that handles exception is written in <code>except</code> clause.
+                </p>
+                <p><strong>Syntax:</strong>
+<pre class="syntax">
+try:
+    run this code
+except:
+    run this block if an exception occurs
+</pre>
+</p>
+<pre>
+<span class="comment"># ZerodivisionError</span>
+
+<span class="keyword">try</span>:
+    a = <span class="function">int</span>(<span class="function">input</span>(<span class="string">'a = '</span>))
+    b = <span class="function">int</span>(<span class="function">input</span>(<span class="string">'b = '</span>))
+    <span class="function">print</span>(a/b)
+
+<span class="keyword">except</span> <span class="">ZeroDivisionError:
+    <span class="function">print</span>(<span class="string">'Enter the number greater than zero'</span>)
+</pre>
+<p><strong>Output</strong></p>
+<pre class="output">
+a = 1
+b = 0
+Enter the number greater than zero
+</pre>
+                <p>
+                    A <code>try</code> statement may have more than one except clause. An <code>except</code> clause may have multiple exceptions name parenthesized in a tuple.
+                </p>
+                <p><strong>Syntax:</strong>
+<pre class="syntax">
+... except (RuntimeError, TypeError, NameError):
+...    pass
+</pre></p>
+                <h3>Raising Exception</h3>
+                <p>
+                    In Python programming, exceptions are raised when corresponding errors occur at run time, but we can forcefully raise it using the keyword <code>raise</code>.
+                </p>
+<pre>
+<span class="keyword">try</span>:
+
+    a = <span class="function">int</span>(<span class="function">input</span>(<span class="string">"enter the positive number: "</span>))
+
+    <span class="keyword">if</span> a &lt;= 0:
+        <span class="keyword">raise</span> ValueError(<span class="string">"This is not a positive number!"</span>)
+
+<span class="keyword">except</span> ValueError <span class="keyword">as</span> value:
+    <span class="function">print</span>(value)
+</pre>
+<p><strong>Output</strong></p>
+<pre class="output">
+enter the positive number: -1
+This is not a positive number!
+</pre>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="file.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="class.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

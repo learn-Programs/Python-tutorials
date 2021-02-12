@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="A recursive function is a function that calls itself in its definition."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Recursion.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Recursive Function</h1>
+                    <h5>In this article, we will learn how recursive function works.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    A recursive function is a function that calls itself in its definition.
+					<br>
+					For example, the following program finds factorial of a number using recursive function.
+                </p>
+<pre>
+<span class="comment"># recursive function.</span>
+<span class = "keyword">def</span> <span class = "userfunction">factorial</span>(n):
+
+    <span class = "keyword">if</span> n == <span class = "number">0</span>:
+        <span class = "keyword">return</span> <span class = "number">1</span>
+    <span class = "keyword">else</span>:
+        <span class = "keyword">return</span> n * <span class = "userfunction">factorial</span>(n-<span class = "number">1</span>)
+
+<span class = "function">print</span>(<span class = "userfunction">factorial</span>(<span class = "number">5</span>))
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+120
+</pre></p>
+                <p>
+                    Factorial of a number (<code>n</code>) is the product of all integers from <code>1</code> to <code>n</code>. for example factorial of number <code>5</code> is <code>1 * 2 * 3 * 4 * 5 = 120</code>.
+                    <br>
+                    In the above example, the <code>factorial()</code> function call itself by decreasing the value of <code>n</code> number.
+                </p>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="function.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="lambda.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

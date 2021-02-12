@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python Set, A set is an unordered collection of elements with no duplicate elements. The elements of set must be unique and immutable type(which can not change)."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python set.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Set</h1>
+                    <h5>In this tutorial, we will learn how to create, update Python set elements as well as removing elements from set. we will also learn the types of sets and set methods so, let's get started.  </h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    A <strong>set</strong> is an unordered collection of elements with no duplicate elements. The elements of set must be unique and immutable type(which means that we can not change elements of set once we create a set).
+                </p>
+                <p>
+                    The set type is mutable which means the elements can be changed using methods like <code>add()</code>, and <code>remove()</code>.
+                </p>
+                <p>
+                    Sets are commonly used in membership testing, removing duplicates from a sequence, and mathematical operations such as intersection, union, difference and symmetric difference.
+					<br>
+					Since sets are mutable, it cannot be used as a dictionary key or an element of another set.
+                </p>
+                <h3>How to Create Set?</h3>
+                <p>
+                    A set can be created by placing comma-separated elements within curly braces <code>{}</code>.
+					<br>
+					We can also create a set using the built-in function <code>set()</code>.
+                </p>
+                <p>
+                    Elements of a set must be an immutable type such as string, numbers or tuple, but a mutable type of data such as list, dictionary or even set cannot be used as an element of a set.
+                </p>
+<pre>
+my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>}
+
+<span class="comment">#set with mixed immutable datatypes</span>
+my_set = {<span class="number">1</span>, <span class="number">3.14</span>, <span class="string">'Python'</span>}
+</pre>
+                <p>
+                    Empty set created by using <code>set()</code> function and not with empty curly braces <code>{}</code> because this will create a dictionary.
+                </p>
+<pre>
+>>> my_set = {}
+
+>>> <span class="function">print</span>(<span class="function">type</span>(my_set))
+< class 'dict'>
+
+>>> my_set = set()
+
+>>> <span class="function">type</span>(my_set)
+< class 'set'>
+</pre>
+                <p>
+                    To get the length of set use <code>len()</code> built-in function.
+                </p>
+<pre>
+>>> my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>}
+>>> <span class="function">len</span>(my_set)
+4
+</pre>
+                <h3>Updating Set</h3>
+                <p>
+                    Sets are an unordered collection of items, sets do not support indexing, slicing or other sequence-like behavior.
+			    </p>
+			    <p>
+			    	We can update the elements of a set using methods such as <code>add()</code> or <code>remove()</code>.
+                </p>
+                <p>
+                    To add a single element in set we can use <code>add()</code> method and multiple elements can be added in the set using <code>update()</code> method.
+                </p>
+<pre>
+my_set = {<span class="number">1</span>, <span class="number">2</span>}
+
+<span class="comment"># single element using add()</span>
+my_set.<span class="function">add</span>(<span class="number">3</span>)
+
+<span class="function">print</span>(my_set)
+
+<span class="comment"># output 
+{1, 2, 3}</span>
+
+
+<span class="comment"># multiple elements using update(iterable)</span>
+my_set.<span class="function">update</span>([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])
+
+<span class="comment"># set will remove duplicates and returns unique values.</span>
+<span class="function">print</span>(my_set)
+
+<span class="comment"># output 
+{1, 2, 3, 4, 5}</span>
+</pre>
+                <h3>Removing elements from set</h3>
+                <p>
+                    We can remove elements from the set using methods such as <code>discard()</code> and <code>remove()</code>.
+                </p>
+
+                <p>
+                	The <code>remove()</code> method will raise a KeyError when element is not in Set, while <code>discard()</code> method do nothing.
+                </p>
+<pre>
+>>> my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>}
+
+>>> <span class="function">print</span>(my_set)
+{1, 2, 3, 4, 5}
+
+>>> my_set.<span class="function">discard</span>(<span class="number">1</span>)
+
+>>> <span class="function">print</span>(my_set)
+{2, 3, 4, 5}
+
+>>> my_set.<span class="function">remove</span>(<span class="number">4</span>)
+
+>>> <span class="function">print</span>(my_set)
+{2, 3, 5}
+
+>>> my_set.<span class="function">discard</span>(<span class="number">6</span>)
+
+>>> my_set.<span class="function">remove</span>(<span class="number">6</span>)
+KeyError: 6
+</pre>
+                <p>
+                    We can use <strong>pop()</strong> method, which remove and return an arbitrary element from the set and raises <code>KeyError</code> if a set is empty. We can also use <strong>clear()</strong> method to remove all elements from set.
+                </p>
+<pre>
+>>> my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>}
+
+>>> my_set.<span class="function">pop</span>()
+1
+
+>>> my_set.<span class="function">clear</span>()
+
+>>> my_set
+set()
+</pre>
+                
+                <h3>Set Operations</h3>
+                <p>
+                    Sets are commonly used for mathematical operations such as union, intersection, difference and symmetric difference.
+                </p>
+                <h4>Set Union(|)</h4>
+                <p>
+                    The union of two sets are performed using <strong>|</strong> operator or <strong>union()</strong> method.
+                    The union of sets returns a new set of elements from each set.
+                </p>
+<pre>
+<span class="comment"># Lets consider two sets.</span>
+set1 = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>}
+set2 = {<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>}
+
+<span class="comment"># set union using | operator.</span>
+<span class="function">print</span>(set1 | set2)
+
+<span class="comment"># using union() method.</span>
+<span class="function">print</span>(set1.<span class="function">union</span>(set2))
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+{1, 2, 3, 4, 5, 6, 7}
+{1, 2, 3, 4, 5, 6, 7}
+</pre></p>
+
+
+                <h4>Set Intersection (&)</h4>
+                <p>
+                    The intersection of two sets is performed by using <strong>&amp;</strong> operator or <strong>intersection()</strong> method.
+                    It Returns a new set of common elements from both sets.
+                </p>
+<pre>
+<span class="comment">
+# consider the above sets.
+# set1 = {1,2,3,4}
+# set2 = {3,4,5,6,7}
+</span>
+<span class="comment"># '&' operator.</span>
+<span class="function">print</span>(set1 & set2)
+
+<span class="comment"># intersection() method.</span>
+<span class="function">print</span>(set1.<span class="function">intersection</span>(set2))
+</pre>
+
+<p><strong>Output</strong>
+<pre class="output">
+{3, 4}
+{3, 4}
+</pre>
+</p>
+                <h4>Set Difference (-)</h4>
+                <p>
+                    The difference of two sets (set1 and set2 )is a set of elements that are only in set1 but not in set2.
+               
+                    The difference of two sets can be performed by using the <code>-</code> operator and <code>difference()</code> method.
+                </p>
+<pre>
+<span class="function">print</span>(set1 - set2)
+
+<span class="comment"># This will return set of elements in set2 but not in set1.</span>
+<span class="function">print</span>(set2.intersection(set1))
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+{1, 2}
+{5, 6, 7}
+</pre>
+</p>
+                <h4>Set Symmetric difference(^)</h4>
+                <p>
+                    Symmetric difference of two sets is a set of elements in both except those are common in both the sets.
+                    Symmetric difference is performed by <strong>^</strong> operator and <strong>symmetric_differece()</strong> method.
+                </p>
+<pre>
+<span class="comment"># '^' operator.</span>
+<span class="function">print</span>(set1 ^ set2)</span>
+
+<span class="comment"># symmetric_differece() method</span>
+<span class="function">print</span>(set1.<span class="function">symmetric_differece</span>(set2))
+</pre>
+<p><strong>Output</strong>
+<pre class="output">
+{1, 2, 5, 6, 7}
+{1, 2, 5, 6, 7}
+</pre>
+</p>
+                    <h4>Set Membership Test</h4>
+                    <p>
+                        We can test if an element is present in a set using an <code>in</code> or <code>not in</code>  keywords.
+                   
+<pre>
+&gt;&gt;&gt; <span class="function">print</span>(set1)
+{1, 2, 3, 4}
+
+&gt;&gt;&gt; <span class="function">print</span>(<span class="number">1 </span><span class="keyword">in</span> set1)
+True
+
+&gt;&gt;&gt; <span class="function">print</span>(<span class="number">5 </span><span class="keyword">not in</span> set1)
+True
+</pre>
+</p>
+                    <h4>Iterating Through a set</h4>
+                    <p>
+                        We can iterate through each element in a set using <strong>for</strong> loop.
+                    </p>
+<pre>
+<span class="keyword">for</span> i <span class="keyword">in</span> set1:
+<span class="function">print</span>(i)
+</pre>
+<p><strong>Output</strong></p>
+<pre class="output">
+1
+2
+3
+4
+</pre>
+                    <h3>Frozen set</h3>
+                    <p>
+                        There are two built-in set types in Python, <code>set</code> and <code>frozenset</code>.
+                        The difference between set and frozenset is that sets are mutable while frozensets are immutable type which means that elements in a frozenset can not be changed once it has been created.
+                </p>
+                <p>
+                	Frozensets can be used as a dictionary key or as an element of another set.
+                	The frozensets can be created by using the built-in function <code>frozenset()</code>.
+                	Being Immutable set type, frozensets does not supports add or remove methods.
+                </p>
+<pre>
+>>> <span class="comment"># Creating frozenset.</span>
+
+>>> A = <span class="function">frozenset</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])
+
+>>> <span class="function">print</span>(<span class="function">type</span>(A)) 
+< class 'frozenset'>
+</pre>
+                    <h3>Set Methods</h3>
+                    <p>
+                        There are many set methods, some of them are already used and explain above. This is a list of other methods that are available with set objects.
+                    </p>
+                    <table>
+                        <thead>
+                        <tr>
+                        <th>Methods</th>
+                        <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td>isdisjoint()</td>
+                        <td>Returns True if two sets have no common elements.</td>
+                        </tr>
+                        <tr>
+                        <td>issubset()</td>
+                        <td>Return True if every element in one set is in other</td>
+                        </tr>
+                        <tr>
+                        <td>issuperset()</td>
+                        <td>Return True if set contains another set.</td>
+                        </tr>
+                        <tr>
+                        <td>copy()</td>
+                        <td>Returns a copy of the set</td>
+                        </tr>
+                        <tr>
+                        <td>update()</td>
+                        <td>Update the set with the union of itself and other</td>
+                        </tr>
+                        <tr>
+                        <td>difference_update()</td>
+                        <td>Removes all elements of another set from this set.</td>
+                        </tr>
+                        <tr>
+                        <td>intersection_update()</td>
+                        <td>Update a set with the intersection of itself and another.</td>
+                        </tr>
+                        <tr>
+                        <td>symmetric_difference_update()</td>
+                        <td>Update a set with the symmetric difference of itself and another.</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    <h3>Set Comprehension</h3>
+                    <p>
+                        Python also supports <strong>set comprehension</strong>. Set comprehension provide a concise way to create a sets.
+                    </p>
+
+                    <p>
+                    	We can  create a new set using set coprehension just like we create a list using list comprehension.
+                    </p>
+<pre>
+&gt;&gt;&gt; a = {x <span class="keyword">for</span> x <span class="keyword">in </span><span class="string">'abracadabra'</span> <span class="keyword">if</span> x <span class="keyword">not in</span> <span class="string">'abc'</span>}
+{'r', 'd'}
+</pre>
+            </div>  
+
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="dictionary.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="if.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

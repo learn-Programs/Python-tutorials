@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Variables.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Variables</h1>
+                    <h5>In this tutorial, we will learn what is variable, how to create a variable in Python and what are the rules to follow while creating variables and then we will learn how to delete a variable.</h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    One of the most powerful features of a programming language is the ability to manipulate variables.
+                    <strong>What is Variable?</strong>
+                    Variable is the name given to the memory location where data is stored.
+                    When a variable is created, the interpreter will create some space or memory to store the value of that variable. Variables are used to store data/values.
+                </p>
+
+                    <p>
+                        Everything in Python is <strong>Object</strong>. Every object in Python has an <strong>Indentity</strong>, a<strong> Type</strong> and a <strong>Value</strong>.
+                    
+                        <strong>Identity</strong> of the object is its address in memory and does not get change once it is created. 
+                        Memory address or Identity of a variable can get using <code>id(variable_name)</code>.
+                        <br>
+                        
+                        <strong>Type</strong> is nothing but the <strong>Datatype</strong> which means that, what type of data is store under the name of variable. It is a set of values and allowable operations on those values.
+                        Datatype of a variable can get using function <code>type(variable_name)</code>.
+                    </p>
+                    <h3 id="variable">How to create a Variable?</h3>
+                    <p>
+                        We know now, that a variable is a name refers to memory location and variables are also known as <strong>Indentifier</strong> and used to hold a value.
+
+                        Creating a variable in Python is very simple. Python's variables are dynamically typed, which means that we do not need to specify the type of variable. A variable does not need declaration or initialization, while creating or before adding value to it like in other languages such as C, C++, etc.
+
+                        There are some rules to follow while creating a variable in Python.
+
+					<li>
+						The name of the variable must start with a letter or with an underscore(_).
+					</li>
+
+					<li>
+						The name of the variable cannot start with a number.
+					</li>
+
+					<li>
+						The name of the variable cannot have a special character such as %, $, #, @, ! etc.
+					</li>
+
+					<li>
+						They can have only alphanumeric character and underscore (A to Z, a to z, 0-9, _).
+					</li>
+
+					<li>
+						Python is case sensitive language. for example, variable called " name " or " Name " are considered to be two different variables.
+					</li>
+                    </p>
+                    <h3 id="assignment">Variable Assignment</h3>
+                    <p>
+                        In Python, varaibles are created using an assignment operator <code>(=)</code> to store data.<br>
+                        <code>var_name = value</code>
+                    </p>
+<pre>
+<span class="comment"># Creating Variable in Python.</span>
+a = <span class= "number">10</span>
+_a = <span class= "number">10</span>
+
+<span class="comment"># Invalid variable.</span> 
+1a = <span class= "number">10</span> <span class= "comment"># SyntaxError will occure</span>
+</pre>
+                    <p>
+                        Variable assignment works from left to right. So the following code will generate a syntax error.
+<pre>
+>>> <span class="number">0</span> = x
+SyntaxError: can't assign to literal.
+</pre>
+                    </p>
+                    <h3 id="multiple_assigment">Multiple Assignments</h3>
+                    <p>
+                        You can assign multiple values to multiple variables in one line. but there must be the same number of arguments on the right and left side of the " = " operator.
+                    </p>
+<pre>
+>>> a, b, c = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>
+>>> <span class="function">print</span>(</span>a, b, c)
+1 2 3
+</pre>
+                    <p>
+                        Variables can be reassigned as many times as you want, in order to change their value. In Python, variables don’t have specific types, so you can assign a <strong>string</strong> to a variable and later assign an <strong>integer</strong> to the same variable.
+                    </p>
+<pre>
+>>> a = <span class="number">10</span>
+>>> <span class="function">print</span>(<span class="variable">a</span>)	
+10
+
+>>> a = <span class="string">'String'</span>
+>>> <span class="function">print</span>(<span class="variable">a</span>)
+String
+</pre>
+                    <h3 id="delete">Deleting Variable</h3>
+                    <p>
+                        You can delete a variable using <code>del</code> statement. Which means The reference from the name to the value is deleted.
+                        Deleted variables can be reassigned to later as normal variable.
+				    </p>
+<pre>
+>>> a = <span class="number">10</span>
+>>> <span class="keyword">del</span> a
+>>> a
+NameError: name 'a' is not defined.
+</pre>
+                </div>
+                <div class="btn">
+                    <div class="pre__btn">
+                        <button><a href="keyword.html">Previous</a></button>
+                    </div>
+                    <div class="nxt__btn">
+                        <button><a href="datatype.html">Next</a></button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
+

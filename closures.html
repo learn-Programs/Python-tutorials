@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python closures.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Closures</h1>
+                    <h5>In this tutorial, you will learn about python closures, how to define a closure and the reasons you should use it.</h5>
+                </div>
+            <div class="content__container">
+                <h3>Nested Function and Non-local Variables.</h3>
+                <p>
+                    To understand the concept of closures in Python we must know about the nested function and non-local variables. so lets start with them first.
+				</p>
+
+                <p>
+                	<strong>Nested function</strong>: When function is defined inside of other function then that function is called the 'Nested function'.
+                </p>
+                <p>
+                    where, the function inside which another function is defined is called <i>outer function</i> and the function defined inside of that outer function is called <i>inner function</i>.
+                </p>
+
+                <p>
+                    Now, this nested function can access the variables of the enclosing scope.
+                    <br>
+                    In Python, these non-local variables are read-only meaning we can only access them, but can not modify them.
+                </p>
+
+                <p>
+                    In order to do that we must declare them explicitly as non-local using <code>non-local</code> keyword.
+                </p>
+
+                <p>
+                    let’s try to understand the nesting of function using simple example:
+                </p>
+<pre>
+<span class="comment"># create nested function.</span>
+<span class="keyword">def</span> <span class="userfunction">outer_func</span>(msg):
+    <span class="string">"""This is outer enclosing function."""</span>
+
+    <span class="keyword">def</span> <span class="userfunction">inner_func</span>():
+        <span class="string">"""This is inner function inside outer function"""</span>
+        <span class="function">print</span>(msg)
+    
+    <span class="comment"># calling inner function.</span>
+    <span class="userfunction">inner_func</span>()
+
+<span class="comment"># outer function call.</span>
+<span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
+</pre>
+                <p><strong>Output</strong></p>
+<pre class="output">
+Hello
+</pre>
+                <p>
+                    Here, we defined  nested function with outer function <code>outer_func()</code> with parameter <code>msg</code> and inside that function, we defined another function called <code>inner_func()</code> which prints the <code>msg</code>.
+                </p>
+                <p>
+                    We can see that the nested <code>inner_func()</code> function was able to access the non-local <code>msg</code> variable of the enclosing function.
+                </p>
+                <p>
+                    The local variable <code>msg</code> of the outer function is <strong>non-local variable</strong> for the inner function which it can access but not modify.
+                </p>
+
+                <p>
+                    We can call the nested  <code>inner_func()</code> only from the outer function <code>outer_func()</code>.
+                </p>
+
+                <p>Let’s try to access the inner function.
+                </p>
+<pre>
+>>> <span class="userfunction">inner_func</span>()
+
+Traceback (most recent call last):
+...
+inner_func()
+NameError: name 'inner_func' is not defined
+</pre>
+                <p>
+                    When we try to call the inner function from outside of its scope it raises <code>NameError</code>.
+                </p>
+
+                <p>
+                    But, we can do that using closures in Python, lets understand how the closures can help us to do that.
+                </p>
+                <h3>Python Closures</h3>
+                <p>
+                    Python function are first class object. This means that functions can be assigned to variables, stored in collections, created and deleted dynamically or passed as arguments.
+				</p>
+
+                <p>
+                	The built-in <code>iter()</code> function takes an arbitrary object and tries to return an iterator that will return the object’s contents or elements.  It will raise a <code>TypeError</code> if the object is not an iterable type or doesn’t support iteration.</p>
+
+                <p>
+                    A Closure is a nested function which has access to a free variables from an enclosing function that has finished its execution.
+                </p>
+
+                <p>
+                    A free variable is a variable that is not bound in the local scope.
+                </p>
+
+                <p>
+                    When a function is available inside another function then closure is created. The inner function will have access to the variables and parameters of outer function even after outer function is returned.
+                </p>
+
+                <p>
+                    This means that we can call the inner function later and it will have access to variables and parameters of the outer function.
+                </p>
+
+                <p>
+                    Understand the concepts of closure in more clear way using below example:
+                </p>
+<pre>
+<span class="comment"># create nested function.</span>
+
+<span class="keyword">def</span> <span class="userfunction">outer_func</span>(msg):
+
+    <span class="string">"""This is outer enclosing function."""</span>
+
+    <span class="keyword">def</span> <span class="userfunction">inner_func</span>():
+
+        <span class="string">"""This is inner function inside outer function"""</span>
+        <span class="function">print</span>(msg)
+        
+    <span class="function">return</span> <span class="userfunction">inner_func</span> <span class="comment">#retruns the nested function. </span>
+
+
+<span class="comment"># Now let's try calling this function.</span>
+another = <span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
+another()
+</pre>
+                <p>
+                    The <code>outer_func()</code> function was called with the string “Hello” and the returned function was bound to the name <code>another</code>. This is nothing but we create an Object of the function <code>outer_func()</code>. On calling <code>another()</code>, the message was still remembered although we had already finished executing the <code>outer_func()</code> function.
+                </p>
+
+                <p>
+                    This technique by which some data (<code>"Hello"</code> in this case) gets attached to the code is called <strong>closure in Python</strong>.
+                </p>
+
+                <p>
+                    This value in the enclosing scope is remembered even when the variable goes out of scope or the function itself is removed from the current namespace.
+                </p>
+<pre>
+>>> <span class="keyword">del</span> <span class="userfunction">outer_func</span>
+
+>>> another()
+Hello
+
+>>> <span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
+Trackeback (most recent call last):
+...
+NameError: name 'outer_func' is not defined
+</pre>
+                <p>The returned function still works even when the original function was deleted.</p>
+
+                <h3>When we can create a closures?</h3>
+
+                <p>We have closure in Python when a nested function references a value in its enclosing scope.</p>
+
+                <p>To create  closure in Python, the following condition must be satisfied.
+                <ul>
+
+                    <li>We must have a nested function.</li>
+
+                    <li>The nested function must refer to a value defined in the enclosing function. Which means that, the inner function must refer to the outer functions variables, and parameters.</li>
+
+                    <li>The enclosing function must return the nested function, meaning the outer function must return the inner function.</li>
+
+                </ul></p>
+
+				<h3>Why we should use Closures?</h3>
+
+                <ul>
+
+                    <li>Closures can avoid the use of global values.</li>
+
+                    <li>provides some form of data hiding.</li>
+
+                    <li>it can also provide an object oriented solution to the problem.</li>
+                </ul>
+
+                <p>
+                    When there are few methods to be implemented in a class, closures can provide an alternate and more elegant solution. But with more number of attributes and methods it is good idea to implement a class.
+                <br>
+                    Here is an example of how the closures can be an alternate solution to small classes.
+                </p>
+<pre>
+<span class="comment"># using class</span>
+<span class="keyword">class</span> <span class="userfunction">MultiplierOf</span>:
+     
+     <span class="keyword">def</span> __<span class="function">init</span>__(<span class="keyword">self</span>, n):
+         <span class="keyword">self</span>.n = n
+
+     <span class="keyword">def</span> <span class="userfunction">multiplier</span>(<span class="function">self</span>, x):
+         <span class="function">return</span> <span class="function">self</span>.n * x
+
+
+<span class="comment"># create object</span>
+<span class="comment"># Muliplier of 3</span>
+multiply3 = <span class="userfunction">MultiplierOf</span>(<span class="number">3</span>)
+
+<span class="comment"># Muliplier of 4</span>
+multiply4 = <span class="userfunction">MultiplierOf</span>(<span class="number">4</span>)
+
+<span class="function">print</span>(multiply3(<span class="number">4</span>))
+<span class="comment">#Output: 12</span>
+
+<span class="function">print</span>(multiply4(<span class="number">5</span>))
+<span class="comment">#Output: 20</span>
+</pre>
+                    <p>
+                        The same can be done using clouseres instead of classes.
+                    </p>
+<pre>
+<span class="comment"># using function</span>
+<span class="keyword">def</span> <span class="userfunction">multiplier_of</span>(n):
+     
+    <span class="keyword">def</span> <span class="userfunction">multiplier</span>(x):
+
+        <span class="function">return</span> n * x
+
+    <span class="function">return</span> multiplier
+
+<span class="comment"># Muliplier of 3</span>
+multiply3 = <span class="userfunction">multiplier_of</span>(<span class="number">3</span>)
+
+<span class="comment"># Muliplier of 4</span>
+multiply4 = <span class="userfunction">multiplier_of</span>(<span class="number">4</span>)
+
+<span class="function">print</span>(multiply3(<span class="number">4</span>))
+<span class="comment">#Output: 12</span>
+
+<span class="function">print</span>(multiply4(<span class="number">5</span>))
+<span class="comment">#Output: 20</span>
+
+<span class="function">print</span>(multiply4(multiply3(<span cla)
+NameError: name 'inner_func'ss="number">2</span>)))
+<span class="comment">#Output: 24</span>
+</pre>
+                    <p>
+                        Python Decorators make an extensive use of closures as well.
+                    </p>
+
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="generator.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="decorators.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

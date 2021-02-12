@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python programming language. what is Python?: Python is an intepreted high-level, object-oriented programming language which is easy to learn. Python is powerful programming language written by Guido van Rossum in early 1990."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Indentation</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Python Indentation.</h1>
+                    <h5>In this article, we will learn importance of indentation in Pyhton, and how to use them.</h5>
+                </div>
+                <div class="content__container">
+                    <p>
+                        A Python program is constructed from <strong>code blocks</strong>. A block of code is a piece of Python program statements or lines of code that are executed as a unit.
+                        
+                        Python uses indentation to indicate a block of code. All statements of one block are intended at the same level indentation.
+
+                        Python does not use the parentheses or curly braces for the "code blocks" like in other languages such as Java, C, C++ etc.
+                        <br>
+                        Indentation refers to the <strong>spaces</strong> at the beginning of a code line. The standard number of spaces for indentation in python is four spaces. Python will give you an error if you skip the indentation for example below.
+<pre>
+a = 5
+
+<span class="comment"># Error will occure in next line because of single space indentation.</span>
+ <span class="function">print</span>(<span class="string">"The value of a is"</span><span class="variable">, a</span>)
+
+<span class="function">print</span>(<span class="string">"value of a is"</span><span class="variable">, a</span>)   
+</pre>
+                    </p>
+                    <p>
+                        When we run this, we will get the following error.
+<pre class="output">
+File "indent.py", line 3
+
+    print("The value of a is", a)
+    ^
+IndentationError: unexpected indent
+</pre>
+                    </p>
+                    <p>
+                        Notice that there is a single space at the beginning of the second line. The error indicated by Python tells us that, the syntax of the program is invalid i.e. the program was not properly written. <br>
+                        What this means to you is that you cannot arbitrarily start new blocks of statements (except for the default main block which you have been using all along, of course). Cases where you can use new blocks will be detailed in later chapters such as the control flow.
+                    </p>
+
+                </div>
+
+                <div class="btn">
+                    <div class="pre__btn">
+                        <button><a href="comment.html">Previous</a></button>
+                    </div>
+                    <div class="nxt__btn">
+                        <button><a href="first_pro.html">Next</a></button>
+                    </div>
+            </div>
+           
+            </div>
+        </div>
+        
+    </body>
+</html>
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, Learn Python, Pandas" />
+
+        <meta name="description" content="Learn Python variables, One of the most powerful features of a programming language is the ability to manipulate variables."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python Tuple.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Tuple</h1>
+                    <h5>In this article, we will learn what is tuple, how to create a tuple, how to access, change and delete a tuple elements, we will learn some popular tuple operations and methods as well. </h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    We saw that <strong>list</strong> and <strong>string</strong> have many common properties, such as indexing and slicing operations. These two are an example of sequence data types (such as list, string, range).
+                </p>
+                <p>
+                    There is another standard sequence data type constructor which is called <strong>tuple</strong>. Tuples are immutable sequences, typically used to store collection of heterogeneous data.
+                    <br>Tuples are similar to the Lists. The only difference is that tuples are immutable sequence data types and Which means that elements of a tuple can not be changed once it has been created.
+                </p>
+                <h3>How to create a tuple?</h3>
+                <p>
+                    A tuple is created by placing an elements inside parentheses <code>()</code>, separated by commas. 
+                    <br>
+                    The parentheses are optional, it is the comma which makes a tuple, not the parentheses. But it is good programming practice to use them. <br>
+                    A tuple can have any number of elements which may have the same or different data types. <strong>Empty tuples</strong> are constructed by an empty pair of parentheses.
+                </p>
+<pre>
+>>> <span class="comment">#Creating Tuple.</span>
+
+>>> <span class="comment">#empty tuple</span>
+>>> my_tuple = ()
+
+>>> <span class="comment">#tuple using '()'</span>
+>>> my_tuple = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)
+
+>>> <span class="comment">#tuple using a trailing comma.</span>
+>>> my_tuple = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>  <span class="comment">#This is called tuple packing.</span>
+
+>>> <span class="comment">#tuple with different data types.</span>
+>>> my_tuple = (<span class="number">1</span>,<span class="string">'a'</span>,<span class="number">2.3</span>)
+
+>>> <span class="function">print</span>(my_tuple)
+(1,'a',2.3)
+</pre>  
+                <p>
+                    The tuple can be created using built-in <code>tuple()</code> or <code>tuple(iterable)</code> function. The iterable may be either a sequence such as string, list, or another tuple.
+                </p>
+                <p>
+                    If iterable is a tuple, it is returned unchanged.
+                    <pre>
+>>> <span class="comment">#creating a tuple using different methods.</span>
+>>> <span class="comment"># tuple using built-in tuple() function.</span>
+
+>>> my_tuple = <span class="function">tuple</span>((<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>))
+
+>>> <span class="function">print</span>(my_tuple)
+(1, 2, 3)
+
+>>> <span class="comment">#iterable as string</span>
+>>> my_tuple = <span class="function">tuple</span>(<span class="string">'abc'</span>)
+
+>>> <span class="function">print</span>(my_tuple)
+('a', 'b','c')
+
+>>> <span class="comment">#iterable as List</span>
+>>> my_tuple = <span class="function">tuple</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])
+
+>>> <span class="function">print</span>(my_tuple)
+(1, 2, 3)                       
+                    </pre>
+                </p>
+                <h4>Creating a single value tuple</h4>
+                    <p>
+                    The tuple with one item is constructed by following a value with a comma, it is not sufficient to enclose a single value in parentheses. 
+					<br>
+					Which means that, create a single value tuple you need to provide a value with a comma. if we create a single tuple with missing comma, then Python will consider that variable of string type and not a tuple since In tuple, comma who create a tuple and not parentheses for example as follows.
+<pre>
+>>> my_tuple = (<span class="string">"Hello"</span>)
+
+>>> <span class="function">print</span>(<span class="function">type</span>(my_tuple))
+< class 'str'>
+
+>>> my_tuple = (<span class="string">"Hello"</span>,)
+
+>>> <span class="function">print</span>(<span class="function">type</span>(my_tuple))
+< class 'tuple'>
+</pre>
+                </p>
+                <h4>Sequence Unpacking</h4>
+                <p>
+                    The sequence unpacking works for any sequence such as tuple, list, etc.
+					<br>
+                    Sequence unpacking requires the variables on the left side must be equal to the elements in the sequence on the right-hand side..
+<pre>
+<span class="comment">#tuple packing</span>
+my_tuple = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>
+
+<span class="comment">#tuple unpacking</span>
+<span class="string">x</span>, <span class="string">y</span>, <span class="string">z</span> = my_tuple   
+</pre> 
+                </p>
+                <h3>Access Tuple Elements</h3>
+                <p>
+                    There are various ways to access the elements of the tuple.</p>
+                
+                <h4>1. Using Indexing</h4>
+                <p>
+                    We can access elements of the tuple using indexing with index operator <code>[]</code> where index starts from <code>0</code>.
+					<br>The index of tuple with <code>n</code> elements will have index from <code>0</code> to <code>n-1</code>.
+					<br>
+					if you try to access elements outside the range of tuple index such as if tuple of length <code>5</code> with index from <code>0</code>  to <code>4</code> and if you try to access tuple with index 5 or 6 then it will raise an <code>IndexError</code>.
+                    <br>
+                    The index must be an integer type; Datatypes other than integer will raise a <code>TypeError</code>.
+<pre>
+>>> my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>)
+
+>>> <span class="comment">#using index.</span>
+>>> <span class="function">print</span>(my_tuple[<span class="number">1</span>])
+b
+
+>>> <span class="function">print</span>(my_tuple[<span class="number">5</span>])
+IndexError: tuple index out of range
+
+>>> <span class="function">print</span>(my_tuple[<span class="number">1.2</span>])
+TypeError: tuple indices must be integers or slices, not float.
+</pre>
+                </p>
+                <h4>2.Negative Indexing</h4>
+                <p>
+                    Python allows negative indexing for its sequences.
+					<br>
+					The index of <code>-1</code> represents the last element, <code>-2</code> to the second last element and so on.
+<pre>
+>>> <span class="comment"># accessing elements of tuple using negative indexing.</span>
+>>> my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>)
+
+>>> <span class="function">print</span>(my_tuple[<span class="number">-1</span>])
+'d'
+</pre>
+                </p>
+                <h4>3.Using Slicing</h4>
+                <p>
+                    We can access a range of elements in a tuple by using <code>:</code> in square brackets <code>[]</code> as <code>tuple_name[start index: end index]</code>.
+                    Just like any other sequences in Python, In tuple, the start is always included, and end index always excluded.
+
+<pre>
+>>> my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>,<span class="string">'d'</span>)
+
+>>> <span class="function">print</span>(my_tuple[<span class="number">0</span>:<span class="number">2</span>])
+('a', 'b')
+
+>>> <span class="comment"># using negative indexing</span>
+>>> <span class="function">print</span>(my_tuple[<span class="number">-1</span>: <span class="number">-3</span>])
+('d':'c')
+</pre>
+                </p>
+                <h3>Updating Tuple</h3>
+                <p>
+                    Tuples are immutable sequence data type. This means that the elements of a tuple can not be changed once it has been created.
+					Tuple can have elements with different data types such as list, dictionary, string, or even tuple as an element.
+					<br>
+
+				    If the element is itself a mutable datatype like list or dictionary. then elements inside such datatype can be changed.
+<pre>
+>>> my_tuple = (<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>])
+
+>>> <span class="comment"># changing elements inside list in tuple.</span>
+>>> my_tuple[<span class="number">2</span>][<span class="number">1</span>] = 10
+
+>>> my_tuple
+(1, 2, [3, 10])
+</pre>
+                </p>
+                <h3>Tuple Operations</h3>
+                <p>
+                    We can use the <code>+</code> operator to combine two tuples. This is called <strong>concatenation</strong>.
+                    To <strong>repeat</strong> the elements in a tuple for a given number of times using <code>*</code> operator.
+<pre>
+<span class="comment">#concatenation</span>
+tuple1 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
+tuple2 = (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)
+
+<span class="function">print</span>(tuple1 + tuple2)
+
+<span class="comment">output
+(1, 2, 3, 4, 5, 6)
+
+#Repeat</span>
+<span class="function">print</span>((<span class="string">"Hello"</span> * <span class="number">2</span>))
+
+<span class="comment">output
+("Hello","Hello")</span>
+</pre>
+                </p>
+                <h4>Tuple Membership Test</h4>
+                <p>
+                    we can test if an element in the list is present in a tuple or not, using the keyword <code>in</code> and <code>not in</code>.
+<pre>
+>>> my_tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)
+
+>>> <span class="function">print</span>( <span class="number">1</span> <span class="keyword">in</span> my_tuple)
+True
+
+>>> <span class="function">print</span>( <span class="number">5</span> <span class="keyword">in</span> my_tuple)
+False
+
+>>> <span class="function">print</span>( <span class="number">5</span> <span class="keyword">not in</span> my_tuple)
+True
+</pre>
+                </p>
+                <h4>Iterating through a tuple</h4>
+                <p>
+                    We can iterate through each element in a tuple using <strong>for</strong> loop.
+<pre>
+my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)
+
+<span class="keyword">for</span> elem <span class="keyword">in</span> my_tuple:
+
+<span class="comment">#output
+# a
+# b
+# c
+</span>
+</pre>
+                </p>
+                <h3>Deleting a Tuple</h3>
+                <p>
+			    	We can not delete or remove the elements in a tuple since tuples are immutable. But we can delete entire tuple using <code>del</code> keyword.
+<pre>
+>>> my_tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
+
+>>> <span class="keyword">del</span> my_tuple
+>>> my_tuple
+NameError: name 'my_tuple' is not defined.
+</pre>
+
+</p>
+
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="string.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="dictionary.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

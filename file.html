@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, python files i/o" />
+
+        <meta name="description" content="A file is a name given to the memory location on a computer that stores data, information. To store, read, write, or  work with files of an operating system is both necessary and easy with Python."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>Python File I/o.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Files</h1>
+                    <h5>
+                        In this tutorial, we will learn about Python files, how to open , close files as well as how to write into files and read from files.
+                    </h5>
+                </div>
+            <div class="content__container">
+                <p>
+                    A file is a name given to the memory location on a computer that stores data, information.
+				</p>
+				<p>
+					To store, read, write, or  work with files of an operating system is both necessary and easy with Python.
+				</p>
+				<p>
+					If we need to read from or write to a files, we can store files onto the local file system which is volatile and can be accessed every time using Python files.
+				</p>
+				<p>
+					In this article you will learn everything about file handling in Python which includes creating a file, opening a file, closing a file, writing and appending the files.
+                </p>
+                <h3>Opening a file</h3>
+                <p>
+                    Python provides a <code>open()</code> function to open a files. This function returns a file object.
+				</p>
+				<p>
+					<strong>Syntax</strong>: <code>open(file, mode)</code>
+				</p>
+				<p>
+					The first argument <strong>file</strong> is a string containing the filename or an object representing a system path of the file to be opened.
+					<br>
+				
+					The second argument is <strong>mode</strong> is an optional string that specifies the mode in which the file opened.
+					<br>
+				</p>
+				<p>
+					The default value for mode is <code>'r'</code> which means open for reading in text mode, <code>'w'</code> is for only writing. and <code>'a'</code> opens the file for appending; any data written to the file is automatically added to the end. <code>'r+'</code> opens the file for both reading and writing.
+				</p>
+				<p>
+					Files are opened in text mode by default, that means you read and write strings from and to the file. Python allows to open files in binary mode using <code>‘b’</code> character. In binary mode, data is read and written in the form of bytes objects. This is useful when files do not contain text.
+				</p>
+				<p>
+				    Other common values for modes are:
+                    <table>
+
+                        <thead>
+                        <tr>
+                        <th>Modes</th>
+                        <th>Meaning</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        <td>‘r’</td>
+                        <td>Open for reading in text mode</td>
+                        </tr>
+                        <tr>
+                        <td>‘w’</td>
+                        <td>Open for Writing in text mode</td>
+                        </tr>
+                        <tr>
+                        <td>‘x’</td>
+                        <td>Open for exclusive creation, failing if the file already exists.</td>
+                        </tr>
+                        <tr>
+                        <td>‘a’</td>
+                        <td>Open for writing, appending to the end of the file if it exists</td>
+                        </tr>
+                        <tr>
+                        <td>‘b’</td>
+                        <td>binary mode</td>
+                        </tr>
+                        <tr>
+                        <td>‘t’</td>
+                        <td>text mode (default)</td>
+                        </tr>
+                        <tr>
+                        <td>‘+’</td>
+                        <td>open a disk file for updating (reading and writing)</td>
+                        </tr>
+                        </tbody>
+                        </table>
+<pre>
+<span class="comment"># Open file in write mode.</span>
+f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)
+
+<span class="comment"># To Open a file in reading mode.</span>
+f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)
+
+<span class="comment"># Read and write file in binary mode.</span>
+f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'r + b'</span>)
+</pre>
+                </p>
+               
+                <h3>Closing files</h3>
+                <p>
+                    Once the file opened and done with all the operations. we must close files using the <code>close()</code> method.
+                </p>
+<pre>
+f = <span class="function">open</span>(<span class="string">'test.txt'</span>)
+f.<span class="function">close</span>()
+</pre>
+                <p>
+                    It is good practice to use the <code>with</code> keyword when dealing with file objects. Using <code>with</code> statement, the files are properly closed after its operations, even if an exception is raised.
+<pre>
+&gt;&gt;&gt; <span class="keyword">with</span> <span class="function">open</span>(<span class="string">'test.txt'</span>) <span class="keyword">as</span> f:
+        read_data = f.<span class="function">read</span>()
+
+&gt;&gt;&gt; f.<span class="function">closed</span>
+True
+</pre>
+</p>
+                <h3>Writing into a files</h3>
+                <p>
+                    To write into a file, we need to open the file in a writing mode <strong>‘w’</strong> or  in append mode <strong>‘a’.</strong>
+				</p>
+				<p>
+					To create a new file or overwrite the existing file we can use mode <strong>‘w’</strong>, while <strong>‘a’</strong> opens the file for appending; and any data written to the file is automatically added to the end.
+				</p>
+				<p>
+					To write the contents of string into a file, we can use <code>write(string)</code> method which writes and returns the number of characters written into a file.
+                </p>
+<pre>
+<span class="keyword">with</span> <span class="function">open</span>( <span class="string">'test.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:
+    f.<span class="function">write</span>(<span class="string">"This is a the first line\nThis is second line\n"</span>)
+</pre>
+                <p>
+                    The above program will create a file name ‘test.txt’. if it does not exist, and if it exists, it is overwritten.
+                </p>
+                <h3>Reading into files</h3>
+                <p>
+                    To read a file in a Python, we must open the file in reading mode.<br>
+
+					To read a file’s contents, we can use <code>read(size)</code> method of files. Which reads some quantity of data and returns it as a string (in text mode) or in byte object (in binary mode).
+				</p>
+
+				<p>
+					The <code>size</code> is an optional numeric argument. if the size parameter is not specified, it reads and returns entire content.
+                </p>
+<pre>
+&gt;&gt;&gt; f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)
+
+&gt;&gt;&gt; f.<span class="function">read</span>(<span class="number">4</span>)
+'This'
+
+&gt;&gt;&gt; f.<span class="function">read</span>(<span class="number">3</span>)
+' is'
+
+&gt;&gt;&gt; f.<span class="function">read</span>()
+'This is a the first line of the file\n'
+'This is second line of the file\n'
+
+&gt;&gt;&gt; f.<span class="function">read</span>()
+' '
+</pre>
+                <p>
+                    The <code>read()</code> methods returns empty string <code>' '</code>  once the end of file is reached.
+				</p>
+				<h4>readline()</h4>
+
+				<p>
+					We can also use <code>realine()</code> method to read a single line from the file. This method reads a file until the newline character (\n). 
+                    
+                    We can use readline when we want to read a file single line by line manner.
+                
+<pre>
+&gt;&gt;&gt; f.<span class="function">readline</span>()
+'This is a the first line of the file\n'
+</pre></p>
+                <h4>tell()</h4>
+                <p>
+                    This method returns a current position of a line in integer.
+                
+<pre>
+&gt;&gt;&gt; f.<span class="function">tell</span>() <span class="comment">#returns a current position.</span>
+38
+</pre></p>
+                <h4>seek()</h4>
+                <p>
+                    We can change the position of cursor/the file object’s position using <code>seek()</code> method.</p>
+<pre>
+&gt;&gt;&gt; f.<span class="function">seek</span>(<span class="number">0</span>) <span class="comment"># bring file cursor to position 0.</span>
+0
+</pre>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="module.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="exception.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

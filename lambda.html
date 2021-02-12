@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="keywords" content="Python programming language, Python tutorial for beginners, python lambda function." />
+
+        <meta name="description" content="An anonymous function is a function that is defined without a name, this function are lambda functions."/>
+
+
+        <!-- icon link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- css link -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- logo icon link -->
+        <link rel="icon" href="/logo/py-logo.ico"/>
+
+        <!-- title of Page -->
+        <title>lambda functions in Python.</title>
+    </head>
+
+    <body>
+        <div class="nav">
+            <div class="logo">
+                <img src="/logo/py-logo.ico" alt="LearnPython">
+                <h3>Python NoteBook</h3></div>
+            <div class="nav__titles">
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="introduction.html">Getting Started</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content__heading">
+                    <h1>Lambda-The Anonymous function</h1>
+                    <h5>In this article, we will learn about Python's lambda functions, map, filter, and reduce function</h5>
+                </div>
+            <div class="content__container">
+                <h3>Anonymous/Lambda function</h3>
+                <p>
+                    In Python, an anonymous function is a function that is defined without a name.<br>
+                    Normal functions are defined using the <code>def</code> keyword, while anonymous functions are defined using the <code>lambda</code> keyword.<br>
+					These functions are also called <strong>‘lambda functions’</strong>.
+				</p>
+				<p>
+                    <strong>Syntax: </strong><code> lambda parameters: expression</code>
+                </p>
+                <p>
+                    The parameters of the lambda are defined to the left side of the colon <strong>(:)</strong> while the expression on the right side.
+                </p>
+                <p>
+                    The lambda functions can have any number of arguments but only one expression. The function evaluates the expression and return results.
+                </p>
+<pre>
+>>> <span class="comment"># function definition with lambda function.</span>
+>>> <span class="comment"># addition of two numbers.</span>
+
+>>> add = <span class="function">lambda</span> a, b : a + b
+
+>>> <span class="function">print</span>(add(<span class="number">2</span>, <span class="number">3</span>))
+5
+</pre>
+                <p>
+                    The unnamed above function object can be written in normal function as,
+                </p>
+<pre>
+<span class="comment">#Normal function definition.</span>
+
+<span class="keyword">def</span> <span class="userfunction">add</span>(a, b):
+    <span class="keyword">return</span> a + b
+
+<span class="function">print</span>(<span class="userfunction">add</span>(<span class="number">2</span>, <span class="number">3</span>))
+
+<span class="comment">#Output
+5</span>
+</pre>
+                <p>
+                    In Python, lambda functions are used in a higher-order function which takes a function as arguments. Lambda functions can be used along with built-in functions like <code>map()</code>, <code>filter()</code> and <code>reduce()</code> functions
+                </p>
+                <h3>Map function</h3>
+                <p>
+                    The map()  takes a function and a collection of items(list).
+					It makes a new, empty collection, runs the function on each item in the original collection and insert each return value into the new collection.It returns the new collection type.
+                </p>
+                <p><strong>syntax:</strong>
+<code>
+map(function, sequence)
+</code></p>
+<pre>
+<span class="comment"># Program to find square of numbers using a map() function.</span>
+
+nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
+
+squares = <span class="function">list</span>(<span class="function">map</span>(<span class="function">lambda</span> x: x*x, nums))
+<span class="function">print</span>(squares)
+
+<span class="comment">#output
+[1, 4, 9, 16]</span>
+</pre>
+                <h3>Reduce function</h3>
+                <p>
+                    The <code>reduce()</code> takes a function and a collection of items. it returns a value that is created by combining the items. It is used to apply a particular function passed in its argument to all of the list elements.
+                    To use <code>reduce</code> function in Python program we have import this fucntion from the <code>functools</code> module
+				</p>
+				<p>
+					<strong>Syntax</strong>: <code>reduce(function, sequence) </code>
+                
+<pre>
+<span class="comment"># importing reduce function.</span>
+<span class="keyword">import</span> reduce <span class="keyword">from</span> functools
+
+Total = <span class="function">reduce</span>(<span class="function">lambda</span> a, x: a + x, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])
+<span class="function">print</span>(Total)
+    
+<span class="comment">#Output 
+15</span>               
+</pre>
+               </p>
+                <h3>Filter function</h3>
+                <p>
+                    The <code>filter()</code> function takes a function and a collection as a argument. It returns a collection of every item for which the function returned <code>True</code>.
+				</p>
+				<p>
+					<strong>Syntax</strong>: <code>filter(function, sequence)</code>
+                </p>
+<pre>
+<span class="comment">#Program to find numbers greater than 3.</span>
+
+nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]
+
+my_list = <span class="function">list</span>(<span class="function">filter</span>(<span class="function">lambda</span> x: x &gt; <span class="number">3</span>, nums))
+<span class="function">print</span>(my_list)
+
+<span class="comment">#Output 
+[4, 5]</span>
+</pre>
+            </div>
+            <div class="btn">
+                <div class="pre__btn">
+                    <button><a href="recursion.html">Previous</a></button>
+                </div>
+                <div class="nxt__btn">
+                    <button><a href="module.html">Next</a></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
