@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*, 
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+body {
+    color: #111111;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #fafaff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:#111;
+    letter-spacing: 0.1px;
+    padding:5px;
+}
+
+h1 {
+    font-size: 40px;
+}
+a {
+    text-decoration: none;
+    color: #112;
+    font-weight: 600;
+}
+
+::selection {
+    background-color: #ffbac8;
+    color: #000;
+}
+.nav {
+    width: 90%;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content: space-between;
+    text-align:center;
+    align-items: center;
+}
+.logo {
+    display: flex;
+}
+.logo img {
+    width:30px;
+    height: 30px;
+}
+.logo h3 {
+    font-size:20px;
+    font-weight: bold;
+
+}
+.nav__titles ul{
+    display:flex;
+}
+
+.nav__titles ul li {
+    list-style: none;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.nav__titles ul li a{
+    padding:4px 20px;
+    font-size:16px;
+    line-height: 15px;
+    color: #222;
+    border-left: 2px solid #000;
+}
+
+.nav__titles ul li a:hover{
+    background-color: #00adf220;
+    border-radius:20px;
+    border-left:none;
+}
+
+.container {
+    width:82%;
+    margin:5em auto;
+}
+.container .content {
+    width:auto;
+    padding:1em;
+}
+
+.container .content .content__heading {
+    padding:1em;
+    width: 60%;
+    border-bottom: 2px solid #000;
+}
+
+.container .content .content__heading h2 {
+    font-size: 40pt;
+    font-weight: bolder;
+    line-height: 50pt;
+    text-transform: uppercase;
+}
+
+.container .content .content__container {
+    margin: 2em;
+}
+
+/* Paragraph Css */
+.container .content .content__container p{
+    width: 60%;
+    margin:auto;
+    font-size: 20px;
+    line-height: 22pt;
+    letter-spacing: 0.2pt;
+    padding:1em;
+    color:#222;
+    text-align: justify;
+}
+.container .content .content__container h4{
+    width:60%;
+    margin:auto;
+    line-height: 20pt;
+    font-size: 20px;
+}
+.container .content .content__container h3{
+    width:60%;
+    margin:auto;
+    line-height: 20pt;
+    font-size: 22px;
+}
+.container .content .content__container li {
+    width: 55%;
+    margin:auto;
+    padding:4px;
+    letter-spacing: 0.2pt;
+    font-size:16px;
+
+}
+
+/* Table css */
+table {
+    width: 70%;
+    margin:20pt auto;
+    border-collapse:collapse;
+    border:2px solid #000;
+}
+
+th {
+    padding:1em;
+}
+td {
+    padding: 1em;
+    font-size:20px;
+    width: auto;
+    border:2px solid #000;
+}
+td:first-child{
+    color:#0d09f3;
+    font-weight: 800;
+}
+.data {
+    padding: 2em;
+}
+td a{
+   font-weight: 600;
+}
+
+
+
+.container .content .content__heading h1 {
+    font-size: 2em;
+    font-weight: bolder;
+    line-height: 28pt;
+}
+
+.container .content .content__heading h5 {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 20pt;
+}
+
+.container .content .content__container li {
+    font-size:20px;
+}
+
+/* next and previous button css. */
+.btn {
+    display: flex;
+    justify-content: space-between;
+    margin:3em;
+}
+
+.pre__btn button,
+.nxt__btn button {
+    padding:9px 30px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    outline:none;
+}
+.pre__btn button:hover,
+.nxt__btn button:hover {
+
+    background-color: #ffbd0880;
+}
+
+code {
+    overflow-x: auto;
+    font-size:12pt;
+    background: #e6e6e9;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px 2px #eee;
+    margin: 3px;
+}
+/* 
+pre {
+    overflow-x:auto;
+    width: 58%;
+    margin:auto;
+    padding: 2em;
+    font-size: 18px;
+    background-color: #222;
+    color:#fff;
+    border-radius: 15px;
+}   */
+
+
+.syntax {
+    width: 58%;
+    margin:auto;
+    overflow-x: scroll;
+    color: #000;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 1px 2px 3px 2px #eee;
+    padding:20px;
+}
+
+/* .output {
+    font-size:20px;
+    overflow-x: scroll;
+    color: #fafaff;
+    background-color:#111;
+    box-shadow: 1px 2px 3px 2px #eee;
+} */
+.comment {
+    color: #a8a8a8;
+}
+
+.string {
+    color: #ffbb00;
+}
+
+.function {
+    color: #e947f8;
+}
+.userfunction {
+    color: #82f7ff;
+}
+.boolean, .number {
+    color: #8381ff;
+}
+
+.keyword {
+    color:#ff62a3;
+}
+/* new editor css */
+
+
+/* code editor css */
+.code{
+    width: 58%; /*change to width 60%*/
+    height:auto; /*change to auto*/
+    z-index:-1;
+    position: relative;
+    margin:auto;
+    border-radius: 14px;
+    padding:10px 0 20px 0; 
+}
+
+.code .threedots{
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    display:flex;
+    background-color: #ccc;
+    border-radius:14px 14px 0 0;
+    border:2px solid #ccc;
+}
+
+.code .threedots .c1,
+.code .threedots .c2,
+.code .threedots .c3{
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    background:#000;
+    margin:3px;
+}
+.code .threedots .c1{
+    background-color: rgb(255, 35, 35);
+}
+
+.code .threedots .c2{
+    background-color: rgb(250, 216, 24)
+}
+.code .threedots .c3{
+    background-color: rgb(2, 190, 11);
+}
+.code .threedots .title{
+    position:relative;
+    left:35%;
+}
+.code .codearea{
+    width: 100%;
+    height: auto;
+    border:2px solid #000000;
+    background-color: #000000;
+    border-radius:14px;
+}
+
+.code .codearea pre{
+    overflow-x: auto;
+    position: relative;
+    margin:40px;
+    font-size:20px;
+    color:#fafaff;
+    overflow-x: scroll;
+}
+
+.output{
+    width: 58%; /*must same as codearea*/
+    height:auto; /*change to auto*/
+    z-index:-1;
+    position: relative;
+    margin:20px auto;
+    border-radius:14px;
+    padding:10px 0 10px 0;
+}
+
+.output .outputcode{
+    width: 100%;
+    height: auto;
+    border:2px solid #ccc;
+    background-color: #ccc;
+    border-radius:14px;
+}
+
+.output .outputcode pre{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin:40px;
+    font-size:20px;
+    color:#222;
+    overflow-x: scroll;
+}
+
+
+/* footer on home page */
+.footer{
+    height: auto;
+    background-color: #06142e;
+    padding: 100px;
+    display: flex;
+}
+
+.footer h3{
+    color: #fafaff;
+    font-weight: 700;
+}
+
+.footer .tutorial_links {
+    display: flex;
+    margin-left: 50%;
+}
+.footer .tutorial_links .link_list{
+   width:200px;
+}
+.footer .tutorial_links .link_list ul{
+    list-style-type: none;
+}
+.footer .tutorial_links .link_list ul li a{
+    color:#ffffff90;
+}
+
+
+/* media query */
+
+@media only screen and (max-width:1120px) {
+    .container {
+        margin: 0em;
+        width: auto;
+    }
+    .container .content {
+        width: auto;
+    }
+    .container .content .content__heading{
+        width: 90%;
+        margin:auto;
+    }
+    
+    .container .content .content__container p{
+        width: auto;
+        margin:auto;
+    }
+    .container .content .content__container h4,
+    .container .content .content__container h3{
+        width: auto;
+        margin:auto;
+    }
+    .code, .output, .syntax {
+        width: auto;
+        margin:auto;
+    }
+
+    .container .content .content__container .content__index {
+        width:98%;
+        margin:auto;
+    }
+    .container .content .content__container li {
+        width: 90%;
+        margin: 20px;
+    }
+
+    .cards{
+        display:grid;
+        grid-template-columns: auto;
+        grid-gap: 20px;
+        margin: 25%;
+    }
+
+}
+@media only screen and (max-width:630px) {
+    .nav {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav__titles {
+        margin:1em;
+        padding:1em;
+    }
+    
+    body {
+        margin:0;
+        padding:0;
+    }
+    .container{
+        width:auto;
+        margin:auto;
+    }
+
+    .container .content .content__container {
+        width: auto;
+        margin:auto;
+    }
+
+    .container .content .content__container p{
+    width:auto;
+    margin:auto;
+    }
+
+.container .content {
+    width: auto;
+    margin:auto;
+}
+
+.container .content .content__heading {
+    width:auto;
+    margin:auto;
+}
+} 
+
