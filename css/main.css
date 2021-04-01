@@ -139,67 +139,6 @@ a {
     font-size:16px;
 
 }
-/* .content__index table{
-    width: 100%;
-}
-.container .content .content__container .content__index {
-    width: 70%;
-    margin:auto;
-    padding: 2em;
-}
-.content__index th, td{
-    border: 2px solid #0151ff40;
-    padding:12px;
-} */
-
-/* card Css */
-.cards{
-    margin: auto;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-}
-.cards .card{
-    width: 450px;
-    height: 350px;
-    border: 2px solid #ccc;
-    border-radius:5px;
-    box-shadow: 1px 2px 4px 1px #eee;
-}
-
-.cards .card .topic h1 {
-    width: 400px;
-    height: 100px;
-    font-size: 2em;
-    letter-spacing: 1px;
-    border: 1px solid #ccc;
-    font-family: 'Poppins', sans-serif;
-    margin:20px auto auto auto;
-    text-align: center;
-}
-
-
-.cards .card .text {
-    width: 400px;
-    margin: 10px auto;
-}
-
-.cards .card .text p {
-    font-size: 18px;
-    font-weight: 700;
-    height: 150px;
-    padding: 10px 0 10px 0;
-}
-
-.cards .card .text a{
-    float:right;
-    padding:8px;
-    border:2px solid rgb(18, 107, 252);
-    border-radius: 22px;
-    font-size: 16px;
-    font-weight: 700;
-}
-
 
 /* Table css */
 table {
@@ -514,5 +453,29 @@ pre {
         margin:0;
         padding:0;
     }
+    .container{
+        width:auto;
+        margin:auto;
+    }
+
+    .container .content .content__container {
+        width: auto;
+        margin:auto;
+    }
+
+    .container .content .content__container p{
+    width:auto;
+    margin:auto;
+    }
+
+.container .content {
+    width: auto;
+    margin:auto;
+}
+
+.container .content .content__heading {
+    width:auto;
+    margin:auto;
+}
 } 
 
