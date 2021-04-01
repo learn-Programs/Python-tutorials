@@ -50,21 +50,21 @@
 					<table>
 						<tbody>
 							<tr>
-								<td>False</td>
+								<td style="color:#222">False</td>
 								<td>class</td>
 								<td>from</td>
 								<td>or</td>
 							</tr>
 
 							<tr>
-								<td>None</td>
+								<td style="color:#222">None</td>
 								<td>continue</td>
 							    <td>global</td>
 							    <td>pass</td>
 						    </tr>
 
 							<tr>
-								<td>True</td>
+								<td style="color:#222">True</td>
 								<td>def</td>
 								<td>if</td>
 								<td>raise</td>
@@ -72,42 +72,42 @@
 
 
 							<tr>
-								<td>and</td>
+								<td style="color:#222">and</td>
 							    <td>del</td>
 							    <td>import</td>
 							    <td>return</td>
 							</tr>
 
 							<tr>
-								<td>as</td>
+								<td style="color:#222">as</td>
 						        <td>elif</td>
 						        <td>in</td>
 						        <td>try</td>
 						    </tr>
 
 						    <tr>
-						    	<td>assert</td>
+						    	<td style="color:#222">assert</td>
 						    	<td>else</td>
 						    	<td>is</td>
 						    	<td>while</td>
 						    </tr>
 
 						    <tr>
-						    	<td>async</td>
+						    	<td style="color:#222">async</td>
 						    	<td>except</td>
 						    	<td>lambda</td>
 						    	<td>with</td>
 						    </tr>
 
 						    <tr>
-						    	<td>await</td>
+						    	<td style="color:#222">await</td>
 						    	<td>finally</td>
 						    	<td>nonlocal</td>
 						    	<td>yield</td>
 						    </tr>
 
 						    <tr>
-						    	<td>break</td>
+						    	<td style="color:#222">break</td>
 						    	<td>for</td>
 						    	<td>not</td>
 						    	<td></td>
@@ -115,8 +115,17 @@
 						</tbody>
 					</table>
                     </p>
-                    <p>
+                    <!-- editor for python code -->
+                    <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+
 >>> <span class="comment"># if you try to assign a value to keyword</span>
 >>> <span class="comment"># then syntax error will occure. </span>
 >>> <span class="keyword">for</span> = 3
@@ -125,7 +134,8 @@
         ^
 SyntaxError: invalid syntax
 </pre>
-                    </p>
+</div></div>
+                    
                     <p>
                         Notice that, when we try to assign a value to <code>for</code> keyword, the interpreter raised syntax error. so we can not use these keywords as variables or identifiers.
                         <br>

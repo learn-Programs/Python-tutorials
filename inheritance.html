@@ -63,7 +63,17 @@ class DerivedClass(BaseClass):
                 <p>
                     The derived class inherits all the methods and properties of the base class. The derived class can also has its own methods.
                 </p>
+
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">Animal</span>:
 
     <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, name, color):
@@ -82,11 +92,16 @@ moti = <span class="userfunction">Dog</span>(<span class="string">"Moti"</span>,
 
 moti.<span class="userfunction">bark</span>()
 </pre>
-                <p><strong>Output</strong>
-<pre class="output">
+</div></div>
+                <p><strong>Output</strong></p>
+
+                <div class="output">
+                    <div class="outputcode">
+<pre>
 Brown
 Woof!
-</pre></p>
+</pre>
+</div></div>
                 <h3>Method Overriding</h3>
                 <p>
                     The subclass can also replace methods of the superclass. The process of replacing methods defined in super class with new methods with the same name in the derived class is known as <strong>Method Overriding</strong>.					
@@ -97,7 +112,16 @@ Woof!
 				<p>
 					To avoid this we can use <strong>super()</strong> method in derived class.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">Animal</span>:
 
     <span class="keyword">def</span> <span class="userfunction">speak</span>(<span class="keyword">self</span>):
@@ -112,17 +136,32 @@ Woof!
 d = <span class="userfunction">Dog</span>()
 d.<span class="userfunction">speak</span>()
 </pre>
-<p><strong>Output</strong>
-<pre class="output">
+</div></div>
+
+<p><strong>Output</strong></p>
+    <div class="output">
+        <div class="outputcode">
+<pre>
 Barking
 Speaking
-</pre></p>
+</pre>
+</div></div>
                 <p>
                     Python has two built-in functions <code>isinstance()</code> and <code>issubclass()</code> are used to check inheritances.
 				</p>
 				<p>
 					Function <code>isinstance()</code> returns <code>True</code>, if the object is an instance of the class. each and every class in Python inherits from the base class <code>object</code>.
+                </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 &gt;&gt;&gt; <span class="function">isinstance</span>(d, Dog)
 True
 
@@ -132,7 +171,8 @@ True
 &gt;&gt;&gt; <span class="function">issubclass</span>(Dog, Animal)
 True
 </pre>
-                </p>
+</div></div>
+
                 <h3>Multi-level Inheritance</h3>
                 <p>
                     Python also supports multi-level inheritance. In multilevel inheritance, features of the base class and derived class is inherited into the new derived class.
@@ -177,7 +217,16 @@ class DerivedClass(BaseClass1, BaseClass2,..):
 				<p>
 					Name mangled methods can still be accessed externally, but by a different name. The method <strong>__privatemethod</strong> of class <strong>Spam</strong> could be accessed externally with <strong>_Spam__privatemethod.</strong>
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">Spam</span>:
 
     __egg = 7
@@ -193,13 +242,17 @@ s.<span class="userfunction">print_egg</span>()
 <span class="function">print</span>(s._Spam__egg)
 <span class="function">print</span>(s.__egg)
 </pre>
+</div></div>
+
                 <p><strong>Output</strong></p>
-<pre class="output">
+                <div class="output">
+                    <div class="outputcode">
+<pre>
 7
 7
 AttributeError: 'Spam' object has no attribute '__egg'
 </pre>
-
+</div></div>
             </div>
             <div class="btn">
                 <div class="pre__btn">

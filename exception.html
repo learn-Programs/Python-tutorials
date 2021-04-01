@@ -55,17 +55,32 @@
 					<br>
                     The Syntax Errors are also called as ‘Parsing Error’.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">if</span> True
 <span class="function">print</span>(<span class="string">"Hello World"</span>)
 </pre>
+</div>
+</div>
+
 <p><strong>Output</strong>
-<pre class="output">
+    <div class="output">
+        <div class="outputcode">
+<pre>
 File "&lt;stdin&gt;", line 1
     if True
            ^
 SyntaxError: invalid syntax
 </pre>
+</div></div>
 
 
                 <p>
@@ -77,7 +92,16 @@ SyntaxError: invalid syntax
                 
                     Whenever these type of runtime error occur, Python creates an exception object. It prints traceback to that error along with some details about why that error occurred.
                </p>
+               <div class="code">
+                <div class="threedots">
+                    <div class="c1"></div>
+                    <div class="c2"></div>
+                    <div class="c3"></div>
+                    <div class="title">example.py</div>
+                </div>
+                <div class="codearea">
 <pre>
+
 &gt;&gt;&gt; <span class="number">1</span> / <span class="number">0</span>
 
 Traceback (most recent call last):
@@ -85,7 +109,7 @@ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
      1/0
 ZeroDivisionError: division by zero
 </pre>
-                
+        </div></div>        
                 <p>
                     The last line of the traceback output message tell us about, what type of exception was reaised and some relevant information about that exception.
                     Exceptions come in different types, and the type is printed as part of message.
@@ -96,10 +120,19 @@ ZeroDivisionError: division by zero
                 <p>
                     There are various built-in exceptions in Python that are raised when corresponding error occurs. we can view all built-in exceptions using the <code>local()</code> built-in functions as follows
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 &gt;&gt;&gt; <span class="function">locals</span>`()['__builtins__]`
 </pre>
-                </p>
+</div></div>
                 <h3>Exception Handling</h3>
                 <p>
                     It is possible to write a program that handles selected exceptions. This can be done using <code>try...except</code> statement.
@@ -111,6 +144,7 @@ ZeroDivisionError: division by zero
                     If the program contains a code that may raise an exception is placed inside the <code>try</code> clause and the code that handles exception is written in <code>except</code> clause.
                 </p>
                 <p><strong>Syntax:</strong>
+                    
 <pre class="syntax">
 try:
     run this code
@@ -118,7 +152,16 @@ except:
     run this block if an exception occurs
 </pre>
 </p>
+<div class="code">
+    <div class="threedots">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="title">example.py</div>
+    </div>
+    <div class="codearea">
 <pre>
+
 <span class="comment"># ZerodivisionError</span>
 
 <span class="keyword">try</span>:
@@ -129,12 +172,17 @@ except:
 <span class="keyword">except</span> <span class="">ZeroDivisionError:
     <span class="function">print</span>(<span class="string">'Enter the number greater than zero'</span>)
 </pre>
+</div></div>
+
 <p><strong>Output</strong></p>
-<pre class="output">
+<div class="output">
+    <div class="outputcode">
+<pre>
 a = 1
 b = 0
 Enter the number greater than zero
-</pre>
+</pre></div>
+</div>
                 <p>
                     A <code>try</code> statement may have more than one except clause. An <code>except</code> clause may have multiple exceptions name parenthesized in a tuple.
                 </p>
@@ -147,7 +195,16 @@ Enter the number greater than zero
                 <p>
                     In Python programming, exceptions are raised when corresponding errors occur at run time, but we can forcefully raise it using the keyword <code>raise</code>.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">try</span>:
 
     a = <span class="function">int</span>(<span class="function">input</span>(<span class="string">"enter the positive number: "</span>))
@@ -158,11 +215,15 @@ Enter the number greater than zero
 <span class="keyword">except</span> ValueError <span class="keyword">as</span> value:
     <span class="function">print</span>(value)
 </pre>
+</div></div>
+
 <p><strong>Output</strong></p>
-<pre class="output">
+<div class="output">
+    <div class="outputcode">
+<pre>
 enter the positive number: -1
 This is not a positive number!
-</pre>
+</pre></div></div>
             </div>
             <div class="btn">
                 <div class="pre__btn">

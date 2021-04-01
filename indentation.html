@@ -50,25 +50,40 @@
                         Python does not use the parentheses or curly braces for the "code blocks" like in other languages such as Java, C, C++ etc.
                         <br>
                         Indentation refers to the <strong>spaces</strong> at the beginning of a code line. The standard number of spaces for indentation in python is four spaces. Python will give you an error if you skip the indentation for example below.
+                    </p>
+                    <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+
 a = 5
 
-<span class="comment"># Error will occure in next line because of single space indentation.</span>
+<span class="comment"># Error will occure in next line 
+# because of single space indentation.</span>
+
  <span class="function">print</span>(<span class="string">"The value of a is"</span><span class="variable">, a</span>)
 
 <span class="function">print</span>(<span class="string">"value of a is"</span><span class="variable">, a</span>)   
 </pre>
-                    </p>
+</div></div>
                     <p>
                         When we run this, we will get the following error.
-<pre class="output">
+                    </p>
+                        <div class="output">
+                            <div class="outputcode">
+                        <pre>
 File "indent.py", line 3
 
     print("The value of a is", a)
     ^
 IndentationError: unexpected indent
 </pre>
-                    </p>
+</div></div>
                     <p>
                         Notice that there is a single space at the beginning of the second line. The error indicated by Python tells us that, the syntax of the program is invalid i.e. the program was not properly written. <br>
                         What this means to you is that you cannot arbitrarily start new blocks of statements (except for the default main block which you have been using all along, of course). Cases where you can use new blocks will be detailed in later chapters such as the control flow.

@@ -56,7 +56,17 @@
                     The parentheses are optional, it is the comma which makes a tuple, not the parentheses. But it is good programming practice to use them. <br>
                     A tuple can have any number of elements which may have the same or different data types. <strong>Empty tuples</strong> are constructed by an empty pair of parentheses.
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="comment">#Creating Tuple.</span>
 
 >>> <span class="comment">#empty tuple</span>
@@ -73,13 +83,25 @@
 
 >>> <span class="function">print</span>(my_tuple)
 (1,'a',2.3)
-</pre>  
+</pre>
+</div></div>  
                 <p>
                     The tuple can be created using built-in <code>tuple()</code> or <code>tuple(iterable)</code> function. The iterable may be either a sequence such as string, list, or another tuple.
                 </p>
                 <p>
                     If iterable is a tuple, it is returned unchanged.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
                     <pre>
+
 >>> <span class="comment">#creating a tuple using different methods.</span>
 >>> <span class="comment"># tuple using built-in tuple() function.</span>
 
@@ -100,13 +122,25 @@
 >>> <span class="function">print</span>(my_tuple)
 (1, 2, 3)                       
                     </pre>
-                </p>
+                </div></div>
+
                 <h4>Creating a single value tuple</h4>
                     <p>
                     The tuple with one item is constructed by following a value with a comma, it is not sufficient to enclose a single value in parentheses. 
 					<br>
 					Which means that, create a single value tuple you need to provide a value with a comma. if we create a single tuple with missing comma, then Python will consider that variable of string type and not a tuple since In tuple, comma who create a tuple and not parentheses for example as follows.
+                </p>
+                    <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> my_tuple = (<span class="string">"Hello"</span>)
 
 >>> <span class="function">print</span>(<span class="function">type</span>(my_tuple))
@@ -117,20 +151,32 @@
 >>> <span class="function">print</span>(<span class="function">type</span>(my_tuple))
 < class 'tuple'>
 </pre>
-                </p>
+</div></div>
                 <h4>Sequence Unpacking</h4>
                 <p>
                     The sequence unpacking works for any sequence such as tuple, list, etc.
 					<br>
-                    Sequence unpacking requires the variables on the left side must be equal to the elements in the sequence on the right-hand side..
+                    Sequence unpacking requires the variables on the left side must be equal to the elements in the sequence on the right-hand side.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment">#tuple packing</span>
 my_tuple = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>
 
 <span class="comment">#tuple unpacking</span>
 <span class="string">x</span>, <span class="string">y</span>, <span class="string">z</span> = my_tuple   
-</pre> 
-                </p>
+</pre>
+</div></div>
+
                 <h3>Access Tuple Elements</h3>
                 <p>
                     There are various ways to access the elements of the tuple.</p>
@@ -143,7 +189,18 @@ my_tuple = <span class="number">1</span>, <span class="number">2</span>, <span c
 					if you try to access elements outside the range of tuple index such as if tuple of length <code>5</code> with index from <code>0</code>  to <code>4</code> and if you try to access tuple with index 5 or 6 then it will raise an <code>IndexError</code>.
                     <br>
                     The index must be an integer type; Datatypes other than integer will raise a <code>TypeError</code>.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>)
 
 >>> <span class="comment">#using index.</span>
@@ -156,26 +213,49 @@ IndexError: tuple index out of range
 >>> <span class="function">print</span>(my_tuple[<span class="number">1.2</span>])
 TypeError: tuple indices must be integers or slices, not float.
 </pre>
-                </p>
+</div></div>
                 <h4>2.Negative Indexing</h4>
                 <p>
                     Python allows negative indexing for its sequences.
 					<br>
 					The index of <code>-1</code> represents the last element, <code>-2</code> to the second last element and so on.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="comment"># accessing elements of tuple using negative indexing.</span>
 >>> my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>)
 
 >>> <span class="function">print</span>(my_tuple[<span class="number">-1</span>])
 'd'
 </pre>
-                </p>
+</div></div>
+
                 <h4>3.Using Slicing</h4>
                 <p>
                     We can access a range of elements in a tuple by using <code>:</code> in square brackets <code>[]</code> as <code>tuple_name[start index: end index]</code>.
                     Just like any other sequences in Python, In tuple, the start is always included, and end index always excluded.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 
 <pre>
+
 >>> my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>,<span class="string">'d'</span>)
 
 >>> <span class="function">print</span>(my_tuple[<span class="number">0</span>:<span class="number">2</span>])
@@ -185,7 +265,8 @@ TypeError: tuple indices must be integers or slices, not float.
 >>> <span class="function">print</span>(my_tuple[<span class="number">-1</span>: <span class="number">-3</span>])
 ('d':'c')
 </pre>
-                </p>
+</div></div>
+
                 <h3>Updating Tuple</h3>
                 <p>
                     Tuples are immutable sequence data type. This means that the elements of a tuple can not be changed once it has been created.
@@ -193,7 +274,18 @@ TypeError: tuple indices must be integers or slices, not float.
 					<br>
 
 				    If the element is itself a mutable datatype like list or dictionary. then elements inside such datatype can be changed.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> my_tuple = (<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>])
 
 >>> <span class="comment"># changing elements inside list in tuple.</span>
@@ -202,12 +294,24 @@ TypeError: tuple indices must be integers or slices, not float.
 >>> my_tuple
 (1, 2, [3, 10])
 </pre>
-                </p>
+</div></div>
+
                 <h3>Tuple Operations</h3>
                 <p>
                     We can use the <code>+</code> operator to combine two tuples. This is called <strong>concatenation</strong>.
                     To <strong>repeat</strong> the elements in a tuple for a given number of times using <code>*</code> operator.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment">#concatenation</span>
 tuple1 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
 tuple2 = (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)
@@ -223,11 +327,23 @@ tuple2 = (<span class="number">4</span>, <span class="number">5</span>, <span cl
 <span class="comment">output
 ("Hello","Hello")</span>
 </pre>
-                </p>
+</div></div>
+                
                 <h4>Tuple Membership Test</h4>
                 <p>
                     we can test if an element in the list is present in a tuple or not, using the keyword <code>in</code> and <code>not in</code>.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> my_tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)
 
 >>> <span class="function">print</span>( <span class="number">1</span> <span class="keyword">in</span> my_tuple)
@@ -239,11 +355,23 @@ False
 >>> <span class="function">print</span>( <span class="number">5</span> <span class="keyword">not in</span> my_tuple)
 True
 </pre>
-                </p>
+</div></div>
+
                 <h4>Iterating through a tuple</h4>
                 <p>
                     We can iterate through each element in a tuple using <strong>for</strong> loop.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)
 
 <span class="keyword">for</span> elem <span class="keyword">in</span> my_tuple:
@@ -251,22 +379,31 @@ my_tuple = (<span class="string">'a'</span>, <span class="string">'b'</span>, <s
 <span class="comment">#output
 # a
 # b
-# c
-</span>
-</pre>
-                </p>
+# c</span></pre>
+</div></div>
+
                 <h3>Deleting a Tuple</h3>
                 <p>
 			    	We can not delete or remove the elements in a tuple since tuples are immutable. But we can delete entire tuple using <code>del</code> keyword.
+                </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> my_tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
 
 >>> <span class="keyword">del</span> my_tuple
 >>> my_tuple
 NameError: name 'my_tuple' is not defined.
 </pre>
-
-</p>
+</div></div>
 
             </div>
             <div class="btn">
@@ -275,7 +412,7 @@ NameError: name 'my_tuple' is not defined.
                 </div>
                 <div class="nxt__btn">
                     <button><a href="dictionary.html">Next</a></button>
-                </div>
+                </p>     </div>
             </div>
         </div>
         

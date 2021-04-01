@@ -48,15 +48,26 @@
                 <p>
                     Loops are used to repeat a particular block of code. The while loop in Python is used to repeat the execution of a block of code as long as an expression (condition) is <code>True</code>.
                 </p>
-                <p><strong>Syntax:</strong>
+                <p><strong>Syntax:</strong></p>
+
 <pre class="syntax">
 while condition:
     block of code
-</pre></p>
+</pre>
                 <p>
                     This while loop repeatedly tests the expression and if it is true, executes the block of while loop. if condition or expression is false, the next section of code is executed.
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># Program to find the sum of 10 numbers using while loop.</span>
 
 n = <span class="number">0</span>
@@ -69,10 +80,16 @@ sum = <span class="number">0</span>
 
 <span class="function">print</span>(<span class="string">"Sum = "</span>,sum)
 </pre>
-<p><strong>Output</strong>
-<pre class="output">
-sum = 45
-</pre></p>
+</div></div>
+
+<p><strong>Output</strong></p>
+
+                    <!-- output code area -->
+                    <div class="output">
+                        <div class="outputcode">
+<pre>
+sum = 45</pre>
+</div></div>
                 <p>
                     In the above example of while loop. we print sum of first <code>10</code> numbers starting from <code>0</code>. while loop has an increment operation where we are increasing the value of <code>n</code> by <code>1</code>. This is a very important step.
                 </p>
@@ -83,7 +100,18 @@ sum = 45
                 <p>
                     When the condition in while loop never becomes false, the while loop will never terminate and result in the infinite loop.
                 </p>
+
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment">#infinte loop.</span>
 
 n = <span class="number">1</span>
@@ -91,14 +119,20 @@ n = <span class="number">1</span>
 <span class="keyword">while</span> n != <span class="number"></span>2</span>:
     <span class="function">print</span>(n)
 </pre>
+</div></div>
                 <p><strong>Output</strong></p>
-<pre class="output">
+
+                    <!-- output code area -->
+                    <div class="output">
+                        <div class="outputcode">
+<pre>
 1
 1
 .
 .
 Infinte times
 </pre>
+</div></div>
                 <p>
                     In the above example, <code>while</code> loop first evaluates the condition. Here, the condition is True, only when n is not equals to 2. <br> 
                     Since, the value of n is equal to 1, which is not equal to 2, which statisfies the condition.Now, program counter will enter into the while loop and excecutes the while block of code.
@@ -117,7 +151,18 @@ Infinte times
                 </p>
                 <p>
                     The following example is the combination of while loop with else statement, it will print a number as long as number is less than 3, otherwise it will print the else block of code.</p>
+
+                    <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># While loop with else.</span>
 
 n = <span class="number">1</span>
@@ -129,12 +174,18 @@ n = <span class="number">1</span>
 <span class="keyword">else</span>:
     <span class="function">print</span>(<span class="string">f"{n} is not less than 3"</span>)
 </pre>
-                <p><strong>Output</strong>
-<pre class="output">
+</div></div>
+                <p><strong>Output</strong></p>
+
+                    <!-- output code area -->
+                    <div class="output">
+                        <div class="outputcode">
+<pre>
 1
 2
 3 is not less than 3
-</pre></p>
+</pre>
+</div></div>
                 
             </div>
             <div class="btn">

@@ -50,6 +50,15 @@
                     A list can be created by placing an item in a square bracket <code>[ ]</code>, separated by commas. The list can be created by using the built-in function <code>list()</code>.
 					A list can be a collection of elements with different types. which means a list can have different data types values.
                 </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
 <span class="comment">#empty list.</span>
 list1 = []
@@ -60,15 +69,26 @@ list2 = [<span class="number">1</span>, <span class="number">2</span>, <span cla
 <span class="comment">#list with elements of different datatypes.</span>
 list3 = [<span class="number">1</span>, <span class="string">'a'</span>, <span class="number">3.14</span>]
 </pre>
+</div></div>
                 <h3>Nested List.</h3>
                 <p>
-                    The list can contain another list as an element, this is called a <strong>Nested List</strong>.
+                    The list can contain another list as an element, this is called a <strong>Nested List</strong>.</p>
+                     <!-- editor for python code -->
+                     <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
                 
 <pre>
+
 <span class="comment">#nested list.</span>
 list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>, [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]]
 </pre>
-</p>
+</div></div>
                 <h3>Accessing elements from a list.</h3>
                 <p>
                     There are various ways to access the elements of a list.
@@ -86,21 +106,41 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
 					<br>
 					<br>
 
-					So, the element at index <code>i</code> of list <code>a</code> can be accessed as <code>a[i]</code>.
+					So, the element at index <code>i</code> of list <code>a</code> can be accessed as <code>a[i]</code>.</p>
+                     <!-- editor for python code -->
+                     <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
                 
 <pre>
+
 >>> <span class="comment">#accessing elements in list 'a' using indexing.</span>
 >>> a = [<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>, <span class="number">44</span>]
 
 >>> <span class="function">print</span>(<span class="variable">a[<span class='number'>0</span>]</span>)
 11
 </pre>
-</p>            
+</div></div>         
+
                     <h4>2. Using Negative Indexing.</h4>
                     <p>
-                    Python supports negative indexing for its sequences. The index of <code>-1</code> represents the last element, <code>-2</code> for the second last element, and so on. for example, let's access elements from above list 'a' using negative indexing.
-                
+                    Python supports negative indexing for its sequences. The index of <code>-1</code> represents the last element, <code>-2</code> for the second last element, and so on. for example, let's access elements from above list 'a' using negative indexing.</p>
+                     <!-- editor for python code -->
+                     <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea"> 
 <pre>
+
 >>> <span class="function">print</span>(<span class="variable">a</span>)
 [11, 22, 33, 44]
 
@@ -110,7 +150,8 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
 >>> <span class="function">print</span>(<span class="variable">a[<span class='number'>-3</span>]</span>)
 22
 </pre>
-</p>             
+                        </div></div>   
+
                     <h4>3. Using Slicing.</h4>
                 <p>
                     Sequences in Python also supports slicing. To access a range of elements in the list we can use slicing. The syntax for the same as follows.
@@ -119,7 +160,17 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
                     Using slicing, let's access the range of elements of list 'b'.
 
                 </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="comment">#accessing elements in list 'b' using slicing.</span>
 >>> b = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>]
 
@@ -129,14 +180,26 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
 >>> <span class="function">print</span>(<span class="variable">b[<span class='number'>2</span> : <span class='number'>5</span>]</span>)
 [6, 8, 10]
 </pre>
+</div></div>
                 <p>
                     In the above slicing example, we print elements from the 2nd index to 4th index, but 5th will not be included.
                 </p>
                 <h3>Updating List.</h3>
                 <p>
                     List is a mutable sequence data type, which means that elements in a list can be changed. We can use the assignment operator (=) to change an element or range of elements in a list.
+                </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
                
 <pre>
+
 >>> <span class="comment">#updating list.</span>
 >>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
 
@@ -154,13 +217,25 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
 >>> <span class="function">print</span>(<span class="variable">a</span>)
 [11, 22, 3, 5]
 </pre>
-</p>               
+</div>
+</div>               
                     <h4>Adding elements in list.</h4>
                     <p>
                     List provides an <code>append()</code> method to add one element and <code>extend()</code> method to update a list with more than one elements.<br>
                     We also can add an element at the given position i.e at given index using <code>insert()</code> method as <code>list_name.insert(index, value)</code>.
+                    </p>
+                     <!-- editor for python code -->
+                     <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
                 
 <pre>
+
 >>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
 
 >>> <span class="comment">#adding one element</span>
@@ -178,12 +253,21 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
 >>> a
 [1, 10, 2, 3, 4, 11, 21, 31]
 </pre>
-</p>            
+</div></div>            
                 <h3>List Operators.</h3>
                 <p>
-                    To combine two lists, we can use <strong>+</strong> operator and this is called <strong>Concatenation</strong>.We can repeat a list for the given number of times using <strong>*</strong> operator
-                
+                    To combine two lists, we can use <strong>+</strong> operator and this is called <strong>Concatenation</strong>.We can repeat a list for the given number of times using <strong>*</strong> operator.</p>
+                     <!-- editor for python code -->
+                     <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">     
 <pre>
+
 >>> even = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]
 
 >>> <span class="function">print</span>(<span class="variable">even + [<span class="number">10</span>, <span class="number">12</span>]</span>)
@@ -192,12 +276,24 @@ list_ = [<span class="number">3.14</span>, <span class="string">'Python'</span>,
 >>> <span class="function">print</span>(<span class="variable">[<span class="string">"Hello"</span>]<span class="variable"> * </span><span class="number">3</span></span>)
 ["Hello", "Hello", "Hello"]
 </pre>
-</p>               
+</div>
+</div>               
                 <h4>List Membership Test</h4>
                 <p>
                     We can check if an element is present in a list or not, using <code>in</code> keyword.
+                </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
                 
 <pre>
+
 >>> my_list = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]
 
 >>> <span class="function">print</span>(<span class="string">'a'</span> <span class="keyword">in </span> <span class="variable">my_list</span>)
@@ -206,18 +302,32 @@ True
 >>> <span class="function">print</span>(<span class="string">'e'</span> <span class="keyword">in </span> <span class="variable">my_list</span>)
 False
 </pre>
-</p>
+                    </div>
+                    </div>
+
                 <h4>Iterating through a list.</h4>
                 <p>
                     We can iterate through a list using <code>for</code> loop.
+                </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
                 
 <pre>
+
 my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <span class="string">'c'</span>]
 
 <span class="keyword">for </span>letter <span class="keyword">in </span>my_list:
     <span class="function">print</span>(<span class="variable">letter</span>)
 </pre>
-</p>
+</div>
+</div>
                 <h3>Deleting list elements</h3>
                 <p>
                     Since lists are mutable sequence we can delete one or more elements from a list. There are various methods to delete elements in a list.
@@ -226,6 +336,16 @@ my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <spa
                 <p>
                     <code>del list_name[index]</code>
                     <br>here, the value at 'index' will be deleted from a list 'list_name'.
+                </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
                 
 <pre>
 >>> my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
@@ -236,13 +356,24 @@ my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <spa
 >>> my_list
 [1, 3, 4]
 </pre>
-                </p>
+</div></div>
                 <h4>2. Using pop() method.</h4>
                 <p>
                     The method <code>pop()</code> will remove the element/value at the given index position in the list and return it.<br>
                     if no index is specified, it removes and returns the last item in the list.<br><code>list_name.pop(index)</code>
-                
+
+                </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">          
 <pre>
+
 >>> my_list = [<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>]
 
 >>> my_list.<span class="function">pop</span>(<span class="number">0</span>)
@@ -251,7 +382,7 @@ my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <spa
 >>> my_list
 [22,33]
 </pre>
-</p>
+</div></div>
                 <h4>3. Using remove() method.</h4>
                 <p>
                     Remove the first occurrence of a value from the list using following syntax.
@@ -259,8 +390,20 @@ my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <spa
                 <p>
                     <code>list_name.remove(value)</code><br>
                     Let's try to remove the element from the above list, 'my_list'.
+
+                </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
                 
 <pre>
+
 >>> my_list
 [22, 33]
 >>>
@@ -268,27 +411,51 @@ my_list = [<span class="string">'a'</span>, <span class="string">b'</span>, <spa
 >>>
 >>> my_list
 [22]
-</pre></p>
+</pre>
+</div></div>
 
                 <h4>4. Deleting List</h4>
                 <p>
                     We remove all elements from the list using <code>clear()</code> built-in function.<br>
                     <code>list_name.clear()</code>
                 </p>
+
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> my_list.<span class="function">clear()</span>
 >>> my_list
 []
 </pre> 
+</div></div>
                 <p>
                     We can delete the entire list using the <code>del</code> keyword.<br>
                     <code>del list_name</code>
                 </p>
+                 <!-- editor for python code -->
+                 <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="keyword">del</span> my_list
 >>> my_list
 NameError: name 'my_list' is not defined.
 </pre>
+</div></div>
                 <h3>List Methods</h3>
                 <p>
                     Python list has some more methods. Here are all of the methods of list-objects.
@@ -387,8 +554,18 @@ NameError: name 'my_list' is not defined.
                         List comprehension can be used when to make a list where each element is the result of some operations applied to each member of another sequence(such as list, tuple, range).
                         <br> <br>
                         List comprehension consists of an expression followed by <strong>for statement</strong> inside square bracket.
-                    
+                    </p>
+                     <!-- editor for python code -->
+                     <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">           
 <pre>
+
 <span class="comment">#Create a list without list comprehension</span>
 
 squares = []
@@ -407,15 +584,25 @@ squares = [x**<span class="number">2</span> <span class="keyword">for</span> x <
 
 <span class="comment">#output [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
 </pre>
-</pre></p>
-
-                
+</pre>
+</div></div>
+ <!-- editor for python code -->
+ <div class="code">
+    <div class="threedots">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="title">example.py</div>
+    </div>
+    <div class="codearea">          
 <pre>
+
 <span class="comment"># creating list of even numbers using list comprehension.</span>
 even = [x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="function">range</span>(<span class="number">1</span>, <span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]
 <span class="function">print</span>(even)
 <span class="comment">#Output[2, 4, 6, 8]</span>
 </pre>
+</div></div>
                 
             </div>
             <div class="btn">

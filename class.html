@@ -41,7 +41,8 @@
                 <div class="content__heading">
                     <h1>Classes</h1>
                     <h5>
-                        In this tutorial, we will learn Object-oriented Python programming and classes in Python.</h5>
+                        In this tutorial, we will learn Object-oriented Python programming and classes in Python.
+                    </h5>
                 </div>
             <div class="content__container">
                 <p>
@@ -58,7 +59,7 @@
 					In object-oriented programming (OOP), the program is designed the data being operated upon rather upon the operation themselves. OOP allows us to decompose a problem into a number of entities called objects and then build's data and functions around those entities.
                 </p>
                 <h2>Object Oriented Programming.</h2>
-                <p></p>
+                <br>
                 <h3>What is OOPs?</h3>
                 <p>
                     Object oriented programming is an approach that provides a way of modularizing programs by creating a memory for both data and functions that can be used as templates for creating copies of such modules.
@@ -87,13 +88,15 @@
 					The class declaration describes the type and scope of its members. You should follow the below syntax to defined a class in Python program.
                 </p>
                 <p><strong>Syntax:</strong></p>
+                <div class="output">
+                    <div class="outputcode">
 <pre>
 class ClassName:
      statements 1
      .
      .
      statements n
-</pre>
+</pre></div></div>
                 <p>
                     while the functions are defined using <code>def</code> keyword, the classes in Python are defined using keyword  <code>class</code> followed by ClassName and a colon(:).
 				</p>
@@ -103,7 +106,16 @@ class ClassName:
 				<p>
 					When a class definition is entered, a new namespace is created and used as local scope.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">MyClass</span>:
 
      <span class="string">"""A simple class"""</span>
@@ -111,6 +123,8 @@ class ClassName:
      <span class="keyword">def</span> <span class="userfunction">f</span>(self):
          <span class="function">print</span>(<span class="string">'Hello'</span>)
 </pre>
+</div>
+</div>
                 <h3>Creating an Object.</h3>
                 <p>
                     An object is the instantiation of a class. The object of the class can be created as follows.
@@ -125,7 +139,16 @@ class ClassName:
                 <p>
                 	The Attributes can be variables or methods in class. Functions defined in a class are called methods.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># Creating Object.</span>
 x = <span class="userfunction">MyClass</span>()
 
@@ -137,19 +160,28 @@ Hello</span>
 <span class="comment">#Output 
 10</span>
 </pre>
+</div>
+</div>
                 <p>
                     The <code>MyClass.a</code> and <code>MyClass.f</code> are  attributes of the class and <code>x.f</code> is a method object.
                 </p>
 
                 <p>
-                	We can delete the object using the <code>del</code> keyword.
+                	We can delete the object using the <code>del</code> keyword.</p>
+                <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+   
 &gt;&gt;&gt; <span class="keyword">del</span> x
 &gt;&gt;&gt; x
-NameError: name 'x' is not defined.
-
-</pre>
-                </p>
+NameError: name 'x' is not defined.</pre>
+</div></div>
                 <h3>Method</h3>
                 <p>
                     The method is a function that is associated with an Object. In Python, a method is not unique to class instances.
@@ -172,7 +204,16 @@ NameError: name 'x' is not defined.
                 <p>
                 	We can pass any number of arguments at the time of creating the class object, depending on the <code>__init__</code> definition.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="">class</span> <span class="userfunction">MyClass</span>:
         <span class="keyword">def</span> __init__(<span class="keyword">self</span>):
             <span class="function">print</span>(<span class="string">"It will print when object is created."</span>)
@@ -182,7 +223,7 @@ NameError: name 'x' is not defined.
 
  It will print when object is created.
 </pre>
-
+</div></div>
 </p>
 
                 <h3>The 'self' Parameter</h3>
@@ -190,8 +231,17 @@ NameError: name 'x' is not defined.
                     All methods in class must have <strong>self</strong> as their first parameter, which is referring to the instance. but you need not give any value for this parameter when you call the method. This is because, whenever an object calls its method, the object itself is passed as the first argument.
                 </p>
                 <p>
-                	In above example, the call <code>x.f()</code> is exactly same as <code>MyClass.f(x)</code>.
+                    In above example, the call <code>x.f()</code> is exactly same as <code>MyClass.f(x)</code>.
+                    <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">ComplexNumber</span>:
 
     <span class="keyword">def</span> __<span class="function">init</span>__(<span class="keyword">self</span>, real, img):
@@ -205,21 +255,35 @@ NameError: name 'x' is not defined.
 C = <span class="userfunction">ComplexNumber</span>(<span class="number">2</span>,<span class="number">3</span>)
 C.<span class="userfunction">complexNum</span>()  
 </pre>
+</div></div>
 <p><strong>Output</strong></p>
-<pre class="output">
+<!-- output code area -->
+<div class="output">
+    <div class="outputcode">
+<pre>
 2 + 3j
 </pre>
-                </p>
+</div></div>
                 <h3>Built-in attributes</h3>
                 <p>
                     Instances of a class have attributes, which is data associated with them.<br>
 
                 	Every object has attributes. These can be accessed by putting a dot operator <strong>(.)</strong> and attribute name after an instance.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 &gt;&gt;&gt; C.real
 2
 </pre>
+</div></div>
                 <p>
                     Python has the following in-built functions for class attributes.
                 </p>
@@ -249,7 +313,16 @@ C.<span class="userfunction">complexNum</span>()
                     </tr>
                     </tbody>
                     </table>
+                    <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">Student</span>:
 
 <span class="keyword">def</span> __init__(<span class="keyword">self</span>, name, age):
@@ -270,10 +343,13 @@ s = <span class="userfunction">Student</span>(<span class="string">'Harry'</span
 
 <span class="function">print</span>(<span class="function">delattr</span>(s, <span class="string">'age'</span>))
 <span class="function">print</span>(s.age)
-
 </pre>
+</div>
+</div>
                 <p><strong>Output</strong></p>
-<pre class="output">
+                <div class="output">
+                    <div class="outputcode">
+<pre>
 Harry
 
 beforesetting age is 12
@@ -287,7 +363,7 @@ Traceback (most recent call last):
 File "&lt;script&gt;", line 19, in &lt;module&gt;
 print(s.age)
 AttributeError: 'Student' object has no attribute 'age'
-</pre>
+</pre></div></div>
                 <h3>Class Methods</h3>
                 <p>
                     Methods of objects are called an instance of a class, which takes a parameter <strong>'self'</strong>, which is points to an instance of a class when method is called.
@@ -295,7 +371,16 @@ AttributeError: 'Student' object has no attribute 'age'
 
                 <p>
                 	The <strong>Class methods</strong> are called by a class, which is passed to <strong>cls</strong> parameter of the method. The class methods work the same way as methods in a class, except that when class method is called it passes the class as the first argument.
+                    <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+
 <span class="keyword">Class</span> <span class="userfunction">A</span>:
 
     multiplier = <span class="number">2</span>
@@ -307,7 +392,8 @@ AttributeError: 'Student' object has no attribute 'age'
 a = <span class="userfunction">A</span>()
 <span class="function">print</span>(a.<span class="userfunction">f</span>(<span class="number">3</span>))
 </pre>
-                </p>
+            </div></div>
+            </p>
                 <h3>Static Method</h3>
                 <p>
                     Static methods of a Python class is similar to the normal method in python which does not take a parameter like self. It is just like any other function defined in the class but it is callable without creating the instance of the class. The method belongs to the class but doesn’t use the object itself at all.
@@ -315,7 +401,16 @@ a = <span class="userfunction">A</span>()
                 <p>
                 	They use static method decorator.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">Class</span> <span class="userfunction">A</span>:
 
     x = <span class="number">10</span>
@@ -324,11 +419,15 @@ a = <span class="userfunction">A</span>()
         <span class="function">print</span>(<span class="string">'Hello'</span>, name)
 a = <span class="userfunction">A</span>()
 a.<span class="userfunction">f</span>(<span class="string">'World!'</span>) 
-</pre>
+</pre></div></div>
 <p><strong>Output</strong></p>
-<pre class="output">
-Hello World!
+<div class="output">
+    <div class="outputcode">
+<pre>
+    Hello World!
 </pre>
+</div></div>
+
             </div>
             <div class="btn">
                 <div class="pre__btn">

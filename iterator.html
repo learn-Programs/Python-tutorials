@@ -68,7 +68,17 @@
                 <p>
                 	The <code>iter()</code> function (which in turn calls the <code>__iter__()</code> method) returns an iterator object from them.
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment"># define a list</span> 
 
 >>> my_iter = <span class="function">iter</span>(a) <span class="comment"># get an iterator using iter()</span>
@@ -77,13 +87,13 @@
 < list_iterator object at... >
 
 >>> my_iter.<span class="function">__next__</span>() <span class="comment"># same as next(my_iter)</span>
-<span class="number">1</span>
+1
 
 >>> <span class="function">next</span>(my_iter)
-<span class="number">2</span>
+2
 
 >>> <span class="function">next</span>(my_iter)
-<span class="number">3</span>
+3
 
 >>> <span class="function">next</span>(my_iter)
 
@@ -91,28 +101,51 @@ Traceback (most recent call last):
    File"<span class="function">< stdin></span>", line1, in < module>
 StopIteration
 </pre>
-</p>
+</div></div>
 
-                <p>There is another way to iterate over an object in Python using <code>for</code> loop. In the <code>for</code> statement <code>for x in y</code>, here <code>y</code> must be an iterator or some object for which <code>iter()</code> can create an iterator.</p>
+                <p>
+                    There is another way to iterate over an object in Python using <code>for</code> loop. In the <code>for</code> statement <code>for x in y</code>, here <code>y</code> must be an iterator or some object for which <code>iter()</code> can create an iterator.
+                </p>
 
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">iter</span>(obj):
     <span class="function">print</span>(i)
 
 <span class="keyword">for</span> i <span class="keyword">in</span> obj: <span class="comment"># same as above.</span>
     <span class="function">print</span>(i)
 </pre>
+</div></div>
                 <p>
                     So, using for loop we can iterate over any object that can return an iterator, for example list, string, file etc.
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="keyword">for</span> element <span class="keyword">in</span> a:
 ...     <span class="function">print</span>(element)
 ...
-<span class="number">1</span>
-<span class="number">2</span>
-<span class="number">3</span>
-</pre>
+1
+2
+3</pre>
+</div></div>
                 <h3>Working of for loop with Iterators</h3>
                 <p>
                     From above example we can see that, <code>for</code> loop was able to iterate over list <code>a</code> automatically.
@@ -120,14 +153,34 @@ StopIteration
                 <p>
                     <code>for</code> loop can iterate over most of the Python’s container objects such as list, tuple, dictionary, string or files. This style of accessing elements from container is clear, concise and convenient.
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="keyword">for</span> element <span class="keyword">in</span> iterable:
     <span class="comment"># do something with element.</span>
-</pre>
+</pre></div></div>
                 <p>
                     Now, let’s see how the <code>for</code> loop is actually implemented in Python.
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># create an iterator object from that iterable.</span>
 
 iter_obj = <span class="function">iter</span>(iterable)
@@ -146,6 +199,7 @@ iter_obj = <span class="function">iter</span>(iterable)
        <span class="comment"># if StopIteration is raised, break from loop.</span>
        <span class="keyword">break</span>
 </pre>
+</div></div>
                 <p>
                     Internally, the <code>for</code> loop creates an iterable object, <code>iter_obj</code> by calling <code>iter()</code> on the iterable (container object). The function returns an iterator object that defines the method <code>next()</code> which accesses the elements in the container one at a time. When there is no more elements, <code>next()</code> raises a <code>StopIteration</code> exception which tells the <code>for</code> loop to terminate the loop.
                 </p>
@@ -164,8 +218,17 @@ iter_obj = <span class="function">iter</span>(iterable)
                 <p>
                     Here, let’s create iterator that returns whether number is even or odd, from 1 to user set number.
                 </p>
-
+<!-- editor for python code -->
+<div class="code">
+    <div class="threedots">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="title">example.py</div>
+    </div>
+    <div class="codearea">
 <pre>
+
 <span class="keyword">class</span> <span class="userfunction">EvenOdd</span>:
 
     <span class="string">"""Class to implements an 
@@ -208,8 +271,13 @@ iter_obj = <span class="function">iter</span>(numbers)
 <span class="function">print</span>(<span class="function">next</span>(iter_obj))
 <span class="function">print</span>(<span class="function">next</span>(iter_obj))
 </pre>
+</div></div>
+
+
 <p><strong>Output</strong></p>
-<pre class="output">
+<div class="output">
+    <div class="outputcode">
+<pre>
 1 is odd
 2 is even
 3 is odd
@@ -218,9 +286,19 @@ Traceback (most recent call last):
    File"<stdin>", line1, in <module>
 StopIteration
 </pre>
+</div></div>
                 <p>
                     We can do the same thing using <code>for</code> loop as follows;
                 </p>
+                <!-- editor for python code -->
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
 >>> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="userfunction">EvenOdd</span>(<span class="number">4</span>):
 ...     <span class="function">print</span>(i)
@@ -230,6 +308,7 @@ StopIteration
 3 is odd
 4 is even
 </pre>
+</div></div>
                 <p>
                     The  advantage of using iterators is that they save resources. There’s an easier way to create iterators in Python. To learn more visit Python Genetators.
                 </p>

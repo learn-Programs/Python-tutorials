@@ -68,7 +68,16 @@
                 <p>
                     let’s try to understand the nesting of function using simple example:
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># create nested function.</span>
 <span class="keyword">def</span> <span class="userfunction">outer_func</span>(msg):
     <span class="string">"""This is outer enclosing function."""</span>
@@ -83,10 +92,14 @@
 <span class="comment"># outer function call.</span>
 <span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
 </pre>
+</div></div>
                 <p><strong>Output</strong></p>
-<pre class="output">
+                <div class="output">
+                    <div class="outputcode">
+<pre>
 Hello
 </pre>
+</div></div>
                 <p>
                     Here, we defined  nested function with outer function <code>outer_func()</code> with parameter <code>msg</code> and inside that function, we defined another function called <code>inner_func()</code> which prints the <code>msg</code>.
                 </p>
@@ -103,7 +116,16 @@ Hello
 
                 <p>Let’s try to access the inner function.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="userfunction">inner_func</span>()
 
 Traceback (most recent call last):
@@ -111,6 +133,7 @@ Traceback (most recent call last):
 inner_func()
 NameError: name 'inner_func' is not defined
 </pre>
+</div></div>
                 <p>
                     When we try to call the inner function from outside of its scope it raises <code>NameError</code>.
                 </p>
@@ -145,7 +168,16 @@ NameError: name 'inner_func' is not defined
                 <p>
                     Understand the concepts of closure in more clear way using below example:
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># create nested function.</span>
 
 <span class="keyword">def</span> <span class="userfunction">outer_func</span>(msg):
@@ -163,7 +195,7 @@ NameError: name 'inner_func' is not defined
 <span class="comment"># Now let's try calling this function.</span>
 another = <span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
 another()
-</pre>
+</pre></div></div>
                 <p>
                     The <code>outer_func()</code> function was called with the string “Hello” and the returned function was bound to the name <code>another</code>. This is nothing but we create an Object of the function <code>outer_func()</code>. On calling <code>another()</code>, the message was still remembered although we had already finished executing the <code>outer_func()</code> function.
                 </p>
@@ -175,7 +207,16 @@ another()
                 <p>
                     This value in the enclosing scope is remembered even when the variable goes out of scope or the function itself is removed from the current namespace.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 >>> <span class="keyword">del</span> <span class="userfunction">outer_func</span>
 
 >>> another()
@@ -185,7 +226,7 @@ Hello
 Trackeback (most recent call last):
 ...
 NameError: name 'outer_func' is not defined
-</pre>
+</pre></div></div>
                 <p>The returned function still works even when the original function was deleted.</p>
 
                 <h3>When we can create a closures?</h3>
@@ -205,21 +246,30 @@ NameError: name 'outer_func' is not defined
 
 				<h3>Why we should use Closures?</h3>
 
-                <ul>
+                <ol>
 
                     <li>Closures can avoid the use of global values.</li>
 
                     <li>provides some form of data hiding.</li>
 
                     <li>it can also provide an object oriented solution to the problem.</li>
-                </ul>
+                </ol>
 
                 <p>
                     When there are few methods to be implemented in a class, closures can provide an alternate and more elegant solution. But with more number of attributes and methods it is good idea to implement a class.
                 <br>
                     Here is an example of how the closures can be an alternate solution to small classes.
                 </p>
+                <div class="code">
+                    <div class="threedots">
+                        <div class="c1"></div>
+                        <div class="c2"></div>
+                        <div class="c3"></div>
+                        <div class="title">example.py</div>
+                    </div>
+                    <div class="codearea">
 <pre>
+
 <span class="comment"># using class</span>
 <span class="keyword">class</span> <span class="userfunction">MultiplierOf</span>:
      
@@ -242,11 +292,20 @@ multiply4 = <span class="userfunction">MultiplierOf</span>(<span class="number">
 
 <span class="function">print</span>(multiply4(<span class="number">5</span>))
 <span class="comment">#Output: 20</span>
-</pre>
+</pre></div></div>
                     <p>
                         The same can be done using clouseres instead of classes.
                     </p>
+                    <div class="code">
+                        <div class="threedots">
+                            <div class="c1"></div>
+                            <div class="c2"></div>
+                            <div class="c3"></div>
+                            <div class="title">example.py</div>
+                        </div>
+                        <div class="codearea">
 <pre>
+    
 <span class="comment"># using function</span>
 <span class="keyword">def</span> <span class="userfunction">multiplier_of</span>(n):
      
@@ -271,7 +330,7 @@ multiply4 = <span class="userfunction">multiplier_of</span>(<span class="number"
 <span class="function">print</span>(multiply4(multiply3(<span cla)
 NameError: name 'inner_func'ss="number">2</span>)))
 <span class="comment">#Output: 24</span>
-</pre>
+</pre></div></div>
                     <p>
                         Python Decorators make an extensive use of closures as well.
                     </p>
