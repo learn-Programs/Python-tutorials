@@ -169,7 +169,7 @@ body {
     .container{
         height: auto;
         background: #F7971E;  /* fallback for old browsers */
-        clip-path:none;
+        clip-path:polygon(100% 92%, 100% 0, 0% 0%, 0% 0%, 0% 100%);
         overflow:visible;
     }
     .content{
@@ -208,9 +208,4 @@ body {
     }
 }
 
-@media only screen and (max-width:630px) {
-    .container {
-    background: linear-gradient(to left, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-    clip-path:polygon(100% 92%, 100% 0, 0% 0%, 0% 0%, 0% 100%);
-}
-}
+@media only screen and (max-width:630px) {}
