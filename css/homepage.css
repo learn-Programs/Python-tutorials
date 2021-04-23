@@ -169,7 +169,7 @@ body {
     .container{
         height: auto;
         background: #F7971E;  /* fallback for old browsers */
-        clip-path:polygon(100% 92%, 100% 0, 0% 0%, 0% 0%, 0% 100%);
+        clip-path:none;
         overflow:visible;
     }
     .content{
