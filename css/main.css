@@ -38,13 +38,16 @@ a {
     color: #000;
 }
 .nav {
-    width: 90%;
+    width: 100%;
     margin:auto;
-    padding:20px;
+    padding:20px 100px 20px 100px;
     display:flex;
     justify-content: space-between;
     text-align:center;
     align-items: center;
+    background: linear-gradient(to right, #e100ff, #7f00ff);
+    box-shadow: 0px 2px 3px 2px #dddd;
+    border-bottom: 2px solid #000;
 }
 .logo {
     display: flex;
