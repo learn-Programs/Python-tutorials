@@ -326,12 +326,12 @@ pre {
 }
 
 .code .codearea pre{
-    overflow-x: auto;
     position: relative;
     margin:40px;
     font-size:20px;
     color:#fafaff;
-    overflow-x: scroll;
+    overflow:auto;
+    overflow-y:hidden;
 }
 
 .output{
@@ -359,7 +359,8 @@ pre {
     margin:40px;
     font-size:20px;
     color:#222;
-    overflow-x: scroll;
+    overflow:auto;
+    overflow-y:hidden;
 }
 
 
@@ -476,6 +477,17 @@ pre {
 .container .content .content__heading {
     width:auto;
     margin:auto;
+}
+
+.code .codearea pre{
+    overflow:scroll;
+    padding:10px;
+}
+
+.output .outputcode pre{
+    overflow:scroll;
+    padding:10px;
+    width:auto;
 }
 } 
 
