@@ -282,7 +282,7 @@ pre {
 
 /* code editor css */
 .code{
-    width: 58%; /*change to width 60%*/
+    width: 68%; /*change to width 60%*/
     height:auto; /*change to auto*/
     z-index:-1;
     position: relative;
@@ -341,7 +341,7 @@ pre {
 }
 
 .output{
-    width: 58%; /*must same as codearea*/
+    width: 68%; /*must same as codearea*/
     height:auto; /*change to auto*/
     z-index:-1;
     position: relative;
