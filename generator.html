@@ -10,37 +10,39 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
-        <link rel="icon" href="/logo/py-logo.ico"/>
+        <link rel="icon" href="logo/py-logo.ico"/>
 
         <!-- title of Page -->
         <title>Python Generators.</title>
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
+
 
         <div class="container">
             <div class="content">
@@ -86,11 +88,11 @@
                         <th>Regular Function</th>
                     </tr>
                     <tr>
-                        <td class="data" style="color: #000;">Generator function contains one or more "yield" statements</td>
+                        <td class="data" style="color: #000;; font-weight: 400;">Generator function contains one or more "yield" statements</td>
                         <td class="data">Regular function contains one or more "return" statements.</td>
                     </tr>
                     <tr>
-                        <td class="data"  style="color: #000;">When the function gets called, it returns an "object" (iterator) but does not start execution immediately.</td>
+                        <td class="data"  style="color: #000;; font-weight: 400;">When the function gets called, it returns an "object" (iterator) but does not start execution immediately.</td>
                         <td class="data"> Regular function does not create any "object" and it compute a value and return it.</td>
                     </tr>
                     </tbody>
@@ -130,17 +132,8 @@
                 <p>
                     Now, let's create a simple generator function <code>simple_gen()</code> in Python.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 <span class="comment"># A simple generator function.</span>
 
 <span class="function">def</span> <span class="userfunction">simple_gen</span>():
@@ -156,21 +149,10 @@
     <span class="function">print</span>(<span class="string">"third iteration"</span>)
     <span class="keyword">yield</span> n += <span class="number">1</span>
 </pre>
-</div></div>
                 <p>
                     Let's see the output of this above example using Python interpreter.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> <span class="function">simple_gen</span>() <span class="comment"># calling generator function.</span>
 < generator object 'my_gen' at ...>
 
@@ -181,7 +163,7 @@
 <span class="number">1</span>
 
 >>> <span class="function">next</span>(obj)
-<span class="string">second iteratio</n
+<span class="string">second iteratio</span>
 <span class="number">2</span>
 
 >>> <span class="function">next</span>(obj)
@@ -198,7 +180,6 @@ Traceback (most recent call last):
  ...
 <span class="exception">StopIteration</span>
 </pre>
-</div></div>
                 <p>
                     Did you notice that, when we called the function <code>simple_gen()</code> it does not executes immediately but it returns a generator object (iterator), which we can iterate over to get values. 
                 </p>
@@ -218,29 +199,15 @@ Traceback (most recent call last):
                 <p>
                     We can use generators with <code>for</code> loop directly, since a <code>for</code> loop takes an iterator and iterates over it using <code>next()</code> function. It automatically ends when <code>StopIteration</code> is raised.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
                 
 <pre>
-
 <span class="comment"># let's use above generator function with 'for' loop</span>
 
 <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">simple_gen</span>():
     <span class="function">print</span>(i)
 </pre>
-</div>
-</div>
 <p><strong>Output</strong></p>
 <!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 first iteration
 1
@@ -251,21 +218,10 @@ second iteration
 third iteration
 3
 </pre>
-    </div></div>
                 <p>
                     Now, let's create one more example of generators with a loop that reverses a string.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="function">def</span> <span class="userfunction">reverse_str</span>(my_str):
 
     length = <span class="function">len</span>(my_str)
@@ -279,11 +235,7 @@ third iteration
 <span class="keyword">for</span> char <span class="keyword">in</span> <span class="function">reverse_str</span>(<span class="string">"Python"</span>):
     <span class="function">print</span>(char)
 </pre>
-</div></div>
 <p><strong>Output</strong></p>
-<!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 n
 o
@@ -292,7 +244,7 @@ t
 y
 P
 </pre>
-    </div></div>
+<p></p>
            <h3>Generator Expression</h3>
                 <p>
                     Simple generators can be created easily using generator expression.
@@ -302,17 +254,8 @@ P
                 <p>
                     The main difference between the list comprehension and generator expression is that a list comprehension produces the entire list while the generator expression produces one item at a time.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
 
 <span class="comment"># square of each number using list comprehension</span>
@@ -325,16 +268,12 @@ generator = (x*x <span class="keyword">for</span> x <span class="keyword">in</sp
 <span class="function">print</span>(list_)
 <span class="function">print</span>(generator)    
 </pre>
-</div></div>
 
                 <p><strong>output</strong></p>
-                <!-- output code area -->
-                <div class="output">
-                    <div class="outputcode">
+                
 <pre>
 [1, 4, 9]
 < generator object <genexpr> at ... > </pre>
-                    </div></div>
                 <p>
                     Did you notice?,  the generator expression does not produces the require result immediately. Instead, it returned a generator object, which we can iterate over to get values.
                 </p>
@@ -342,17 +281,8 @@ generator = (x*x <span class="keyword">for</span> x <span class="keyword">in</sp
                     We can do this using <code>next()</code> method on generator object.
                 </p>
 
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+               
 <pre>
-
 >>> <span class="function">next</span>(generator)
 <span class="number">1</span>
 
@@ -367,7 +297,6 @@ Traceback (most recent call last):
 ...
 <span class="exception">StopIteration</span>
 </pre>
-</div></div>
                     <p>
                         The generator expression return an iterator that computes the values as necessary, this means that list comprehensions are not useful if you're working with iterators that returns an infinite stream or very large amount of data.  Generator expression are preferable in these situations.
                     </p>
@@ -375,18 +304,7 @@ Traceback (most recent call last):
                         Generator expressions always have to be written inside parentheses. Generator expression can be used in a function call as arguments so when we used in such a way, the parentheses can be omitted.
                         <br>For example:</p>
 
-                        <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
-                    
 <pre>
-
 >>> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]
 
 >>> <span class="comment"># we can compute the sum of even number </span>
@@ -398,7 +316,7 @@ Traceback (most recent call last):
 >>> <span class="function">max</span>(x <span class="keyword">for</span> x <span class="keyword">in</span> a)
 <span class="number">5</span>
 </pre>
-            </div></div>
+<p></p>
                     <h3>Advantages of Generators</h3>
                     <ul>
                         <li>
@@ -411,15 +329,69 @@ Traceback (most recent call last):
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="iterator.html">Previous</a></button>
+                    <a href="iterator.html">Iterator</a>    
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="closures.html">Next</a></button>
+                    <a href="closures.html">Closures</a>    
                 </div>
             </div>
         </div>
         
     </div>
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>

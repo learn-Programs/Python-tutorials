@@ -13,7 +13,10 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="logo/py-logo.ico"/>
@@ -22,22 +25,22 @@
         <title>Python Datatypes.</title>
     </head>
 
+</div></div>
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -56,7 +59,7 @@
                     There are two main types of Datatypes.
 				</p>
                 <p>
-                    <img src="images/pythondatatype.jpeg" alt="Python Datatypes"
+                    <img src="images/pythondatatype.jpeg" alt="Python Datatypes chart" style="width: 100%;"
 					title="Python Datatypes">
                 </p>
                 <p>
@@ -67,14 +70,6 @@
                 <p>
 					There are three distinct numeric types: integers, floating-point numbers, and complex numbers in Python. Booleans are also a subtype of integers.
 				</p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 
 >>> num = <span class="number"> 10 </span><span class="comment">#integer.</span>
@@ -89,56 +84,34 @@
 >>> complex_num = <span class="number"> 2 + 3j </span><span class="comment">#complex number.</span>	
 >>> <span class="function">print</span>(<span class="function">type</span>(complex_num))
 < class 'complex' >
-</pre> </div></div> 
+</pre> 
+<p></p>
                         <h3>String</h3>
                         <p>
                             Strings are an immutable sequence of Unicode code points. Strings are a set of characters represented in the quotation marks. In Python, we can use either pair of single or double or triple quotes to define a string.
                         </p>
-                        <div class="code">
-                            <div class="threedots">
-                                <div class="c1"></div>
-                                <div class="c2"></div>
-                                <div class="c3"></div>
-                                <div class="title">example.py</div>
-                            </div>
-                            <div class="codearea">
 <pre>
 
 str_var = <span class="string">"Hello, World!"</span>
-</pre></div></div>
+</pre>
 
                         <p>
                             Tuples are an immutable sequence of elements separated by commas and enclosed in parentheses <code>()</code>. Tuples can be sequence of same or combination of different data types.
                             <br>
                             A tuple is a read-only data structure as we don’t modify the size and value of the items of a tuple.
                         </p>
-                        <div class="code">
-                            <div class="threedots">
-                                <div class="c1"></div>
-                                <div class="c2"></div>
-                                <div class="c3"></div>
-                                <div class="title">example.py</div>
-                            </div>
-                            <div class="codearea">
 <pre>
 
 <span class="comment">#tuple</span>
 tuple1 = (<span class="number">1, </span><span class="number">2, </span><span class="number">3</span>)
 
 tuple2 = (<span class="number">1, </span><span class="string">'a', </span><span class="number">3.14</span>)	
-</pre></div></div>
+</pre>
+<p></p>
                         <h3>List</h3>
                         <p>
                             A list contains items separated by commas and enclosed within square brackets <code>[]</code>. Python list can have data of different data types. List are similar to arrays in C.
                         </p>
-                        <div class="code">
-                            <div class="threedots">
-                                <div class="c1"></div>
-                                <div class="c2"></div>
-                                <div class="c3"></div>
-                                <div class="title">example.py</div>
-                            </div>
-                            <div class="codearea">
 <pre>
 
 <span class="comment">#list</span>
@@ -146,25 +119,18 @@ list1 = [<span class="number">2</span>, <span class="number">4</span>, <span cla
 
 <span class="comment">#List with Multiple Datatypes</span>
 list1 = [<span class="number">123</span>, <span class="string">'Python'</span>, <span class="number">3.14</span>]
-</pre></div></div>
+</pre>
+<p></p>
 
                         <h3>Dictionary</h3>
                         <p>
                             Dictionary consists of key-value pairs. It is enclosed by curly braces <code>{}</code> and values can be assigned using square brackets <code>[]</code>.
                         </p>
-                        <div class="code">
-                            <div class="threedots">
-                                <div class="c1"></div>
-                                <div class="c2"></div>
-                                <div class="c3"></div>
-                                <div class="title">example.py</div>
-                            </div>
-                            <div class="codearea">
 <pre>
 
 dictionary = {<span class="string">'name'</span>: <span class="string">'Advaita'</span>, <span class="string">'age'</span>: <span class="number">7</span>}
 </pre>
-</div></div>
+<p></p>
 
                         <h3>Set</h3>
                         <p>
@@ -174,39 +140,25 @@ dictionary = {<span class="string">'name'</span>: <span class="string">'Advaita'
                             <br>
                             <strong>1. sets</strong> – They are mutable and new elements can be added once sets are defined. 
                         </p>
-                        <div class="code">
-                            <div class="threedots">
-                                <div class="c1"></div>
-                                <div class="c2"></div>
-                                <div class="c3"></div>
-                                <div class="title">example.py</div>
-                            </div>
-                            <div class="codearea">
+                        
 <pre>
 
 >>> basket = {<span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'kiwi'</span>}
 
 >>> <span class="function">print</span>(<span class="variable">basket</span>)
 {'apple', 'banana', 'orange', 'kiwi'}
-</pre></div></div>
+</pre>
                         <p>
                             <strong>2. frozen set</strong> – They are immutable and new elements cannot be added after its defined.
                         </p>
-                        <div class="code">
-                            <div class="threedots">
-                                <div class="c1"></div>
-                                <div class="c2"></div>
-                                <div class="c3"></div>
-                                <div class="title">example.py</div>
-                            </div>
-                            <div class="codearea">
+                        
 <pre>
 
 >>> b = <span class="function">frozenset</span>(<span class="string">'asdfagsa'</span>)
 
 >>> <span class="function">print</span>(<span class="variable">b</span>)
 frozenset({'d', 'f', 'g', 's', 'a'})
-</pre></div></div>
+</pre>
 
                         <p>
                             In this tutorial, we learned different types of datatypes briefly, we will learn each data types in details in coming tutorials so, keep learning!.
@@ -215,15 +167,72 @@ frozenset({'d', 'f', 'g', 's', 'a'})
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="variable.html">Previous</a></button>
+                    <a href="variable.html">Variables</a>   
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="operator.html">Next</a></button>
+                    <a href="operator.html">Operators</a>   
                 </div>
             </div>
         </div>
         
     </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
+    
     
 </body>
 </html>

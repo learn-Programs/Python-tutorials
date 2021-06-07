@@ -11,10 +11,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -24,24 +26,26 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
+
+
         <div class="container">
             <div class="content">
                 <div class="content__heading">
@@ -77,15 +81,70 @@
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="operator.html">Previous</a></button>
+                    <a href="operator.html">Operators</a>
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="list.html">Next</a></button>
+                    <a href="list.html">List</a>
                 </div>
             </div>
         </div>
+        </div>
         
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
     
 </body>
 </html>

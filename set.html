@@ -10,10 +10,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,24 +25,24 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
+
 
         <div class="container">
             <div class="content">
@@ -69,15 +71,7 @@
                 <p>
                     Elements of a set must be an immutable type such as string, numbers or tuple, but a mutable type of data such as list, dictionary or even set cannot be used as an element of a set.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
 
 my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>}
@@ -85,19 +79,10 @@ my_set = {<span class="number">1</span>, <span class="number">2</span>, <span cl
 <span class="comment">#set with mixed immutable datatypes</span>
 my_set = {<span class="number">1</span>, <span class="number">3.14</span>, <span class="string">'Python'</span>}
 </pre>
-</div></div>
                 <p>
                     Empty set created by using <code>set()</code> function and not with empty curly braces <code>{}</code> because this will create a dictionary.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
 >>> my_set = {}
 
@@ -109,25 +94,15 @@ my_set = {<span class="number">1</span>, <span class="number">3.14</span>, <span
 >>> <span class="function">type</span>(my_set)
 < class 'set'>
 </pre>
-</div></div>
                 <p>
                     To get the length of set use <code>len()</code> built-in function.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 >>> my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>}
 >>> <span class="function">len</span>(my_set)
 4
 </pre>
-</div></div>
+<p></p>
                 <h3>Updating Set</h3>
                 <p>
                     Sets are an unordered collection of items, sets do not support indexing, slicing or other sequence-like behavior.
@@ -138,17 +113,8 @@ my_set = {<span class="number">1</span>, <span class="number">3.14</span>, <span
                 <p>
                     To add a single element in set we can use <code>add()</code> method and multiple elements can be added in the set using <code>update()</code> method.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 my_set = {<span class="number">1</span>, <span class="number">2</span>}
 
 <span class="comment"># single element using add()</span>
@@ -169,7 +135,7 @@ my_set.<span class="function">update</span>([<span class="number">2</span>, <spa
 <span class="comment"># output 
 {1, 2, 3, 4, 5}</span>
 </pre>
-</div></div>
+<p></p>
                 <h3>Removing elements from set</h3>
                 <p>
                     We can remove elements from the set using methods such as <code>discard()</code> and <code>remove()</code>.
@@ -178,17 +144,8 @@ my_set.<span class="function">update</span>([<span class="number">2</span>, <spa
                 <p>
                 	The <code>remove()</code> method will raise a KeyError when element is not in Set, while <code>discard()</code> method do nothing.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>}
 
 >>> <span class="function">print</span>(my_set)
@@ -209,21 +166,11 @@ my_set.<span class="function">update</span>([<span class="number">2</span>, <spa
 >>> my_set.<span class="function">remove</span>(<span class="number">6</span>)
 KeyError: 6
 </pre>
-</div></div>
                 <p>
                     We can use <strong>pop()</strong> method, which remove and return an arbitrary element from the set and raises <code>KeyError</code> if a set is empty. We can also use <strong>clear()</strong> method to remove all elements from set.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> my_set = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>}
 
 >>> my_set.<span class="function">pop</span>()
@@ -234,8 +181,7 @@ KeyError: 6
 >>> my_set
 set()
 </pre>
-</div></div>
-                
+<p></p>           
                 <h3>Set Operations</h3>
                 <p>
                     Sets are commonly used for mathematical operations such as union, intersection, difference and symmetric difference.
@@ -245,17 +191,8 @@ set()
                     The union of two sets are performed using <strong>|</strong> operator or <strong>union()</strong> method.
                     The union of sets returns a new set of elements from each set.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+               
 <pre>
-
 <span class="comment"># Lets consider two sets.</span>
 set1 = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>}
 set2 = {<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>}
@@ -266,35 +203,19 @@ set2 = {<span class="number">3</span>,<span class="number">4</span>,<span class=
 <span class="comment"># using union() method.</span>
 <span class="function">print</span>(set1.<span class="function">union</span>(set2))
 </pre>
-</div></div>
 <p><strong>Output</strong></p>
-<!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 {1, 2, 3, 4, 5, 6, 7}
 {1, 2, 3, 4, 5, 6, 7}
 </pre>
-</div>
-</div>
-
+<p></p>
 
                 <h4>Set Intersection (&)</h4>
                 <p>
                     The intersection of two sets is performed by using <strong>&amp;</strong> operator or <strong>intersection()</strong> method.
                     It Returns a new set of common elements from both sets.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment">
 # consider the above sets.
 # set1 = {1,2,3,4}
@@ -306,99 +227,56 @@ set2 = {<span class="number">3</span>,<span class="number">4</span>,<span class=
 <span class="comment"># intersection() method.</span>
 <span class="function">print</span>(set1.<span class="function">intersection</span>(set2))
 </pre>
-</div></div>
-
+<p></p>
 <p><strong>Output</strong></p>
-<!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 {3, 4}
 {3, 4}
 </pre>
-</div></div>
-                <h4>Set Difference (-)</h4>
+<p></p>          <h4>Set Difference (-)</h4>
                 <p>
                     The difference of two sets (set1 and set2 )is a set of elements that are only in set1 but not in set2.
                
                     The difference of two sets can be performed by using the <code>-</code> operator and <code>difference()</code> method.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="function">print</span>(set1 - set2)
 
 <span class="comment"># This will return set of elements in set2 but not in set1.</span>
 <span class="function">print</span>(set2.intersection(set1))
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
-<!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 {1, 2}
 {5, 6, 7}
 </pre>
-    </div></div>
+<p></p>
                 <h4>Set Symmetric difference(^)</h4>
                 <p>
                     Symmetric difference of two sets is a set of elements in both except those are common in both the sets.
                     Symmetric difference is performed by <strong>^</strong> operator and <strong>symmetric_differece()</strong> method.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment"># '^' operator.</span>
 <span class="function">print</span>(set1 ^ set2)</span>
 
 <span class="comment"># symmetric_differece() method</span>
 <span class="function">print</span>(set1.<span class="function">symmetric_differece</span>(set2))
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
-<!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 {1, 2, 5, 6, 7}
 {1, 2, 5, 6, 7}
 </pre>
-</div></div>
+<p></p>
                     <h4>Set Membership Test</h4>
                     <p>
                         We can test if an element is present in a set using an <code>in</code> or <code>not in</code>  keywords.
                     </p>
-                    <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
                    
 <pre>
-
 &gt;&gt;&gt; <span class="function">print</span>(set1)
 {1, 2, 3, 4}
 
@@ -408,39 +286,24 @@ True
 &gt;&gt;&gt; <span class="function">print</span>(<span class="number">5 </span><span class="keyword">not in</span> set1)
 True
 </pre>
-</div>
-</div>
+<p></p>
                     <h4>Iterating Through a set</h4>
                     <p>
                         We can iterate through each element in a set using <strong>for</strong> loop.
                     </p>
-                    <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 <span class="keyword">for</span> i <span class="keyword">in</span> set1:
 <span class="function">print</span>(i)
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
-<!-- output code area -->
-<div class="output">
-    <div class="outputcode">
 <pre>
 1
 2
 3
 4
 </pre>
-</div></div>
+<p></p>
                     <h3>Frozen set</h3>
                     <p>
                         There are two built-in set types in Python, <code>set</code> and <code>frozenset</code>.
@@ -451,17 +314,7 @@ True
                 	The frozensets can be created by using the built-in function <code>frozenset()</code>.
                 	Being Immutable set type, frozensets does not supports add or remove methods.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> <span class="comment"># Creating frozenset.</span>
 
 >>> A = <span class="function">frozenset</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])
@@ -469,7 +322,7 @@ True
 >>> <span class="function">print</span>(<span class="function">type</span>(A)) 
 < class 'frozenset'>
 </pre>
-</div></div>
+<p></p>
                     <h3>Set Methods</h3>
                     <p>
                         There are many set methods, some of them are already used and explain above. This is a list of other methods that are available with set objects.
@@ -516,6 +369,7 @@ True
                         </tr>
                         </tbody>
                         </table>
+                        <p></p>
                     <h3>Set Comprehension</h3>
                     <p>
                         Python also supports <strong>set comprehension</strong>. Set comprehension provide a concise way to create a sets.
@@ -524,34 +378,77 @@ True
                     <p>
                     	We can  create a new set using set coprehension just like we create a list using list comprehension.
                     </p>
-                    <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; a = {x <span class="keyword">for</span> x <span class="keyword">in </span><span class="string">'abracadabra'</span> <span class="keyword">if</span> x <span class="keyword">not in</span> <span class="string">'abc'</span>}
 {'r', 'd'}
 </pre>
-</div></div>
+<p></p>
             </div>  
 
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="dictionary.html">Previous</a></button>
+                    <a href="dictionary.html">Dictionary</a>    
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="if.html">Next</a></button>
+                    <a href="if.html">If Statements</a> 
                 </div>
             </div>
         </div>
-        
+    </div>
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>

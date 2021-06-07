@@ -10,10 +10,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,25 +25,24 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
-
+        
         <div class="container">
             <div class="content">
                 <div class="content__heading">
@@ -56,17 +57,8 @@
 					<br>
 					Python allows us to use <strong>single</strong>, <strong>double</strong>  or <strong>triple quotes</strong> to the create a string.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> <span class="comment">#creating string with 'my_str' variable.</span>
 >>> my_str = <span class="string">'Python'</span>
 
@@ -74,50 +66,29 @@
 >>> <span class="function">print</span>(<span class="function">type</span>(<span class="variable">my_str</span>))
 < class 'str' >
 </pre>
-</div></div>
 
                 <p>
                     Strings may also be created from other objects using the <code>str</code> constructor.
                     
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> list_ = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]
 
 >>> <span class="function">print</span>(<span class="function">str</span>(<span class="variable">list_</span>))
 "abc"
 </pre>
-</div></div>
                 <p>
                     Python doesn’t have a char type; instead every code point in the string object with length 1.
 					The built-in function <code>len()</code> returns the length of a string.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> my_str = <span class="string">'Python'</span>
 >>> <span class="function">len</span>(<span class="variable">my_str</span>)
 6
 </pre>
-</div></div>
-
+<p></p>
                 <h3>Accessing String</h3>
                 <p>
                     There are various ways to access the strings.</p>
@@ -140,46 +111,27 @@
                 <p>
                     To access the single character in the string, we can use its index in square brackets <code>[]</code> for example as follows.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> my_str = <span class="string">'Python'</span>
 >>> my_str[<span class="number">0</span>]
 P
 </pre>
-</div></div>
-               
+<p></p>            
                 
                     <h4>2. Negative Indexing.</h4>
                 <p>
 				    Python also allows negative indexing for its sequences. The index <code>-1</code> represents the last element whereas <code>-2</code> for second last and so on.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
                 
 <pre>
-
 >>> my_str[<span class="number">-1</span>]
 n
 >>> my_str[<span class="number">-2</span>]
 o
 </pre>
-</div></div>
+<p></p>
 
                 
                     <h4>3. Using Slicing.</h4>
@@ -193,17 +145,8 @@ o
 
 					Here, the start is always included, and end index always excluded.
                     </p>
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                    
 <pre>
-
 >>> my_str[<span class="number">1</span> : <span class="number">4</span>]
 yth
 
@@ -215,7 +158,7 @@ pyth
 >>> my_str[:]
 Python
 </pre>
-</div></div>
+<p></p>
                 <h3>How to Change or Delete a String</h3>
                 <p>
                     String is an immutable sequence data type which means we can not change the string once it has been created.
@@ -223,17 +166,8 @@ Python
 					But, we can reassign new different Strings to the same string variable. for example.
                 </p>
 
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> my_str = <span class="string">'Python'</span>
 
 >>> my_str[<span class = "number">0</span>] = <span class="string">'p'</span>
@@ -245,84 +179,48 @@ TypeError:  'str'  object does not   support item assignment.
 >>> my_str
 Hello
 </pre>
-</div></div>
                 <p>
 					We can not delete or remove characters from a string, but we can delete entire string using del keyword.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> <span class="keyword">del</span> my_str
 >>> my_str
 ...
 NameError: name 'my_str' is not defined.
 </pre>
-</div></div>
+<p></p>
 
                 <h3>String Operations</h3>
                 <h4>Concatenation</h4>
                 <p>
                     The <code>+</code> operator is used to join two strings together. This is called  <strong>concatenation</strong>.
                 </p>
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> <span class="function">print</span>(<span class="string">'Hello'</span> <span class="variable">+</span> <span class="string">'World'</span>)
 HelloWorld
 </pre>
-</div></div>
+<p></p>
                 
                 <h4>Repetition</h4>
                 <p>
                     The <code>*</code> operator is used to <strong>repeat</strong> the string for given number of times.
                 </p>
                 <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-
 >>> <span class="function">print</span>(<span class="string">'Hello'</span>+<span class="variable">*</span> <span class="number">3</span> )
 HelloHelloHello
 </pre>
-</div></div>
+<p></p>
                 
                 <h4>Iterating Thorugh String</h4>
                 <p>
                     We can iterate through the string using for loop.
                 </p>
                 <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+              
 <pre>
-
 my_str = <span class="string">'Python'</span>
 
 <span class="comment">#count the length of string using 'for loop'</span>.
@@ -333,25 +231,17 @@ count = <span class = "number">0</span>
 <span class="function">print</span>(<span class="variable">count</span>)
 <span class="comment">#Output: 6</span>
 </pre>
-</div></div>
+<p></p>
+
                 <h4>String Membership Test</h4>
                 <p>
                     We can test if a substring exists in a string or not using the keyword <code>in</code>.</p>
                     <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> <span class="function">print</span>(<span class="string">'e'</span> <span class="keyword">in</span> <span class="string">'Hello'</span> )
 True
 </pre>
-</div></div>
+<p></p>
                 <h3>String Methods</h3>
                 <p>
                     Python supports various methods for string objects.<br>
@@ -414,34 +304,80 @@ True
                         <br>The format string contains ‘replacement fields’ surrounded by curly braces <code>{}</code>.<br>Each replacement field contains either the numeric index of positional arguments or the name of a keyword argument.
                     </p>
                     <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
-    
 >>> <span class="string">"The sum of 1 + 2 is {0}"</span>.<span class="function">format</span>(<span class="number">1</span> + <span class="number">2</span>)
 The sum of 1 + 2 is 3
 </pre>
-</div></div>
-
+<p></p>
                
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="list.html">Previous</a></button>
+                <a href="list.html">List</a>
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="tuple.html">Next</a></button>
+                <a href="tuple.html">Tuple</a>
                 </div>
             </div>
         </div>
         
     </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>

@@ -9,11 +9,11 @@
         <meta name="description" content="Inheritance is an important feature of the object oriented programming language. Inheritance provides code reusability to the program because inheritance enable us to share functionality between classes."/>
 
 
-        <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,21 +23,20 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -60,7 +59,7 @@
 					The derived class is known as a <strong>subclass</strong> or a <strong>child class</strong>. and the class from new class is derived is called as <strong>base</strong> <strong>class</strong> or <strong>superclass</strong> or <strong>parent class</strong>.
                 </p>
                 <p><strong>Syntax:</strong></p>
-<pre class="syntax">
+<pre>
 class BaseClass:
     base class block
     
@@ -70,17 +69,7 @@ class DerivedClass(BaseClass):
                 <p>
                     The derived class inherits all the methods and properties of the base class. The derived class can also has its own methods.
                 </p>
-
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="keyword">class</span> <span class="userfunction">Animal</span>:
 
     <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, name, color):
@@ -99,16 +88,13 @@ moti = <span class="userfunction">Dog</span>(<span class="string">"Moti"</span>,
 
 moti.<span class="userfunction">bark</span>()
 </pre>
-</div></div>
                 <p><strong>Output</strong></p>
 
-                <div class="output">
-                    <div class="outputcode">
 <pre>
 Brown
 Woof!
 </pre>
-</div></div>
+<p></p>
                 <h3>Method Overriding</h3>
                 <p>
                     The subclass can also replace methods of the superclass. The process of replacing methods defined in super class with new methods with the same name in the derived class is known as <strong>Method Overriding</strong>.					
@@ -119,16 +105,7 @@ Woof!
 				<p>
 					To avoid this we can use <strong>super()</strong> method in derived class.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="keyword">class</span> <span class="userfunction">Animal</span>:
 
     <span class="keyword">def</span> <span class="userfunction">speak</span>(<span class="keyword">self</span>):
@@ -143,32 +120,19 @@ Woof!
 d = <span class="userfunction">Dog</span>()
 d.<span class="userfunction">speak</span>()
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
-    <div class="output">
-        <div class="outputcode">
 <pre>
 Barking
 Speaking
 </pre>
-</div></div>
                 <p>
                     Python has two built-in functions <code>isinstance()</code> and <code>issubclass()</code> are used to check inheritances.
 				</p>
 				<p>
 					Function <code>isinstance()</code> returns <code>True</code>, if the object is an instance of the class. each and every class in Python inherits from the base class <code>object</code>.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; <span class="function">isinstance</span>(d, Dog)
 True
 
@@ -178,15 +142,14 @@ True
 &gt;&gt;&gt; <span class="function">issubclass</span>(Dog, Animal)
 True
 </pre>
-</div></div>
-
+<p></p>
                 <h3>Multi-level Inheritance</h3>
                 <p>
                     Python also supports multi-level inheritance. In multilevel inheritance, features of the base class and derived class is inherited into the new derived class.
                    
                 </p>
                 <p><strong>Syntax</strong>
-<pre class="syntax">
+<pre>
 class BaseClass
      statements
 class DerivedClass1(BaseClass):
@@ -200,7 +163,7 @@ class DerivedClass2(DerivedClass1):
                     Python allows to inherits multiple base classes in the derived class.
                 </p>
                 <p><strong>Syntax</strong>
-<pre class="syntax">
+<pre>
 class BaseClass1:
     statement
 class BaseClass2:
@@ -224,16 +187,7 @@ class DerivedClass(BaseClass1, BaseClass2,..):
 				<p>
 					Name mangled methods can still be accessed externally, but by a different name. The method <strong>__privatemethod</strong> of class <strong>Spam</strong> could be accessed externally with <strong>_Spam__privatemethod.</strong>
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="keyword">class</span> <span class="userfunction">Spam</span>:
 
     __egg = 7
@@ -249,28 +203,56 @@ s.<span class="userfunction">print_egg</span>()
 <span class="function">print</span>(s._Spam__egg)
 <span class="function">print</span>(s.__egg)
 </pre>
-</div></div>
 
                 <p><strong>Output</strong></p>
-                <div class="output">
-                    <div class="outputcode">
 <pre>
 7
 7
 AttributeError: 'Spam' object has no attribute '__egg'
 </pre>
-</div></div>
+<p></p>
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="class.html">Previous</a></button>
+                    <a href="class.html">Class</a>  
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="iterator.html">Next</a></button>
+                    <a href="iterator.html">Iterator</a>    
                 </div>
             </div>
         </div>
         
+    </div>
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     
 </body>

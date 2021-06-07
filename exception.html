@@ -13,7 +13,11 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
+
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,25 +27,24 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="container">
             <div class="content">
                 <div class="content__heading">
@@ -62,32 +65,18 @@
 					<br>
                     The Syntax Errors are also called as ‘Parsing Error’.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="keyword">if</span> True
 <span class="function">print</span>(<span class="string">"Hello World"</span>)
 </pre>
-</div>
-</div>
 
 <p><strong>Output</strong>
-    <div class="output">
-        <div class="outputcode">
 <pre>
 File "&lt;stdin&gt;", line 1
     if True
            ^
 SyntaxError: invalid syntax
 </pre>
-</div></div>
 
 
                 <p>
@@ -99,16 +88,7 @@ SyntaxError: invalid syntax
                 
                     Whenever these type of runtime error occur, Python creates an exception object. It prints traceback to that error along with some details about why that error occurred.
                </p>
-               <div class="code">
-                <div class="threedots">
-                    <div class="c1"></div>
-                    <div class="c2"></div>
-                    <div class="c3"></div>
-                    <div class="title">example.py</div>
-                </div>
-                <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; <span class="number">1</span> / <span class="number">0</span>
 
 Traceback (most recent call last):
@@ -116,7 +96,6 @@ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
      1/0
 ZeroDivisionError: division by zero
 </pre>
-        </div></div>        
                 <p>
                     The last line of the traceback output message tell us about, what type of exception was reaised and some relevant information about that exception.
                     Exceptions come in different types, and the type is printed as part of message.
@@ -127,19 +106,10 @@ ZeroDivisionError: division by zero
                 <p>
                     There are various built-in exceptions in Python that are raised when corresponding error occurs. we can view all built-in exceptions using the <code>local()</code> built-in functions as follows
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; <span class="function">locals</span>`()['__builtins__]`
 </pre>
-</div></div>
+<p></p>
                 <h3>Exception Handling</h3>
                 <p>
                     It is possible to write a program that handles selected exceptions. This can be done using <code>try...except</code> statement.
@@ -152,23 +122,14 @@ ZeroDivisionError: division by zero
                 </p>
                 <p><strong>Syntax:</strong>
                     
-<pre class="syntax">
+<pre>
 try:
     run this code
 except:
     run this block if an exception occurs
 </pre>
 </p>
-<div class="code">
-    <div class="threedots">
-        <div class="c1"></div>
-        <div class="c2"></div>
-        <div class="c3"></div>
-        <div class="title">example.py</div>
-    </div>
-    <div class="codearea">
 <pre>
-
 <span class="comment"># ZerodivisionError</span>
 
 <span class="keyword">try</span>:
@@ -179,22 +140,18 @@ except:
 <span class="keyword">except</span> <span class="">ZeroDivisionError:
     <span class="function">print</span>(<span class="string">'Enter the number greater than zero'</span>)
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
-<div class="output">
-    <div class="outputcode">
 <pre>
 a = 1
 b = 0
 Enter the number greater than zero
-</pre></div>
-</div>
+</pre>
                 <p>
                     A <code>try</code> statement may have more than one except clause. An <code>except</code> clause may have multiple exceptions name parenthesized in a tuple.
                 </p>
                 <p><strong>Syntax:</strong>
-<pre class="syntax">
+<pre>
 ... except (RuntimeError, TypeError, NameError):
 ...    pass
 </pre></p>
@@ -202,16 +159,7 @@ Enter the number greater than zero
                 <p>
                     In Python programming, exceptions are raised when corresponding errors occur at run time, but we can forcefully raise it using the keyword <code>raise</code>.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="keyword">try</span>:
 
     a = <span class="function">int</span>(<span class="function">input</span>(<span class="string">"enter the positive number: "</span>))
@@ -222,27 +170,77 @@ Enter the number greater than zero
 <span class="keyword">except</span> ValueError <span class="keyword">as</span> value:
     <span class="function">print</span>(value)
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
-<div class="output">
-    <div class="outputcode">
 <pre>
 enter the positive number: -1
 This is not a positive number!
-</pre></div></div>
+</pre>
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="file.html">Previous</a></button>
+                    <a href="file.html">File</a>
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="class.html">Next</a></button>
+                    <a href="class.html">Class</a>
                 </div>
             </div>
         </div>
-        
+    </div>
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>

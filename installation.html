@@ -10,10 +10,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,21 +25,20 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -50,29 +51,85 @@
                 </div>
                 <div class="content__container">
                     <p>
-                        Python is open source programming languages and its free to download and use. Since python is a cross-platform language you can install python on any operating systems such as Windows, Mac, Linux, Unix and others.
-                        Before you start, you will need Python on your computer. check whether you already have an up to date version of Python installed by entering python in a command line window. If you see a response from a Python interpreter it will include a version number in its initial display. Generally any Python 3.x version will do, as Python makes every attempt to maintain backwards compatibility within major Python versions. Python 2.x and Python 3.x are intentinally not fully compatible. If python starts with a Python 2.x interpreter, try entering Python3 and see if an up to date version is already installed.
+                        Python is open source programming languages and its free to download and use. Since Python is a cross-platform language you can install Python on any operating systems such as Windows, Mac, Linux, Unix and others.
+                        Before you start, you will need Python on your computer. Check whether you already have an upto date version of Python installed by entering python in a command line window. If you see a response from a Python interpreter it will include a version number in its initial display. Generally any Python 3.x version will do, as Python makes every attempt to maintain backwards compatibility within major Python versions. Python 2.x and Python 3.x are intentinally not fully compatible. If Python starts with a Python 2.x interpreter, try entering Python3 and see if an up to date version is already installed.
                     </p>
                     <p>
-                        If you need to install Python, you can visit <a href="https://www.python.org/">"Python official Website".</a> and download the most recent stable version,  it will detect the operating system and based on that it would recommend you to download python.
+                        If you need to install Python, you can visit <a href="https://www.python.org/">"Python official Website".</a> and download the most recent stable version,  it will detect the operating system and based on that it would recommend you to download Python.
                         <br>
 
-					    There are two main versions of python which is Python 2.x and Python 3.x but you can download the latest version of python. Installation steps are pretty simple. You just have to accept the agreement and finish the installation.
+					    There are two main versions of Python which is Python 2.x and Python 3.x but you can download the latest version of Python. Installation steps are pretty simple. You just have to accept the agreement and finish the installation.
                     </p>
 
                 </div>
                 <div class="btn">
                     <div class="pre__btn">
-                        <button><a href="features.html">Previous</a></button>
+                        <a href="features.html">Features</a>    
                     </div>
                     <div class="nxt__btn">
-                        <button><a href="comment.html">Next</a></button>
+                        <a href="comment.html">Comments</a> 
                     </div>
                 </div>
             </div>
             
         </div>
         
+        <div class="footer">
+            <div class="footer__container">
+                <div class="footer__title">
+                    <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+                </div>
+                <div class="footer__links">
+                    <div class="topic__links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="topic__links">
+                        <ul>
+                            <li><a href="introduction.html">Introduction</a></li>
+                            <li><a href="keyword.html">Basic</a></li>
+                            <li><a href="list.html">Data Sturctures</a></li>
+                            <li><a href="if.html">Control Flow</a></li>
+                        </ul>
+                    </div>
+                    <div class="topic__links">
+                        <ul>
+                            <li><a href="function.html">Functions</a></li>
+                            <li><a href="file.html">Files</a></li>
+                            <li><a href="class.html">OOPs</a></li>
+                            <li><a href="iterator.html">More Python!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- script -->
+        <script>
+            window.onscroll = function() {scrollFunc()};
+            var nav = document.getElementById("nav");
+            var sticky = nav.offsetTop;
+        
+            function scrollFunc(){
+                if (window.pageYOffset > sticky){
+                    nav.classList.add("sticky");
+                }
+                else {
+                    nav.classList.remove("sticky");
+                }
+            }
+        
+            const toggleButton = document.getElementsByClassName('toggle__button')[0]
+        
+            const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+        
+            toggleButton.addEventListener("click", () => {
+                navbarLinks.classList.toggle("active")
+            })
+        </script>
+
     </body>
 </html>
 

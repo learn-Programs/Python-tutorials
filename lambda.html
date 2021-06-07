@@ -10,10 +10,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,24 +25,24 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
+
 
         <div class="container">
             <div class="content">
@@ -65,17 +67,7 @@
                     The lambda functions can have any number of arguments but only one expression. The function evaluates the expression and return results.
                 </p>
 
-                    <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 >>> <span class="comment"># function definition with lambda function.</span>
 >>> <span class="comment"># addition of two numbers.</span>
 
@@ -84,22 +76,10 @@
 >>> <span class="function">print</span>(add(<span class="number">2</span>, <span class="number">3</span>))
 5
 </pre>
-</div></div>
                 <p>
                     The unnamed above function object can be written in normal function as,
                 </p>
-
-                    <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 <span class="comment">#Normal function definition.</span>
 
 <span class="keyword">def</span> <span class="userfunction">add</span>(a, b):
@@ -110,7 +90,6 @@
 <span class="comment">#Output
 5</span>
 </pre>
-</div></div>
                 <p>
                     In Python, lambda functions are used in a higher-order function which takes a function as arguments. Lambda functions can be used along with built-in functions like <code>map()</code>, <code>filter()</code> and <code>reduce()</code> functions
                 </p>
@@ -124,17 +103,7 @@
 map(function, sequence)
 </code></p>
 
-                    <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-    
 <span class="comment"># Program to find square of numbers using a map() function.</span>
 
 nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]
@@ -145,8 +114,7 @@ squares = <span class="function">list</span>(<span class="function">map</span>(<
 <span class="comment">#output
 [1, 4, 9, 16]</span>
 </pre>
-</div></div>
-
+<p></p>
                 <h3>Reduce function</h3>
                 <p>
                     The <code>reduce()</code> takes a function and a collection of items. it returns a value that is created by combining the items. It is used to apply a particular function passed in its argument to all of the list elements.
@@ -156,17 +124,7 @@ squares = <span class="function">list</span>(<span class="function">map</span>(<
 					<strong>Syntax</strong>: <code>reduce(function, sequence) </code>
                 </p>
 
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">  
 <pre>
-
 <span class="comment"># importing reduce function.</span>
 <span class="keyword">import</span> reduce <span class="keyword">from</span> functools
 
@@ -176,8 +134,7 @@ Total = <span class="function">reduce</span>(<span class="function">lambda</span
 <span class="comment">#Output 
 15</span>               
 </pre>
-</div></div>
-               
+<p></p>               
                 <h3>Filter function</h3>
                 <p>
                     The <code>filter()</code> function takes a function and a collection as a argument. It returns a collection of every item for which the function returned <code>True</code>.
@@ -185,17 +142,7 @@ Total = <span class="function">reduce</span>(<span class="function">lambda</span
 				<p>
 					<strong>Syntax</strong>: <code>filter(function, sequence)</code>
                 </p>
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment">#Program to find numbers greater than 3.</span>
 
 nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]
@@ -206,19 +153,74 @@ my_list = <span class="function">list</span>(<span class="function">filter</span
 <span class="comment">#Output 
 [4, 5]</span>
 </pre>
-</div></div>
+<p></p>
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="recursion.html">Previous</a></button>
+                   <a href="recursion.html">Recursion</a>
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="module.html">Next</a></button>
+                    <a href="module.html">Modules</a>
                 </div>
             </div>
         </div>
         
     </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>

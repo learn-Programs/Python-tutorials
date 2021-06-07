@@ -10,10 +10,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,21 +25,20 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -51,29 +52,39 @@
             <div class="content__container">
                 <p>
                     One of the most powerful features of a programming language is the ability to manipulate variables.
-                    <strong>What is Variable?</strong>
-                    Variable is the name given to the memory location where data is stored.
-                    When a variable is created, the interpreter will create some space or memory to store the value of that variable. Variables are used to store data/values.
-                </p>
-
+                    </p>
+                    <p>
+                        <strong>What is Variable?</strong>
+                        Variable is the <strong>name</strong> given to the memory location where data is stored.
+                        When a variable is created, the interpreter will create some space or memory to store the value of that variable. Variables are used to store data/values,
+                    </p>
+               
                     <p>
                         Everything in Python is <strong>Object</strong>. Every object in Python has an <strong>Indentity</strong>, a<strong> Type</strong> and a <strong>Value</strong>.
-                    
+                    </p>
+                    <p>
                         <strong>Identity</strong> of the object is its address in memory and does not get change once it is created. 
                         Memory address or Identity of a variable can get using <code>id(variable_name)</code>.
-                        <br>
                         
-                        <strong>Type</strong> is nothing but the <strong>Datatype</strong> which means that, what type of data is store under the name of variable. It is a set of values and allowable operations on those values.
-                        Datatype of a variable can get using function <code>type(variable_name)</code>.
+                        </p>
+                    
+                        <p>
+                            <strong>Type</strong> is nothing but the <strong>Datatype</strong> which means that, what type of data is store under the name of variable. It is a set of values and allowable operations on those values.
+                            Datatype of a variable can get using function <code>type(variable_name)</code>.
+                        </p>
+                        
+                        
                     </p>
                     <h3 id="variable">How to create a Variable?</h3>
                     <p>
                         We know now, that a variable is a name refers to memory location and variables are also known as <strong>Indentifier</strong> and used to hold a value.
-
-                        Creating a variable in Python is very simple. Python's variables are dynamically typed, which means that we do not need to specify the type of variable. A variable does not need declaration or initialization, while creating or before adding value to it like in other languages such as C, C++, etc.
-
-                        There are some rules to follow while creating a variable in Python.
-
+                        </p>
+                        <p>
+                            Creating a variable in Python is very simple. Python's variables are dynamically typed, which means that we do not need to specify the type of variable. A variable does not need declaration or initialization, while creating or before adding value to it like in other languages such as C, C++, etc.
+                        </p>
+                        <p>
+                            There are some rules to follow while creating a variable in Python.
+                        </p>
 					<li>
 						The name of the variable must start with a letter or with an underscore(_).
 					</li>
@@ -99,17 +110,7 @@
                         In Python, varaibles are created using an assignment operator <code>(=)</code> to store data.<br>
                         <code>var_name = value</code>
                     </p>
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment"># Creating Variable in Python.</span>
 a = <span class= "number">10</span>
 _a = <span class= "number">10</span>
@@ -117,60 +118,28 @@ _a = <span class= "number">10</span>
 <span class="comment"># Invalid variable.</span> 
 1a = <span class= "number">10</span> <span class= "comment"># SyntaxError will occure</span>
 </pre>
-</div></div>
                     <p>
                         Variable assignment works from left to right. So the following code will generate a syntax error.
                     </p>
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> <span class="number">0</span> = x
 SyntaxError: can't assign to literal.
 </pre>
-</div></div>
+<p></p>
                     
                     <h3 id="multiple_assigment">Multiple Assignments</h3>
                     <p>
                         You can assign multiple values to multiple variables in one line. but there must be the same number of arguments on the right and left side of the " = " operator.
                     </p>
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> a, b, c = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>
 >>> <span class="function">print</span>(</span>a, b, c)
 1 2 3
 </pre>
-</div></div>
                     <p>
                         Variables can be reassigned as many times as you want, in order to change their value. In Python, variables don’t have specific types, so you can assign a <strong>string</strong> to a variable and later assign an <strong>integer</strong> to the same variable.
                     </p>
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 >>> a = <span class="number">10</span>
 >>> <span class="function">print</span>(<span class="variable">a</span>)	
 10
@@ -179,42 +148,88 @@ SyntaxError: can't assign to literal.
 >>> <span class="function">print</span>(<span class="variable">a</span>)
 String
 </pre>
-</div></div>
+<p></p>
                     <h3 id="delete">Deleting Variable</h3>
                     <p>
                         You can delete a variable using <code>del</code> statement. Which means The reference from the name to the value is deleted.
                         Deleted variables can be reassigned to later as normal variable.
 				    </p>
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                    
 <pre>
-
 >>> a = <span class="number">10</span>
 >>> <span class="keyword">del</span> a
 >>> a
 NameError: name 'a' is not defined.
 </pre>
-</div></div>
+<p></p>
                 </div>
                 <div class="btn">
                     <div class="pre__btn">
-                        <button><a href="keyword.html">Previous</a></button>
+                        <a href="keyword.html">Keyword</a>
                     </div>
                     <div class="nxt__btn">
-                        <button><a href="datatype.html">Next</a></button>
+                        <a href="datatype.html">Data Type</a>
                     </div>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="footer">
+            <div class="footer__container">
+                <div class="footer__title">
+                    <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+                </div>
+                <div class="footer__links">
+                    <div class="topic__links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="topic__links">
+                        <ul>
+                            <li><a href="introduction.html">Introduction</a></li>
+                            <li><a href="keyword.html">Basic</a></li>
+                            <li><a href="list.html">Data Sturctures</a></li>
+                            <li><a href="if.html">Control Flow</a></li>
+                        </ul>
+                    </div>
+                    <div class="topic__links">
+                        <ul>
+                            <li><a href="function.html">Functions</a></li>
+                            <li><a href="file.html">Files</a></li>
+                            <li><a href="class.html">OOPs</a></li>
+                            <li><a href="iterator.html">More Python!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
         
+        <!-- script -->
+        <script>
+            window.onscroll = function() {scrollFunc()};
+            var nav = document.getElementById("nav");
+            var sticky = nav.offsetTop;
+        
+            function scrollFunc(){
+                if (window.pageYOffset > sticky){
+                    nav.classList.add("sticky");
+                }
+                else {
+                    nav.classList.remove("sticky");
+                }
+            }
+        
+            const toggleButton = document.getElementsByClassName('toggle__button')[0]
+        
+            const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+        
+            toggleButton.addEventListener("click", () => {
+                navbarLinks.classList.toggle("active")
+            })
+        </script>
+
     </body>
 </html>
 

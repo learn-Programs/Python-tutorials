@@ -13,31 +13,33 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
-        <link rel="icon" href="/logo/py-logo.ico"/>
+        <link rel="icon" href="logo/py-logo.ico"/>
 
         <!-- title of Page -->
         <title>Python File I/o.</title>
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -125,16 +127,7 @@
                         </tbody>
                         </table>
                          <!-- editor for python code -->
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 <span class="comment"># Open file in write mode.</span>
 f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'w'</span>)
 
@@ -144,51 +137,26 @@ f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <
 <span class="comment"># Read and write file in binary mode.</span>
 f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'r + b'</span>)
 </pre>
-</div>
-</div>
                 </p>
                
                 <h3>Closing files</h3>
                 <p>
                     Once the file opened and done with all the operations. we must close files using the <code>close()</code> method.
                 </p>
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 f = <span class="function">open</span>(<span class="string">'test.txt'</span>)
 f.<span class="function">close</span>()
 </pre>
-</div></div>
                 <p>
                     It is good practice to use the <code>with</code> keyword when dealing with file objects. Using <code>with</code> statement, the files are properly closed after its operations, even if an exception is raised.</p>
-
-                     <!-- editor for python code -->
-                     <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; <span class="keyword">with</span> <span class="function">open</span>(<span class="string">'test.txt'</span>) <span class="keyword">as</span> f:
         read_data = f.<span class="function">read</span>()
 
 &gt;&gt;&gt; f.<span class="function">closed</span>
 True
 </pre>
-</div>
-</div>
+<p></p>
                 <h3>Writing into a files</h3>
                 <p>
                     To write into a file, we need to open the file in a writing mode <strong>‘w’</strong> or  in append mode <strong>‘a’.</strong>
@@ -199,25 +167,14 @@ True
 				<p>
 					To write the contents of string into a file, we can use <code>write(string)</code> method which writes and returns the number of characters written into a file.
                 </p>
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="keyword">with</span> <span class="function">open</span>( <span class="string">'test.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:
     f.<span class="function">write</span>(<span class="string">"This is first line\nThis is second line\n"</span>)
 </pre>
-</div></div>
                 <p>
                     The above program will create a file name ‘test.txt’. if it does not exist, and if it exists, it is overwritten.
                 </p>
-                <h3>Reading into files</h3>
+                <h3>Reading from files</h3>
                 <p>
                     To read a file in a Python, we must open the file in reading mode.<br>
 
@@ -227,17 +184,7 @@ True
 				<p>
 					The <code>size</code> is an optional numeric argument. if the size parameter is not specified, it reads and returns entire content.
                 </p>
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; f = <span class="function">open</span>(<span class="string">'test.txt'</span>, <span class="string">'r'</span>)
 
 &gt;&gt;&gt; f.<span class="function">read</span>(<span class="number">4</span>)
@@ -253,7 +200,7 @@ True
 &gt;&gt;&gt; f.<span class="function">read</span>()
 ' '
 </pre>
-</div></div>
+<p></p>
                 <p>
                     The <code>read()</code> methods returns empty string <code>' '</code>  once the end of file is reached.
 				</p>
@@ -265,73 +212,95 @@ True
                     We can use readline when we want to read a file single line by line manner.
                     </p>
    
-                     <!-- editor for python code -->
-                     <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; f.<span class="function">readline</span>()
 'This is a the first line of the file\n'
 </pre>
-            </div></div>
+<p></p>
                 <h4>tell()</h4>
                 <p>
                     This method returns a current positi second line\n")
                     on of a line in integer.</p>
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 &gt;&gt;&gt; f.<span class="function">tell</span>() <span class="comment">#returns a current position.</span>
 38
 </pre>
-</div></div>
+<p></p>
                 <h4>seek()</h4>
                 <p>
                     We can change the position of cursor/the file object’s position using <code>seek()</code> method.
                 </p>
-
-                 <!-- editor for python code -->
-                 <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 
 &gt;&gt;&gt; f.<span class="function">seek</span>(<span class="number">0</span>) <span class="comment"># bring file cursor to position 0.</span>
 0
 </pre>
-      </div>
-    </div>
     </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="module.html">Previous</a></button>
+                    <a href="module.html">Module</a>    
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="exception.html">Next</a></button>
+                    <a href="exception.html">Exception</a>  
                 </div>
             </div>
         </div>
         
     </div>
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>

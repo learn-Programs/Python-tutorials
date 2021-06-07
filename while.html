@@ -10,10 +10,12 @@
 
 
         <!-- icon link -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
 
         <!-- logo icon link -->
         <link rel="icon" href="/logo/py-logo.ico"/>
@@ -23,21 +25,20 @@
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+                <h3><i class = "fa fa-code"></i> PyCoder</h3>
+                <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -65,16 +66,7 @@ while condition:
                     This while loop repeatedly tests the expression and if it is true, executes the block of while loop. if condition or expression is false, the next section of code is executed.
                 </p>
                 <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment"># Program to find the sum of 10 numbers using while loop.</span>
 
 n = <span class="number">0</span>
@@ -87,16 +79,11 @@ sum = <span class="number">0</span>
 
 <span class="function">print</span>(<span class="string">"Sum = "</span>,sum)
 </pre>
-</div></div>
 
 <p><strong>Output</strong></p>
 
-                    <!-- output code area -->
-                    <div class="output">
-                        <div class="outputcode">
 <pre>
 sum = 45</pre>
-</div></div>
                 <p>
                     In the above example of while loop. we print sum of first <code>10</code> numbers starting from <code>0</code>. while loop has an increment operation where we are increasing the value of <code>n</code> by <code>1</code>. This is a very important step.
                 </p>
@@ -108,17 +95,7 @@ sum = 45</pre>
                     When the condition in while loop never becomes false, the while loop will never terminate and result in the infinite loop.
                 </p>
 
-                <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment">#infinte loop.</span>
 
 n = <span class="number">1</span>
@@ -126,12 +103,7 @@ n = <span class="number">1</span>
 <span class="keyword">while</span> n != <span class="number"></span>2</span>:
     <span class="function">print</span>(n)
 </pre>
-</div></div>
                 <p><strong>Output</strong></p>
-
-                    <!-- output code area -->
-                    <div class="output">
-                        <div class="outputcode">
 <pre>
 1
 1
@@ -139,7 +111,6 @@ n = <span class="number">1</span>
 .
 Infinte times
 </pre>
-</div></div>
                 <p>
                     In the above example, <code>while</code> loop first evaluates the condition. Here, the condition is True, only when n is not equals to 2. <br> 
                     Since, the value of n is equal to 1, which is not equal to 2, which statisfies the condition.Now, program counter will enter into the while loop and excecutes the while block of code.
@@ -159,17 +130,7 @@ Infinte times
                 <p>
                     The following example is the combination of while loop with else statement, it will print a number as long as number is less than 3, otherwise it will print the else block of code.</p>
 
-                    <!-- editor for python code -->
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
-
 <span class="comment"># While loop with else.</span>
 
 n = <span class="number">1</span>
@@ -181,31 +142,80 @@ n = <span class="number">1</span>
 <span class="keyword">else</span>:
     <span class="function">print</span>(<span class="string">f"{n} is not less than 3"</span>)
 </pre>
-</div></div>
                 <p><strong>Output</strong></p>
-
-                    <!-- output code area -->
-                    <div class="output">
-                        <div class="outputcode">
 <pre>
 1
 2
 3 is not less than 3
 </pre>
-</div></div>
                 
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="for.html">Previous</a></button>
+                    <a href="for.html">For Loop</a> 
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="function.html">Next</a></button>
+                    <a href="function.html">Function</a>    
                 </div>
             </div>
         </div>
         
     </div>
     
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3>P<span style="color:#ffff;">Y</span>THON</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
 </body>
 </html>
