@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-199323207-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-199323207-2');
-</script>
-
+        
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -23,34 +14,38 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- css link -->
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="cssstyle/main.css">
+        <link rel="stylesheet" href="cssstyle/colors.css">
+        <link rel="stylesheet" href="cssstyle/code.css">
+        <link rel="stylesheet" href="css/all.css">
+
 
         <!-- logo icon link -->
-        <link rel="icon" href="/logo/py-logo.ico"/>
+        <link rel="icon" href="logo/py-logo.ico"/>
 
         <!-- title of Page -->
         <title>Python closures.</title>
     </head>
 
     <body>
-        <div class="nav">
+        <div class="navigation" id='nav'>
             <div class="logo">
-                <a href="index.html">Python NoteBook</a></div>
+            <h3><i class="fa fa-code"></i> PyCoder</h3>
+            <a href="#" class="toggle__button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
             <div class="nav__titles">
                 <ul>
-                   <li><a href="introduction.html">Getting started</a></li>
-                   <li><a href="keyword.html">Basics</a></li>
-                   <li><a href="list.html">Data Structure</a></li>
-                   <li><a href="if.html">Control flow</a></li>
-                   <li><a href="for.html">Loops</a></li>
-                   <li><a href="function.html">Functions</a></li>
-                   <li><a href="file.html">Files</a></li>
-                   <li><a href="class.html">Class</a></li>
-                   <li><a href="iterator.html">More Python!</a></li>
-
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorial</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
+
 
         <div class="container">
             <div class="content">
@@ -84,14 +79,7 @@
                 <p>
                     let’s try to understand the nesting of function using simple example:
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
+                
 <pre>
 
 <span class="comment"># create nested function.</span>
@@ -108,14 +96,10 @@
 <span class="comment"># outer function call.</span>
 <span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
 </pre>
-</div></div>
                 <p><strong>Output</strong></p>
-                <div class="output">
-                    <div class="outputcode">
 <pre>
 Hello
 </pre>
-</div></div>
                 <p>
                     Here, we defined  nested function with outer function <code>outer_func()</code> with parameter <code>msg</code> and inside that function, we defined another function called <code>inner_func()</code> which prints the <code>msg</code>.
                 </p>
@@ -132,14 +116,6 @@ Hello
 
                 <p>Let’s try to access the inner function.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 
 >>> <span class="userfunction">inner_func</span>()
@@ -149,7 +125,6 @@ Traceback (most recent call last):
 inner_func()
 NameError: name 'inner_func' is not defined
 </pre>
-</div></div>
                 <p>
                     When we try to call the inner function from outside of its scope it raises <code>NameError</code>.
                 </p>
@@ -184,14 +159,6 @@ NameError: name 'inner_func' is not defined
                 <p>
                     Understand the concepts of closure in more clear way using below example:
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 
 <span class="comment"># create nested function.</span>
@@ -211,7 +178,7 @@ NameError: name 'inner_func' is not defined
 <span class="comment"># Now let's try calling this function.</span>
 another = <span class="userfunction">outer_func</span>(<span class="string">"Hello"</span>)
 another()
-</pre></div></div>
+</pre>
                 <p>
                     The <code>outer_func()</code> function was called with the string “Hello” and the returned function was bound to the name <code>another</code>. This is nothing but we create an Object of the function <code>outer_func()</code>. On calling <code>another()</code>, the message was still remembered although we had already finished executing the <code>outer_func()</code> function.
                 </p>
@@ -223,14 +190,6 @@ another()
                 <p>
                     This value in the enclosing scope is remembered even when the variable goes out of scope or the function itself is removed from the current namespace.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 
 >>> <span class="keyword">del</span> <span class="userfunction">outer_func</span>
@@ -242,7 +201,7 @@ Hello
 Trackeback (most recent call last):
 ...
 NameError: name 'outer_func' is not defined
-</pre></div></div>
+</pre>
                 <p>The returned function still works even when the original function was deleted.</p>
 
                 <h3>When we can create a closures?</h3>
@@ -262,28 +221,20 @@ NameError: name 'outer_func' is not defined
 
 				<h3>Why we should use Closures?</h3>
 
-                <ol>
-
+                <p>
+                    When there are few methods to be implemented in a class, closures can provide an alternate and more elegant solution. But with more number of attributes and methods it is good idea to implement a class.
+                
+                <ul>
                     <li>Closures can avoid the use of global values.</li>
 
                     <li>provides some form of data hiding.</li>
 
                     <li>it can also provide an object oriented solution to the problem.</li>
-                </ol>
-
+                </ul>
                 <p>
-                    When there are few methods to be implemented in a class, closures can provide an alternate and more elegant solution. But with more number of attributes and methods it is good idea to implement a class.
-                <br>
+                <p>
                     Here is an example of how the closures can be an alternate solution to small classes.
                 </p>
-                <div class="code">
-                    <div class="threedots">
-                        <div class="c1"></div>
-                        <div class="c2"></div>
-                        <div class="c3"></div>
-                        <div class="title">example.py</div>
-                    </div>
-                    <div class="codearea">
 <pre>
 
 <span class="comment"># using class</span>
@@ -303,23 +254,16 @@ multiply3 = <span class="userfunction">MultiplierOf</span>(<span class="number">
 <span class="comment"># Muliplier of 4</span>
 multiply4 = <span class="userfunction">MultiplierOf</span>(<span class="number">4</span>)
 
-<span class="function">print</span>(multiply3(<span class="number">4</span>))
+<span class="function">print</span>(multiply3.multiplier(<span class="number">4</span>))
 <span class="comment">#Output: 12</span>
 
-<span class="function">print</span>(multiply4(<span class="number">5</span>))
+<span class="function">print</span>(multiply4.multiplier(<span class="number">5</span>))
 <span class="comment">#Output: 20</span>
-</pre></div></div>
+</pre>
                     <p>
                         The same can be done using clouseres instead of classes.
                     </p>
-                    <div class="code">
-                        <div class="threedots">
-                            <div class="c1"></div>
-                            <div class="c2"></div>
-                            <div class="c3"></div>
-                            <div class="title">example.py</div>
-                        </div>
-                        <div class="codearea">
+                    
 <pre>
     
 <span class="comment"># using function</span>
@@ -343,10 +287,9 @@ multiply4 = <span class="userfunction">multiplier_of</span>(<span class="number"
 <span class="function">print</span>(multiply4(<span class="number">5</span>))
 <span class="comment">#Output: 20</span>
 
-<span class="function">print</span>(multiply4(multiply3(<span cla)
-NameError: name 'inner_func'ss="number">2</span>)))
+<span class="function">print</span>(multiply4(multiply3(<span class="number">2</span>)))
 <span class="comment">#Output: 24</span>
-</pre></div></div>
+</pre>
                     <p>
                         Python Decorators make an extensive use of closures as well.
                     </p>
@@ -354,15 +297,70 @@ NameError: name 'inner_func'ss="number">2</span>)))
             </div>
             <div class="btn">
                 <div class="pre__btn">
-                    <button><a href="generator.html">Previous</a></button>
+                    <a href="generator.html">Generator</a>
                 </div>
                 <div class="nxt__btn">
-                    <button><a href="decorators.html">Next</a></button>
+                    <a href="decorators.html">Decorators</a>
                 </div>
             </div>
         </div>
-        
     </div>
+
+    <div class="footer">
+        <div class="footer__container">
+            <div class="footer__title">
+                <h3><i class="fa fa-code"></i> PyCoder</h3>
+            </div>
+            <div class="footer__links">
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="keyword.html">Basic</a></li>
+                        <li><a href="list.html">Data Sturctures</a></li>
+                        <li><a href="if.html">Control Flow</a></li>
+                    </ul>
+                </div>
+                <div class="topic__links">
+                    <ul>
+                        <li><a href="function.html">Functions</a></li>
+                        <li><a href="file.html">Files</a></li>
+                        <li><a href="class.html">OOPs</a></li>
+                        <li><a href="iterator.html">More Python!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- script -->
+    <script>
+        window.onscroll = function() {scrollFunc()};
+        var nav = document.getElementById("nav");
+        var sticky = nav.offsetTop;
+    
+        function scrollFunc(){
+            if (window.pageYOffset > sticky){
+                nav.classList.add("sticky");
+            }
+            else {
+                nav.classList.remove("sticky");
+            }
+        }
+    
+        const toggleButton = document.getElementsByClassName('toggle__button')[0]
+    
+        const navbarLinks = document.getElementsByClassName('nav__titles')[0]
+    
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active")
+        })
+    </script>
     
 </body>
 </html>
